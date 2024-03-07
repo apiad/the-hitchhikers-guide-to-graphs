@@ -298,7 +298,7 @@ window.Quarto = {
 <p>The first step in solving any problem with graphs is, well, turning that problem into a graph problem!</p>
 <p>In this case, what we must do is find a way out of the labyrinth, so we must decide how to model the labyrinth as a graph such that nodes and edges map to concepts in the labyrinth that are useful for this task. Since this is our first encounter with graph problems, this will not prove difficult. The most natural mapping, and the one you’re probably thinking about, is using edges to model the corridors in the labyrinth, and nodes to model the intersections.</p>
 <p>A possible graph that models a labyrinth is the following:</p>
-<div id="89629132" class="cell" data-execution_count="1">
+<div id="a2cc4b99" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 <figure class="figure">
@@ -413,7 +413,7 @@ Note
 <p>As the name implies, depth-first search (DFS) is a graph traversal algorithm that prioritizes going as deep as possible as fast as possible. In our labyrinth analogy, this means walking down a corridor till you can’t go any further, and only then, when you reach a dead end, you backtrack and try a different route.</p>
 <p>More precisely, DFS starts at an arbitrary root node in a graph, and successively jumps to one of its neighbors, and continues from there. You can select which neighbor to visit randomly, but most commonly one simply defines a predefined order –e.g., the same order in which neighbors are listed in the adjacency list. In a practical scenario, like our labyrinth, this could mean, for example, always trying to move south, then east, then north, then west. Of course, you must keep track of which nodes (or intersections in the labyrinth) you have already visited, otherwise you can easily get stuck in a loop.</p>
 <p>This is how DFS looks like in our sample graph that models the labyrinth problem.</p>
-<div id="623bd95c" class="cell" data-execution_count="2">
+<div id="341d0b87" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 <figure class="figure">
