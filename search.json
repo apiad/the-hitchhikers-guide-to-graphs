@@ -1,0 +1,253 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "The Hitchhiker’s Guide to Graphs",
+    "section": "",
+    "text": "Preface\nWhat do the World Wide Web, your brain, the corpus of scientific knowledge accumulated by all of humanity, the entire list of people you’ve ever met, and the city you live in have in common?\nThese are all very different types of things, from physical, to virtual, to social in nature, but they share a very important trait. They are all networks that establish relationships between some entities.\nThe World Wide Web is a network of interconnected computational resources, data, software, and hardware infrastructure. Your brain is a network of interconnected neurons. The accumulated human knowledge is also a network of interconnected ideas, as all discoveries depend upon prior knowledge, and unlock potential new discoveries. The city you live in is also an interconnected network of roads and buildings. And the people you know is also network, as many of them know each other, or know someone that knows someone you know.\nAs distinct as these things are, they all share common properties, by virtue of their networked nature. For example, you can think of how “close” two entities in this network are. The meaning of “distance” will be different if you’re considering physical networks –like roads– versus information networks –like published papers with citations to other papers– versus social networks –like your Facebook friends–, but in all cases there is some sense in which some entities are “closer” together than others.\nWhat if we could study this abstract notion of networks of interconnected elements, and understand the fundamental properties of all sorts of networks all at once?",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#welcome-to-graph-theory",
+    "href": "index.html#welcome-to-graph-theory",
+    "title": "The Hitchhiker’s Guide to Graphs",
+    "section": "Welcome to Graph Theory!",
+    "text": "Welcome to Graph Theory!\nTo study these disparate objects in the deepest possible way, we need some abstract concept that captures the fundamental notion of things connected together. In mathematics and computer science, this concept is called a graph.\nGraph theory is a field at the intersection of mathematics and computer science that studies graphs from a theoretical point of view. It is one of the most fascinating branches of math, science, and human knowledge in general, and this book is all about it.\nThis book is a journey through the theory and applications of graphs. In each chapter, we will look at one specific problem and see how it can be translated into graph problems. Then we will design a computational strategy –an algorithm– to solve that problem, or at least to attempt an approximation –because some problems are too hard to solve them completely. In doing so, we will also look at the underlying mathematical theory that ensures our solution works.\nIn the next few hundred pages, I will teach you almost everything I know about graphs, including their most intriguing mathematical properties, but also their most practical uses to solve real-world scientific, engineering, and social problems.\nThus, when you’ve finished reading this book, you will have a solid understanding of graphs, both from a practical and a theoretical perspective, similar to the level expected from a Computer Science graduate in most curricula out there, and perhaps deeper in some niche topics that are usually not taught in a CS major.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#what-this-book-is-and-what-is-not",
+    "href": "index.html#what-this-book-is-and-what-is-not",
+    "title": "The Hitchhiker’s Guide to Graphs",
+    "section": "What this book is (and what is not)",
+    "text": "What this book is (and what is not)\nThis book is not a textbook for a computer science course. There are plenty of wonderful books you can use if you’re learning (or teaching) about graphs at college. The most essential of these books is Introduction to Algorithms1, which I strongly recommend you check out if you want a more traditional –and complete– introduction to, well, algorithms in general and graphs in particular. It is the best selling book in the history of computer science.\nThis book will cover both some of the simplest and some of the most advanced algorithms and concepts in graph theory, so there is no single one-semester course where all this content could be taught. Depending on your background and interests, this book will serve you in different ways.\nIf you are a Computer Science student, think of this book as a complement to all you will see in college. As you learn about graphs in different subjects, you can come to this book and find algorithms, theorems, and proofs suitable to the level of depth you’re exploring.\nIf you are a CS professor, this book can give you some cool ideas to introduce specific graph theorems and algorithms, along with clean and simple reference implementations. The explanations are also more intuitive than what you can find in more traditional textbooks. The book also features follow-up questions and problems that you can mix-and-match with your own to enrich your classes or exams.\nIf you are a software developer, you can use this book to complement your knowledge about graphs, or fill any gaps you may have from your background studies. You can also use this book as a quick reference to many of the most used graph algorithms, and as an inspiration to introduce graph theory into your current projects, perhaps improving some of your work.\nIf you are a casual coder, this book will give you plenty of cool problems to play with and ideas to build some cool projects on your own. It may even give you the inspiration to go deeper into other computer science fields such as AI and optimization.\nAnd if you are none of the above, I think you can still enjoy this book, if only because some of the most beautiful ideas in math emerge naturally in solving graph problems. In any case, as I’ll try to convince you in this book, graphs are everywhere. So knowing more about them can only help you see the world around you with a new pair of glasses, and that’s always a good thing.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#prerequisites",
+    "href": "index.html#prerequisites",
+    "title": "The Hitchhiker’s Guide to Graphs",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nThis book assumes some basic knowledge of programming. If you have some experience with the Python programming language, you’ll find it easier to understand the code examples. However, even if you’ve never seen Python before, a minimum experience with any programming language will probably be more than enough, since Python is super intuitive –at least the small subset of Python we’ll use throughout this book.\nIf you have never, ever seen a programming language before, then the coding part of this book will be harder for you. However, you can still enjoy the intuitive and visual explanations and the mathematical proofs, and skip all the code. We will always present an informal explanation of any algorithms that we study. And if getting the most out of this book is the nudge you need to learn a little bit of coding, even better!\nRegarding math, you should be at least comfortable with high-school level, but no college-level math is necessary. Specially, no advanced calculus or algebra appears anywhere in this book. The majority of the proofs use only basic logic, and we’ll introduce any mathematical tool we need –such as strong induction or reductio ad absurdum– right before we use it. That being said, some minimal previous exposure to discrete math won’t hurt you.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-read-this-book",
+    "href": "index.html#how-to-read-this-book",
+    "title": "The Hitchhiker’s Guide to Graphs",
+    "section": "How to read this book",
+    "text": "How to read this book\nThis book is divided into several parts that are more or less independent. Except for Chapter 1  Introduction, all other chapters can be read roughly in any order, although the first few chapters introduce some of the most used algorithms. In some rare cases a later chapter may reference a previous result or algorithm, but in those cases you’ll find an explicit link to any required content. Thus, unless you’ve already familiar with the basic notations and concepts in graph theory, I recommend you read Chapter 1  Introduction first, but afterwards you’re free to hop around and take any chapter that suits your interest.\nEach part deals with solving problems of a similar nature, and is divided into chapters that grow in complexity. That means the last chapter of part 2, for example, may be more advanced than the first chapter of part 4.\nEach chapter is dedicated to solving one specific problem, introducing one or a few strongly related algorithms and ideas. In each chapter, we will first spend some time understanding the problem and building intuitions that help us devise possible solutions. Then, we will present one or more algorithms, including a possible implementation in Python, which you are free to skip if you only care about the intuitive solutions. Intermixed between all of this, we’ll drop some theoretical sections that delve into the underlying math and provide some formal proofs. These sections will be clearly marked and are absolutely optional, so you are free to skip them, at least on a first read.\nIn summary, you can read this book top-to-bottom, or you can skim and jump around as much as you want.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#complementary-source-code",
+    "href": "index.html#complementary-source-code",
+    "title": "The Hitchhiker’s Guide to Graphs",
+    "section": "Complementary source code",
+    "text": "Complementary source code\nThis book comes with by a simple Python library called hitchhikers-graphs that contains all the code we’ll write and use throughout the book.\nThe library itself is open-source and can serve as a starting point for other projects, but it is not designed to be a production-ready solution for solving graph problems. The library is mainly an educational device. For this reason, all implementations are purposefully oversimplified and more care is given to clarity and simplicity than performance.\nThat being said, you’re free to download, modify, and use it as you see fit.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#a-word-on-notation",
+    "href": "index.html#a-word-on-notation",
+    "title": "The Hitchhiker’s Guide to Graphs",
+    "section": "A word on notation",
+    "text": "A word on notation\nThis book follows the standard mathematical notation for graphs that you can find anywhere, and we will learn that notation in due time, incorporating new concepts as we need them.\nAs I explained above, most of the math- and code-heavy parts are optional and clearly marked so you can decide whether to skip them or dive into them. This is how you identify them:\n\n All sections or blocks marked with this symbol are math-heavy, and usually include proofs for theorems just discussed in the previous sections.\n All sections or block marked with this symbol are code-heavy, and most often include a Python implementation of an algorithm previously discussed.\n\nJust to be repetitive, although you can definitely skip these sections and still enjoy and get a lot out of this book, I strongly encourage you to, at least on a second read, give them a try. We’ve made our best to be as clear and intuitive as possible even in these more advanced sections.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "The Hitchhiker’s Guide to Graphs",
+    "section": "",
+    "text": "https://mitpress.mit.edu/9780262367509/introduction-to-algorithms/↩︎",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "What is a graph\nIntuitively, a graph is just a (finite) collection of elements —which we will often call vertices, although in many places you’ll see them called nodes as well— connected among them via edges. Thus, a graph represents an abstract relation space, in which the edges define who’s related to whom, whatever the nature of that relation is.\nWe can say a graph is an object composed of two sets: one set of elements we call vertices, and another set of elements we call edges, with the detail that edges themselves are nothing but sets of two vertices. Thus, in principle, there is nothing about an edge that matters beyond which are the two vertices it connects (we will see this isn’t exactly the case when we examine some especial types of graphs.)\nGraphs are abstract objects, which means they don’t have an intrinsic visualization. However, we can visualize graphs drawing dots for vertices and lines for edges. An example of a simple graph is shown below:\nThis graph is composed of the vertices \\(a,b,c,d,e\\) and the edges \\(ab, ae, bc, bd, cd, ce, de\\). Of course, there is nothing intrinsic to names or the exact location of the vertices in the drawing. Except in very concrete cases —such as when a graph represents a geometrical or geographical object— the layout of a graph is arbitrary, and thus the same graph can be represented in an infinite number of ways.\nThe most important characteristic of a vertex is it’s degree, which basically measures the number of edges between this vertex and any other in the graph. Thus, in the previous example, the degree of vertex \\(a\\) is 2, because only edges \\(ab\\) and \\(ae\\) connect \\(a\\) with another vertex. In contrast, the remaining vertices has degree 3. We name the set of vertices adjacent to an arbitrary vertex \\(v\\) its neighborhood. Thus, the neighborhood of vertex \\(c\\) is the set of vertices \\(\\{b,d,e\\}\\).\nIt should now be self-evident that the degree of a vertex is the size of its neighborhood.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#what-is-a-graph",
+    "href": "intro.html#what-is-a-graph",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "Formalizing graphs\n\n\n\n\n\n\nOptional math sections\n\n\n\nSections with a  symbol are mathematical definitions or proofs that you can safely ignore if you don’t care about the formalization.\n\n\nWe can formalize the notion of graph using the tools from logic, especially set theory, which gives us the precise notation and formalism to define graph as a definite mathematical object.\nWe can define graph as:\n\nDefinition 1: A graph \\(G=(V,E)\\) is a collection of two sets, a set of vertices \\(V\\), and a set of edges \\(E \\subseteq V \\times V\\).\n\nWhen given without specifying the vertices and edges sets, we can use the notation \\(V(G)\\) and \\(E(G)\\) to refer to these components in an arbitrary graph \\(G\\).\nWe will write \\(N(v)\\) to refer to the neighborhood, and \\(d(v) = |N(v)|\\) to refer to the degree of any vertex \\(v \\in V(G)\\).\n\n\n Programming with graphs\n\n\n\n\n\n\nOptional coding sections\n\n\n\nSections with a  symbol are related to coding, and you can safely ignore them if you don’t care about the programming part.\n\n\nComputationally speaking, you can think of a graph as an abstract class (or an interface in languages that support that notion) that provides two key operations: listing all nodes, and determining if two nodes are connected.\nIn Python we can achieve this with an abstract class (using the abc module). Since nodes can be literally anything, from numbers to people to diseases, we use a generic type.\n\nclass Graph(Generic[T], ABC):\n    @abstractmethod\n    def nodes(self):\n        pass\n\n    @abstractmethod\n    def adjacent(self, x: T, y: T) -&gt; bool:\n        pass\n\n    # ... rest of class Graph\n\n\n\n\n\n\n See on Github: https://github.com/apiad/graphs/blob/main/graphs/core.py#L9-L18\n\n\n\n\n\n\n\nYou may be wondering, what if we want to modify the graph? While that makes total sense in some applications, since we want to use this graph abstraction as flexibly as possible –e.g., as a readonly interface to some external resource, such as the graph of your Twitter followers– we don’t want to constraint ourselves to only graphs that are stored in local memory or that can be modified. In any case, specific local implementations of this interface will certainly have methods to add or remove nodes or edges\nJust from the previous definition we can already start to implement general methods in graphs, whatever their underlying implementation. For example, we can already compute the neighborhood of any given vertex, albeit with an extremely slow procedure:\n\n# class Graph(...)\n#   ...\n\n    def neighborhood(self, x: T):\n        for y in self.nodes():\n            if self.adjacent(x, y):\n                yield y\n\n    def degree(self, x: T) -&gt; int:\n        return len(list(self.neighborhood(x)))\n\n#   ...\n\n\n\n\n\n\n See on Github: https://github.com/apiad/graphs/blob/main/graphs/core.py#L21-L32\n\n\n\n\n\n\n\nThis is of course the worst way to compute neighborhoods, but it works. In cases where we have nothing better, this method will do, but some specific representations of graphs we will see shortly can override these methods and provide more efficient implementations.\n\nComputational representations of graphs\nThere are several computational representations of graphs, with advantages and limitations of their own.\nThe most straightforward representation is called the adjacency list method, which references all neighbors of a given node in a structure associated to that node, such as an array. In Python, we can store a dictionary of nodes mapping to a set of their adjacent nodes. We use a set to store the adjacency information so we can answer as fast as possible whether two nodes are adjacent.\n\nclass AdjGraph(Graph[T]):\n    def __init__(self, *nodes, directed=False) -&gt; None:\n        super().__init__()\n        self._links = {n: set() for n in nodes}\n        self._directed = directed\n\n    @property\n    def directed(self):\n        return self._directed\n\n    def nodes(self) -&gt; list[T]:\n        return iter(self._links)\n\n    def adjacent(self, x: T, y: T) -&gt; bool:\n        return y in self._links[x]\n\n    def neighborhood(self, x: T):\n        return iter(self._links[x])\n\n    def degree(self, x: T) -&gt; int:\n        return len(self._links[x])\n\n    # ... rest of AdjGraph\n\n\n\n\n\n\n See on Github: https://github.com/apiad/graphs/blob/main/graphs/core.py#L83-L105\n\n\n\n\n\n\n\nNote that this implementation allows computing the neighborhood much more directly. It also allows us to dynamically modify the graph by adding vertices and edges.\n\n# class AdjGraph(...)\n#   ...\n\n    def add(self, *nodes: T):\n        for n in nodes:\n            if n in self._links:\n                return False\n\n            self._links[n] = set()\n\n        return self\n\n    def link(self, x: T, y: T):\n        if x == y:\n            raise ValueError(\"Self-links not allowed.\")\n\n        self.add(x)\n        self.add(y)\n        self._links[x].add(y)\n\n        if not self._directed:\n            self._links[y].add(x)\n\n        return self\n\n#   ...\n\n\n\n\n\n\n See on Github: https://github.com/apiad/graphs/blob/main/graphs/core.py#L108-L133\n\n\n\n\n\n\n\nNotice that we are quite flexible in our modification methods, i.e., we don’t complain if a vertex is already added, and we take care of adding new vertices in link if necessary. This makes it way easier to use our implementation to dynamically construct a graph without taking too much hassle verifying that we aren’t adding duplicated things, paying a minimal overhead in performance.\n\n\n\n\n\n\nA bit of syntax sugar\n\n\n\nIf you noticed that return self at the end of the link method, you may be wondering why is that line there. The reason is so can chain successive calls to link to quickly create custom graphs. For example:\ng = AdjGraph(1,2,3,4).link(2,3).link(1,4)\nThis pattern is often called a “fluent interface” and is very common in object-oriented design. Here it is not strictly necessary but it’s a nice little syntactic sugar, and we can treat ourselves sometimes, right?\nThere are a few other similar methods in AdjGraph that let you quickly build a graph, adding paths, cycles, and other common structures with a single function call, and using method chaining to combine multiple operations in a single line. We will use and explain them when we need them.\n\n\nAnother commonly used representation is the adjacency matrix method, in which we store a separate structure (like a bidimensional array) that explicitely marks which pairs of nodes are related. The main advantage of this representation is that there is a single place to query or modify for adjacency information. The main disadvantages are the extra wasted space (unless you use a sparse matrix) and the added complexity in computing the neighborhood of a given node (unless you use an extra adjacency list for that, which nullifies the main advantage).\nFor those reasons, we don’t really gain much with adjacency matrices, and thus we will mostly use the AdjGraph implementation throughout the book. It provides a nice balance between flexibility and performance, although is neither the most flexible nor the most performant implementation possible. When we need to, we will devise other more appropriate implementations.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#common-graphs",
+    "href": "intro.html#common-graphs",
+    "title": "1  Introduction",
+    "section": "Common graphs",
+    "text": "Common graphs\nThroughout this book we will refer to several common graphs by name. These are graphs that appear over and over in proofs and examples, so it pays to enumerate them briefly here.\nThe complete graph \\(K_n\\) is the graph of \\(n\\) vertices and all possible edges. It is, by definition, the densest graph one can have with \\(n\\) vertices. Here is one example:\n\n\n\n\n\n\n\n\n\nThe path graph \\(P_n\\) is a graph composed of \\(n\\) vertices stitched together in sequence, hence it’s a “path”. (We will formalize this concept in the next chapter). Here is one example:\n\n\n\n\n\n\n\n\n\nThe cycle graph \\(C_n\\) is a closed-loop of \\(n\\) vertices. So, just like a path, but the first and last vertices are also adjacent. Here is one example:\n\n\n\n\n\n\n\n\n\nThe random uniform graph \\(U(n,p)\\) is a graph of \\(n\\) vertices, where each pair of vertices has a probability \\(p \\in [0,1]\\) to exist. It is the simplest random graph one can conceive. Here is one example:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Generating common graphs\n\n\n\nIn graphs.generators you will find methods to generate some of the most common types of graphs, including the ones in this section.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#other-types-of-graphs",
+    "href": "intro.html#other-types-of-graphs",
+    "title": "1  Introduction",
+    "section": "Other types of graphs",
+    "text": "Other types of graphs\nSo far, we’ve been talking about undirected and unweighted graphs, called like this because there is no specific direction in each edge, and there is no cost associated to edges.\nThus, we can either say the edge \\(ab\\) or the edge \\(ba\\) is in the graph, because both are exactly the same edge, and it would redundant –and incorrect– to mention them both. And each edge is similarly “important”.\nHowever, in some applications, we will need a bit more information. Two specific types of graphs that appear over and over are directed and weighted graphs, sometimes both in the same problem.\n\nDirected graphs\nIn some applications it is interesting to give a direction to edges, and consider that \\(ab\\) is different from \\(ba\\). For example, in modeling transportation networks, sometimes you have single-direction routes. These are called directed graphs and although in practical applications they are essential, the fundamental theory is almost identical to undirected graphs, so we will only mention them when there’s some relevant difference.\nHere is an example of a directed graph:\n\n\n\n\n\n\n\n\n\n\n\nWeighted graphs\nIn planning and routing in particular, edges often represent roads or general connections that involve some cost –either a distance, a price, or any other similar notion of cost. In these cases we use weighted graphs, where each edge has an associated number called a weight, and we can ask questions like what is the optimal path between two nodes (where the sum of the weights of the edges involved is smaller).\nWe will see more weighted graphs very soon.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#final-remarks",
+    "href": "intro.html#final-remarks",
+    "title": "1  Introduction",
+    "section": "Final remarks",
+    "text": "Final remarks\nNow that we have laid out the foundational theory, we are ready to move on to specific types of graphs and some concrete problems. In the upcoming chapters we will be looking at specific problems and both learn the necessary theory and design clever algorithms to solve them.\nNOTE: The list of upcoming chapters is temporary. I may change, add, or remove any of these chapters if I see the need.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "walks.html",
+    "href": "walks.html",
+    "title": "2  The Minotaur’s Labyrinth",
+    "section": "",
+    "text": "Modelling the labyrinth\nThe first step in solving any problem with graphs is, well, turning that problem into a graph problem!\nIn this case, what we must do is find a way out of the labyrinth, so we must decide how to model the labyrinth as a graph such that nodes and edges map to concepts in the labyrinth that are useful for this task. Since this is our first encounter with graph problems, this will not prove difficult. The most natural mapping, and the one you’re probably thinking about, is using edges to model the corridors in the labyrinth, and nodes to model the intersections.\nA possible graph that models a labyrinth is the following:\nIn this model, the solution to our problem –finding a way out of the labyrinth– translates into finding a sequence of nodes, each adjacent to next, that take us from the start 0,0 to the end 6,6.\nLet’s begin by formalizing this notion of “walking” through the graph, and then review the most important algorithms that will free Ariadne from the Minotaur.",
+    "crumbs": [
+      "Navigating",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>The Minotaur's Labyrinth</span>"
+    ]
+  },
+  {
+    "objectID": "walks.html#walking-through-a-graph",
+    "href": "walks.html#walking-through-a-graph",
+    "title": "2  The Minotaur’s Labyrinth",
+    "section": "Walking through a graph",
+    "text": "Walking through a graph\nThe most important structure in a graph is a sequence of connected vertices. This is called a walk in the general case, where the only restriction is that between any pair of consecutive vertices there is an edge. For example, \\(a,b,a,e,c,d\\) is a valid walk in our example graph, that happens to go though all vertices, but this, of course, isn’t necessary. Notice that we can move over the same edge back and forth as we want, so we can extend any walk infinitely.\nIf we never repeat an edge, either backtracking or by making a loop, then we have a trail. The previous walk is not a trail because we backtrack through \\(ab\\). In contrast, \\(a,b,e,d, e\\) is a valid trail in our example graph, because although \\(e\\) appears twice, we get to it via different edges each time.\nFinally, if we also never repeat a vertex, then we have a path (some literature will use path to refer to what we call a trail, and simple path to refer to a path with no repeated vertices). In our example graph, \\(a,b,d,c,e\\) is a path that happens to involve all vertices. If, like in the previous case, the path can loop over from the final vertex back into the first one, then we call it a cycle.\n\n All trails contain a path\nYou might have noticed that the difference between trails and path is that trails can have small sub-cycles inside them. Intuitively, every time we find one such cycle, we can skip it and continue directly in the “main path”. Thus, it makes sense to think that we can always remove all detours from a trail and extract a path that begins and ends in the same vertices.\nIf we can get from \\(a\\) to \\(b\\) at all, then we must be able to get from \\(a\\) to \\(b\\) without making any unnecessary loops, right? The answer is yes, of course. This is our first theorem, and one we will use often in the rest of the book.\n\nTheorem 1: In any graph \\(G\\), if there is a trail from \\(a\\) to \\(b\\), then there is a path from \\(a\\) to \\(b\\).\n\nProof: Here is one intuitive, but rigorous demonstration for Theorem 1. We will use something called the well-ordering principle1, a fundamental axiom of natural numbers that basically says, if you have a non-empty set of discrete things that have some property you can use to compare them –like a size–, there is one them that is the smallest.\nIn this case, we will consider the set of all possible trails between \\(a\\) and \\(b\\). Since, by the condition of the theorem, there exists a trail from \\(a\\) to \\(b\\), we know this is a non-empty set. Then we can invoke the well-ordering principle and ask for the smallest possible such trail. Our claim, is that the shortest trail between \\(a\\) and \\(b\\) must be a path. Why? Here we will use another fundamental tool of logical reasoning: proof by contradiction2.\nSuppose the shortest trail between \\(a\\) and \\(b\\) is not a path. Then, it must contain some internal loop, for otherwise it would be a path and the proof would be done. Thus, if it contains a loop, we can make the trail shorter by removing that loop, and it will still fo from \\(a\\) to \\(b\\). This is in contradiction with the claim that we had the shortest possible trail. Thus, by reductio ad absurdum, the shortest trail must be a path.\nThe proof is almost complete. The only step we slightly overlooked is the claim that the existence of a loop implies that we can make the trail shorter. To airtight this part of the proof, we need to show how to actually construct that shortest trail.\nLet \\(P=a \\rightarrow^n b\\) be the shortest trail between \\(a\\) and \\(b\\), with length (number of edges) \\(n=|P|-1\\). Assume this trail has a loop, thus, there is some vertex, call it \\(x\\), that appears twice inside the trail (\\(x\\) could very well be \\(a\\), or \\(b\\), but for the sake of generalization we can assume it’s somewhere inside). Thus, the \\(P\\) trail actually looks like this:\n\\[P=a \\rightarrow^{k_{1}} x^{(1)} \\rightarrow^{k_{2}} x^{(2)} \\rightarrow^{k_{3}} b\\]\nwhere \\(x^{(i)}\\) indicates the \\(i\\)-th time the vertex \\(x\\) appears, and \\(k_{1}+k_{2}+k_{3}=n\\), with \\(k_{1}\\geq 0\\), \\(k_{2}&gt; 0\\), and \\(k_{3} \\geq 0\\). That is, the part between \\(x^{(1)}\\) and \\(x^{(2)}\\) must have at least one edge (in fact, it must have at least length \\(2\\), but we don’t need that).\nNow we need to construct a valid trail from \\(a\\) to \\(b\\) that is strictly smaller than \\(n\\). We can make a trail by going from \\(a\\) to some vertex \\(v\\) and then from \\(v\\) to \\(b\\). In trail \\(P\\) we have two trails \\(a \\rightarrow^{k_1} x\\) and \\(x \\rightarrow^{k_2} b\\) that we can stitch together and make a new trail \\(P’ = a  \\rightarrow^{k_1+k_3} b\\), where the length of \\(P’\\) (equal to \\(k_1+k_3\\)) must be strictly less than \\(n\\) because \\(k_2 &gt; 0\\). \\(\\blacksquare\\)",
+    "crumbs": [
+      "Navigating",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>The Minotaur's Labyrinth</span>"
+    ]
+  },
+  {
+    "objectID": "walks.html#graph-traversal",
+    "href": "walks.html#graph-traversal",
+    "title": "2  The Minotaur’s Labyrinth",
+    "section": "Graph traversal",
+    "text": "Graph traversal\nThe simplest procedure in graphs that involves some notion of “walking” is graph traversal. This is the task of enumerating all nodes in a predefined order by moving through the edges. That is, we don’t want to simply list all nodes –that is trivial– but to do so in a way that uses the graph structure, such that adjacent nodes are considered next to each other.\nThere are two basic graph traversal algorithms: depth-first search (DFS) and breadth-first search (BFS). Both algorithms are very similar, and will produce a full enumeration of a graph –assuming all nodes are reachable, which is a question we’ll answer next chapter. They differ in how they prioritize being eager versus being comprehensive.\n\n Abstract traversals\nWe will begin by defining how our abstract notion of “search” looks like. To keep things simple, we assume a search algorithm provides a single method traverse that simply enumerates all edges in the order in which they are discovered.\n\nclass Search(Generic[T], ABC):\n    @abstractmethod\n    def traverse(self, graph: Graph[T], root: T):\n        pass\n\n    def nodes(self, graph: Graph[T], root: T):\n        return (y for (x,y) in self.traverse(graph, root))\n\n    # ... extra methods in Search\n\n\n\n\n\n\n See on Github: https://github.com/apiad/graphs/blob/main/graphs/search.py#L34-L42\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe nodes method is just a thing wrapper around traverse that yields the nodes instead the full edges.\n\n\nWhy make this a class? Isn’t this just a method? Well, it’s a bit of mouthful at the moment, for sure. But later, as we explore many search strategies, we’ll want to compare different search strategies, and it will become useful to have a class for each of them.\nPlus, this abstract method allows us to implement a very common search pattern that we will reuse over and over: searching for an specific set of nodes (or a single node). We can have the general-purpose case that matches any node with a given property, and the special case when we need to find one particular node –e.g., like the exit of the labyrinth.\n\n# class Search(...)\n#   ...\n\n    def find_any(self, graph: Graph[T], origin: T, goal: Callable[[T], bool]):\n        for node in self.traverse(graph, origin):\n            if goal(node):\n                return True\n\n        return False\n\n    def find(self, graph: Graph[T], origin: T, destination: T):\n        return self.find_any(graph, origin, goal=lambda n: n == destination)\n\n\n\n\n\n\n See on Github: https://github.com/apiad/graphs/blob/main/graphs/search.py#L45-L56\n\n\n\n\n\n\n\nWith this code in place, we’re ready for some actual search algorithms.",
+    "crumbs": [
+      "Navigating",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>The Minotaur's Labyrinth</span>"
+    ]
+  },
+  {
+    "objectID": "walks.html#depth-first-search",
+    "href": "walks.html#depth-first-search",
+    "title": "2  The Minotaur’s Labyrinth",
+    "section": "Depth-first search",
+    "text": "Depth-first search\nAs the name implies, depth-first search (DFS) is a graph traversal algorithm that prioritizes going as deep as possible as fast as possible. In our labyrinth analogy, this means walking down a corridor till you can’t go any further, and only then, when you reach a dead end, you backtrack and try a different route.\nMore precisely, DFS starts at an arbitrary root node in a graph, and successively jumps to one of its neighbors, and continues from there. You can select which neighbor to visit randomly, but most commonly one simply defines a predefined order –e.g., the same order in which neighbors are listed in the adjacency list. In a practical scenario, like our labyrinth, this could mean, for example, always trying to move south, then east, then north, then west. Of course, you must keep track of which nodes (or intersections in the labyrinth) you have already visited, otherwise you can easily get stuck in a loop.\nThis is how DFS looks like in our sample graph that models the labyrinth problem.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnderstanding this image\n\n\n\nIn the previous image, we label each node with a number that indicates the order in which it is discovered by DFS. Thus, nodes that have consecutive numbers indicate that DFS traveled along that path. When you see two adjancent nodes with non-consecutive numbers, that means DFS backtracked to that node after getting stuck, and took a different path.\n\n\n\n Programming DFS\nNow let’s implement DFS. The easiest implementation is using recursion: we start at the root node and recursively visit all non-visited neighbors. To make sure we don’t get stuck in a loop, we can use a set to keep track of visited nodes throughout all the recursive calls. Each iteration, we return the edge \\((x,y)\\) where \\(y\\) is the current node under consideration, and \\(x\\) is the “parent” node –that we must also keep track of during recursion.\nHere is the full implementation:\n\nclass DFS(Search[T]):\n    def traverse(self, graph: Graph[T], root: T):\n        return self._dfs(graph, root, None, set())\n\n    def _dfs(self, graph: Graph[T], current: T, parent:T, visited: Set[T]):\n        yield parent, current\n        visited.add(current)\n\n        for node in graph.neighborhood(current):\n            if node in visited:\n                continue\n\n            yield from self._dfs(graph, node, current, visited)\n\n\n\n\n\n\n See on Github: https://github.com/apiad/graphs/blob/main/graphs/search.py#L73-L85\n\n\n\n\n\n\n\nAs it’s common in recursive methods, we have a public “portal” method that exposes the public arguments, which in turn defers to a private implementation that takes any additional arguments we need for bookkeeping.",
+    "crumbs": [
+      "Navigating",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>The Minotaur's Labyrinth</span>"
+    ]
+  },
+  {
+    "objectID": "walks.html#breadth-first-search",
+    "href": "walks.html#breadth-first-search",
+    "title": "2  The Minotaur’s Labyrinth",
+    "section": "Breadth-first search",
+    "text": "Breadth-first search\n\n Programming BFS",
+    "crumbs": [
+      "Navigating",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>The Minotaur's Labyrinth</span>"
+    ]
+  },
+  {
+    "objectID": "walks.html#finding-your-way-out",
+    "href": "walks.html#finding-your-way-out",
+    "title": "2  The Minotaur’s Labyrinth",
+    "section": "Finding your way out",
+    "text": "Finding your way out\n\n Computing paths\nWhile knowing that a goal node exists is useful, we often want to find the actual path that takes us there. Fortunately, our abstract Search strategy can implement this operation easily using the parent -&gt; node information available in each iteration in the traverse method.\nTo quickly compute paths, we can define a simple structure (Paths) that stores a reference to the parent of each node found during search. With this information, the path between our origin vertex and an arbitrary destination is easy to compute by following the links backwards. That is, we start at the destination node, and iteratively add the parent node to a list, until we find the origin node. Then, we simply reverse the list.\n\nclass Paths(Generic[T]):\n    def __init__(self, origin:T) -&gt; None:\n        self._parents = {}\n        self.origin = origin\n\n    def add(self, node, parent):\n        if node in self._parents:\n            raise ValueError(\"Node already exists\")\n\n        self._parents[node] = parent\n\n    def path(self, destination) -&gt; list[T]:\n        path = [destination]\n        node = destination\n\n        while node != self.origin:\n            node = self._parents[node]\n            path.append(node)\n\n        path.reverse()\n        return path\n\n\n\n\n\n\n See on Github: https://github.com/apiad/graphs/blob/main/graphs/search.py#L9-L29\n\n\n\n\n\n\n\n\n\n\n\n\n\nPaths are origin-dependent\n\n\n\nYou’ll notice we don’t require an origin parameter in the Paths.path method. That is because this structure holds paths precomputed from a fixed origin node, that is, the node from which the search algorithm started.\nIf you need to precompute paths for arbitrary pairs of nodes, there is little you can do other than using a Path instance for each origin node.\n\n\nWith this structure in place, we can add a method to the Search class to compute all paths for a given graph and origin.\n\n# class Search(...)\n#   ...\n\n    def compute_paths(self, graph: Graph[T], origin:T) -&gt; Paths[T]:\n        paths = Paths(origin)\n\n        for parent, node in self.traverse(graph, origin):\n            paths.add(node, parent)\n\n        return paths\n\n\n\n\n\n\n See on Github: https://github.com/apiad/graphs/blob/main/graphs/search.py#L59-L68",
+    "crumbs": [
+      "Navigating",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>The Minotaur's Labyrinth</span>"
+    ]
+  },
+  {
+    "objectID": "walks.html#other-graph-traversal-strategies",
+    "href": "walks.html#other-graph-traversal-strategies",
+    "title": "2  The Minotaur’s Labyrinth",
+    "section": "Other graph traversal strategies",
+    "text": "Other graph traversal strategies\n\nRandom walk\n\n\nBidirectional search",
+    "crumbs": [
+      "Navigating",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>The Minotaur's Labyrinth</span>"
+    ]
+  },
+  {
+    "objectID": "walks.html#final-remarks",
+    "href": "walks.html#final-remarks",
+    "title": "2  The Minotaur’s Labyrinth",
+    "section": "Final remarks",
+    "text": "Final remarks\nDFS and BFS are the two cornerstones of graph search. Almost all algorithms in this book will either include one of these as an explicit step, or use them as building block.",
+    "crumbs": [
+      "Navigating",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>The Minotaur's Labyrinth</span>"
+    ]
+  },
+  {
+    "objectID": "walks.html#footnotes",
+    "href": "walks.html#footnotes",
+    "title": "2  The Minotaur’s Labyrinth",
+    "section": "",
+    "text": "See https://en.wikipedia.org/wiki/Well-ordering_principle.\nTechnically, we don’t need the full well-ordering principle in this proof because we have a finite set of things, so of course one of them must be the smallest. The well-ordering principle applies also to infinite sets, which is where it becomes really handy.↩︎\nhttps://thepalindrome.org/p/proof-by-induction-and-contradiction↩︎",
+    "crumbs": [
+      "Navigating",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>The Minotaur's Labyrinth</span>"
+    ]
+  },
+  {
+    "objectID": "connectivity.html",
+    "href": "connectivity.html",
+    "title": "3  Behind Enemy Lines",
+    "section": "",
+    "text": "Connectivity\nVertices and edges are the building blocks of graphs, which give rise to walks, trails and paths. With these notions, we can start to ask general questions about the structure of a graph. One such question regards connectivity, that is, which vertices are reachable from each other.\nWe say a graph is connected if there is a path between all pairs of vertices (actually, now we know we only need to find a trail). The example graphs we’ve been using so far are all connected, as well as the graph that represents streets in your city, or your Facebook friends.\nHowever, the graph of all roads in the world is not connected, as there are places you can’t travel by land. Such unconnected graphs are still always composed of connected sub-graphs, which call connected components —small islands of vertices that can be reached from each other. Thus, a connected graph has exactly one connected component, and it can have up to \\(n=|V|\\) —one for each vertex— if and only if there are no edges.\nAn interesting question regarding connectivity is how critical a vertex or edge is in ensuring some part of the graph is reachable. We will see more about this problem in this same chapter.",
+    "crumbs": [
+      "Navigating",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Behind Enemy Lines</span>"
+    ]
+  },
+  {
+    "objectID": "appendix-core.html",
+    "href": "appendix-core.html",
+    "title": "Appendix A — The hitchhiker-graphs Python Package",
+    "section": "",
+    "text": "Lots of code ahead\n\n\n\nThis whole appendix is dedicated to the hitchhiker-graphs Python package. You are free to skip it if you don’t care about the coding part of the book.\n\n\nThe hitchhikers-graph package contains the main code used in this book, including class definitions for all the graph types and functions for all search algorithms. It does not contain scripting code that we used to illustrate how the algorithms run.\nTo install the package, just type:\n$ pip install hitchhiker-graphs\nOnce installation is ready, you can import the AdjGraph class and start doing fun stuff.\n\nfrom graphs import AdjGraph\n\ng = AdjGraph().cycle(1,2,3,4,5).link(2,4).link(3,5)\n\nWhich generates the following graph:\n\n\n\n\n\nA simple graph",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>The `hitchhiker-graphs` Python Package</span>"
+    ]
+  }
+]

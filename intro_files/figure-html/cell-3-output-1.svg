@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128pt" height="126pt" viewBox="0.00 0.00 128.04 126.32">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 122.32)">
+<title>%3</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-122.32 124.04,-122.32 124.04,4 -4,4"/>
+<!-- 1 -->
+<g id="node1" class="node">
+<title>1</title>
+<ellipse fill="none" stroke="black" cx="18" cy="-52.34" rx="18" ry="18"/>
+<text text-anchor="middle" x="18" y="-48.64" font-family="Times,serif" font-size="14.00">1</text>
+</g>
+<!-- 2 -->
+<g id="node2" class="node">
+<title>2</title>
+<ellipse fill="none" stroke="black" cx="102.04" cy="-44.62" rx="18" ry="18"/>
+<text text-anchor="middle" x="102.04" y="-40.92" font-family="Times,serif" font-size="14.00">2</text>
+</g>
+<!-- 1&#45;&#45;2 -->
+<g id="edge1" class="edge">
+<title>1--2</title>
+<path fill="none" stroke="black" d="M36.24,-50.67C50.33,-49.37 69.75,-47.59 83.84,-46.29"/>
+</g>
+<!-- 3 -->
+<g id="node3" class="node">
+<title>3</title>
+<ellipse fill="none" stroke="black" cx="57.13" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="57.13" y="-14.3" font-family="Times,serif" font-size="14.00">3</text>
+</g>
+<!-- 1&#45;&#45;3 -->
+<g id="edge2" class="edge">
+<title>1--3</title>
+<path fill="none" stroke="black" d="M31.69,-40.33C35.48,-37 39.59,-33.39 43.39,-30.06"/>
+</g>
+<!-- 4 -->
+<g id="node4" class="node">
+<title>4</title>
+<ellipse fill="none" stroke="black" cx="38.56" cy="-100.32" rx="18" ry="18"/>
+<text text-anchor="middle" x="38.56" y="-96.62" font-family="Times,serif" font-size="14.00">4</text>
+</g>
+<!-- 1&#45;&#45;4 -->
+<g id="edge3" class="edge">
+<title>1--4</title>
+<path fill="none" stroke="black" d="M25.19,-69.12C27.18,-73.77 29.34,-78.82 31.34,-83.47"/>
+</g>
+<!-- 5 -->
+<g id="node5" class="node">
+<title>5</title>
+<ellipse fill="none" stroke="black" cx="90.33" cy="-95.3" rx="18" ry="18"/>
+<text text-anchor="middle" x="90.33" y="-91.6" font-family="Times,serif" font-size="14.00">5</text>
+</g>
+<!-- 1&#45;&#45;5 -->
+<g id="edge4" class="edge">
+<title>1--5</title>
+<path fill="none" stroke="black" d="M33.69,-61.66C45.83,-68.87 62.54,-78.8 74.67,-86"/>
+</g>
+<!-- 2&#45;&#45;3 -->
+<g id="edge5" class="edge">
+<title>2--3</title>
+<path fill="none" stroke="black" d="M86.33,-35.31C81.98,-32.73 77.26,-29.93 72.91,-27.35"/>
+</g>
+<!-- 2&#45;&#45;4 -->
+<g id="edge6" class="edge">
+<title>2--4</title>
+<path fill="none" stroke="black" d="M88.27,-56.71C77.62,-66.05 62.95,-78.92 52.31,-88.26"/>
+</g>
+<!-- 2&#45;&#45;5 -->
+<g id="edge7" class="edge">
+<title>2--5</title>
+<path fill="none" stroke="black" d="M97.94,-62.35C96.81,-67.25 95.58,-72.58 94.44,-77.5"/>
+</g>
+<!-- 3&#45;&#45;4 -->
+<g id="edge8" class="edge">
+<title>3--4</title>
+<path fill="none" stroke="black" d="M53.1,-35.86C49.99,-49.67 45.7,-68.7 42.58,-82.5"/>
+</g>
+<!-- 3&#45;&#45;5 -->
+<g id="edge9" class="edge">
+<title>3--5</title>
+<path fill="none" stroke="black" d="M64.34,-34.77C69.91,-47.74 77.58,-65.6 83.14,-78.56"/>
+</g>
+<!-- 4&#45;&#45;5 -->
+<g id="edge10" class="edge">
+<title>4--5</title>
+<path fill="none" stroke="black" d="M56.67,-98.57C61.68,-98.08 67.13,-97.55 72.15,-97.06"/>
+</g>
+</g>
+</svg>
