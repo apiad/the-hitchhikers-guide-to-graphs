@@ -64,7 +64,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./walks.html" rel="next">
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -183,46 +182,6 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Navigating</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./walks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Minotaur’s Labyrinth</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./connectivity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Behind Enemy Lines</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./appendix-core.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">The <code>hitchhiker-graphs</code> Python Package</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -235,8 +194,8 @@ window.Quarto = {
   <ul>
   <li><a href="#what-is-a-graph" id="toc-what-is-a-graph" class="nav-link active" data-scroll-target="#what-is-a-graph">What is a graph</a>
   <ul class="collapse">
-  <li><a href="#formalizing-graphs" id="toc-formalizing-graphs" class="nav-link" data-scroll-target="#formalizing-graphs"><i class="fa-solid fa-subscript" aria-label="subscript"></i> Formalizing graphs</a></li>
-  <li><a href="#programming-with-graphs" id="toc-programming-with-graphs" class="nav-link" data-scroll-target="#programming-with-graphs"><i class="fa-solid fa-laptop-code" aria-label="laptop-code"></i> Programming with graphs</a></li>
+  <li><a href="#formalizing-graphs-smallsigma" id="toc-formalizing-graphs-smallsigma" class="nav-link" data-scroll-target="#formalizing-graphs-smallsigma">Formalizing graphs <span class="math inline">\(\small(\Sigma)\)</span></a></li>
+  <li><a href="#programming-with-graphs-smalllambda" id="toc-programming-with-graphs-smalllambda" class="nav-link" data-scroll-target="#programming-with-graphs-smalllambda">Programming with graphs <span class="math inline">\(\small[\lambda]\)</span></a></li>
   </ul></li>
   <li><a href="#common-graphs" id="toc-common-graphs" class="nav-link" data-scroll-target="#common-graphs">Common graphs</a></li>
   <li><a href="#other-types-of-graphs" id="toc-other-types-of-graphs" class="nav-link" data-scroll-target="#other-types-of-graphs">Other types of graphs</a>
@@ -270,26 +229,56 @@ window.Quarto = {
 </header>
 
 
-<p>This chapter introduces the basic ideas in graph theory that we will need in the rest of the book. If there is one required chapter, is this one. Even if you are already familiar with the basic notions of graph theory, I recommend you read this chapter, not only as a refresher, but also because we will refer to these concepts over and over and use the notation defined here, which may differ a bit from other traditional textbooks.</p>
+<p>This chapter introduces the basic ideas in graph theory that we will need in the rest of the book. If there is one required chapter, is this one. Even if you are already familiar with the basic notions of graph theory, I recommend you read this chapter. Not only as a refresher, but also because we will refer to these concepts over and over using the notation defined here, which may differ a bit from other traditional textbooks.</p>
 <section id="what-is-a-graph" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-a-graph">What is a graph</h2>
-<p>Intuitively, a graph is just a (finite) collection of elements —which we will often call <em>vertices</em>, although in many places you’ll see them called <em>nodes</em> as well— connected among them via <em>edges</em>. Thus, a graph represents an abstract <em>relation space</em>, in which the edges define who’s related to whom, whatever the nature of that relation is.</p>
-<p>We can say a graph is an object composed of two sets: one set of elements we call vertices, and another set of elements we call edges, with the detail that edges themselves are nothing but sets of two vertices. Thus, in principle, there is nothing about an edge that matters beyond which are the two vertices it connects (we will see this isn’t exactly the case when we examine some especial types of graphs.)</p>
-<p>Graphs are abstract objects, which means they don’t have an intrinsic visualization. However, we can visualize graphs drawing dots for vertices and lines for edges. An example of a simple graph is shown below:</p>
-<div id="1a618405" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="1">
+<p>Intuitively, a graph is just a (finite) collection of elements called <em>vertices</em> (or sometimes <em>nodes</em>), connected via <em>edges</em>. Graph represents an abstract <em>relation space</em>, in which the edges define who’s related to whom, whatever the nature of that relation is.</p>
+<p>Mathematically speaking, a graph is an object composed of two sets: one for the vertices, and another for the edges. In fact, edges themselves are sets of two vertices. There is nothing about an edge that matters beyond which are the two vertices it connects. (We will see this isn’t the case for some special classes of graphs, but we’ll only deal with them later.)</p>
+<p>Graphs are abstract objects, which we can visualize by drawing dots for vertices and lines for edges. An example of a simple graph is shown below:</p>
+<div id="fd3e8152" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 <figure class="figure">
-<p><img src="intro_files/figure-html/cell-2-output-1.svg" class="img-fluid figure-img"></p>
+<p><img src="intro_files/figure-html/cell-4-output-1.svg" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>This graph is composed of the vertices <span class="math inline">\(a,b,c,d,e\)</span> and the edges <span class="math inline">\(ab, ae, bc, bd, cd, ce, de\)</span>. Of course, there is nothing intrinsic to names or the exact location of the vertices in the drawing. Except in very concrete cases —such as when a graph represents a geometrical or geographical object— the layout of a graph is arbitrary, and thus the same graph can be represented in an infinite number of ways.</p>
-<p>The most important characteristic of a vertex is it’s <strong>degree</strong>, which basically measures the number of edges between this vertex and any other in the graph. Thus, in the previous example, the degree of vertex <span class="math inline">\(a\)</span> is 2, because only edges <span class="math inline">\(ab\)</span> and <span class="math inline">\(ae\)</span> connect <span class="math inline">\(a\)</span> with another vertex. In contrast, the remaining vertices has degree 3. We name the set of vertices adjacent to an arbitrary vertex <span class="math inline">\(v\)</span> its <em>neighborhood</em>. Thus, the neighborhood of vertex <span class="math inline">\(c\)</span> is the set of vertices <span class="math inline">\(\{b,d,e\}\)</span>.</p>
-<p>It should now be self-evident that the degree of a vertex is the size of its neighborhood.</p>
-<section id="formalizing-graphs" class="level3">
-<h3 class="anchored" data-anchor-id="formalizing-graphs"><i class="fa-solid fa-subscript" aria-label="subscript"></i> Formalizing graphs</h3>
+<p>This graph is composed of the vertices <span class="math inline">\(a, b, c, d, e\)</span> and the edges <span class="math inline">\(ab, ae, bc, bd, cd, ce, de\)</span>. Of course, there is nothing intrinsic to names or the exact location of the vertices in the drawing. Except in very concrete cases – such as when a graph represents a geometrical or geographical object – the layout of a graph is arbitrary, and the same graph can be represented in an infinite number of ways.</p>
+<!--#
+Tivadar: I have changed the formatting of your LaTeX snippets. Sorry, but my OCD is triggered when it comes to LaTeX :D
+-->
+<p>For instance, here are two different representations of the very same graph.</p>
+<!--#
+Tivadar: The example below should be the implementation of a 3D cube's edge graph. How can I add an alternative drawing of this?
+-->
+<div id="2d76bc8e" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+<figure class="figure">
+<p><img src="intro_files/figure-html/cell-5-output-1.svg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<!--#
+Tivadar: We have to figure out a way to reference and automatically number definitions, theorems, remarks, etc. Things will get complicated really fast without this.
+-->
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Intersecting edges
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The first representation on the previous figure is drawn without no edges intersecting each other, the second one is not. Can we draw any graph without intersecting edges? This simple question leads us to the beautiful domain of <em>planar graphs</em>. We’ll deal this with much later. Let’s see first what graphs are!</p>
+</div>
+</div>
+<section id="formalizing-graphs-smallsigma" class="level3">
+<h3 class="anchored" data-anchor-id="formalizing-graphs-smallsigma">Formalizing graphs <span class="math inline">\(\small(\Sigma)\)</span></h3>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -300,19 +289,42 @@ Optional math sections
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Sections with a <i class="fa-solid fa-subscript" aria-label="subscript"></i> symbol are mathematical definitions or proofs that you can safely ignore if you don’t care about the formalization.</p>
+<p>Sections with a <span class="math inline">\(\small(\Sigma)\)</span> symbol are mathematical definitions or proofs that you can safely ignore if you don’t care about the formalization.</p>
 </div>
 </div>
-<p>We can formalize the notion of graph using the tools from logic, especially set theory, which gives us the precise notation and formalism to define <strong>graph</strong> as a definite mathematical object.</p>
-<p>We can define graph as:</p>
-<hr>
-<p><strong>Definition 1:</strong> A graph <span class="math inline">\(G=(V,E)\)</span> is a collection of two sets, a set of vertices <span class="math inline">\(V\)</span>, and a set of edges <span class="math inline">\(E \subseteq V \times V\)</span>.</p>
-<hr>
-<p>When given without specifying the vertices and edges sets, we can use the notation <span class="math inline">\(V(G)\)</span> and <span class="math inline">\(E(G)\)</span> to refer to these components in an arbitrary graph <span class="math inline">\(G\)</span>.</p>
-<p>We will write <span class="math inline">\(N(v)\)</span> to refer to the neighborhood, and <span class="math inline">\(d(v) = |N(v)|\)</span> to refer to the degree of any vertex <span class="math inline">\(v \in V(G)\)</span>.</p>
+<p>We are ready to use the tools of logic and set theory to formally define the concept of a <em>graph</em> in the language of mathematics.</p>
+<!--#
+Tivadar: I've changed your bolds (i.e. **graph**) to italics (to *graph*) when first introducing a concept. AFAIK this is the convention.
+-->
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Definition 1.1</strong> <em>(Graphs.)</em> A graph <span class="math inline">\(G = (V, E)\)</span> is a collection of two sets, a set of vertices <span class="math inline">\(V\)</span>, and a set of edges <span class="math inline">\(E \subseteq V \times V\)</span>.</p>
+</div>
+</div>
+</div>
+<p>(We’ll often use the notation <span class="math inline">\(V(G)\)</span> and <span class="math inline">\(E(G)\)</span> for clarity to indicate the source graph <span class="math inline">\(G\)</span>. This is useful when juggling with multiple graphs and subgraphs.)</p>
+<p>Let’s unpack this definition. Here’s our previous example one more time.</p>
+<div id="8fa65c1a" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+<figure class="figure">
+<p><img src="intro_files/figure-html/cell-6-output-1.svg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In the language of mathematics, this graph is defined by <span class="math inline">\(G = (V, E)\)</span>, where the vertices are defined by <span class="math inline">\(V = \{ a, b, c, d, e \}\)</span> and the edges are defined by <span class="math inline">\(E = \{ (a, e), (a, b), (b, e), (b, c), (b, d), (c, d), (c, e), (d, e) \}\)</span>.</p>
+<p>To prevent the proliferation of commas and parentheses, we’ll often denote the edge <span class="math inline">\((u, v)\)</span> with <span class="math inline">\(uv\)</span>. You can thank us later.</p>
+<p>The most important characteristic of a vertex is its <em>degree</em>, which basically measures the number of edges between this vertex and any other in the graph. The degree of a vertex <span class="math inline">\(v\)</span> is denoted by <span class="math inline">\(d(v)\)</span>. Thus, in our example, <span class="math inline">\(d(a) = 2\)</span>, because only the edges <span class="math inline">\(ab\)</span> and <span class="math inline">\(ae\)</span> connect <span class="math inline">\(a\)</span> to another vertex. In contrast, the remaining vertices have degree <span class="math inline">\(3\)</span>.</p>
+<p>We call the set of vertices adjacent to an arbitrary vertex <span class="math inline">\(v\)</span> its <em>neighborhood</em>, denoted by <span class="math inline">\(N(v)\)</span>. Thus, the neighborhood of vertex <span class="math inline">\(c\)</span> is the set of vertices <span class="math inline">\(\{ b, d, e \}\)</span>.</p>
+<p>By definition, the degree of a vertex is the size of its neighborhood; that is, <span class="math inline">\(d(v) = |N(v)|\)</span>.</p>
 </section>
-<section id="programming-with-graphs" class="level3">
-<h3 class="anchored" data-anchor-id="programming-with-graphs"><i class="fa-solid fa-laptop-code" aria-label="laptop-code"></i> Programming with graphs</h3>
+<section id="programming-with-graphs-smalllambda" class="level3">
+<h3 class="anchored" data-anchor-id="programming-with-graphs-smalllambda">Programming with graphs <span class="math inline">\(\small[\lambda]\)</span></h3>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -323,11 +335,21 @@ Optional coding sections
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Sections with a <i class="fa-solid fa-laptop-code" aria-label="laptop-code"></i> symbol are related to coding, and you can safely ignore them if you don’t care about the programming part.</p>
+<p>Sections with a <span class="math inline">\(\small[\lambda]\)</span> symbol are related to coding, and you can safely ignore them if you don’t care about the programming part.</p>
 </div>
 </div>
 <p>Computationally speaking, you can think of a graph as an abstract class (or an interface in languages that support that notion) that provides two key operations: listing all nodes, and determining if two nodes are connected.</p>
 <p>In Python we can achieve this with an abstract class (using the <code>abc</code> module). Since nodes can be literally anything, from numbers to people to diseases, we use a generic type.</p>
+<!--#
+Tivadar: I know we had that discussion before, but I suggest to omit ABC and advanced Python typing to make the snippets as user-friendly as possible. (OR explain them for a Python beginner.) Lines such as `T = TypeVar("T")` and `Generic[T]` make the code much more advanced than it has to be.
+
+I emphasize that this is just a suggestion from my part. I haven't thought the code part through, and if these are needed for some reason, let's keep them. Otherwise, we should consider omitting them to minimize complexity.
+
+There's also the consideration of the final form of the graphs lib. Perhaps you want the code snippets to exactly match the final implementations in the lib, conflicting with the objective of simplicity. A solution for that is to create a separate branch in the lib for each chapter, where we only include the current implementations.
+
+What do you think about this?
+ ->
+
 <!-- SNIPPET core.py @graph-main @graph-extra -->
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Graph(Generic[T], ABC):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">@abstractmethod</span></span>
@@ -339,13 +361,13 @@ Optional coding sections
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ... rest of class Graph</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled" data-appereance="minimal">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<i class="fa-brands fa-github" aria-label="github"></i> See on Github: <a href="https://github.com/apiad/graphs/blob/main/graphs/core.py#L9-L18" class="uri">https://github.com/apiad/graphs/blob/main/graphs/core.py#L9-L18</a>
+<i class="fa-brands fa-github" aria-label="github"></i> <a href="https://github.com/apiad/graphs/blob/main/graphs/core.py#L9-L18">See on Github</a>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -353,8 +375,29 @@ Optional coding sections
 </div>
 </div>
 <!-- /SNIPPET -->
-<p>You may be wondering, what if we want to modify the graph? While that makes total sense in some applications, since we want to use this graph abstraction as flexibly as possible –e.g., as a readonly interface to some external resource, such as the graph of your Twitter followers– we don’t want to constraint ourselves to only graphs that are stored in local memory or that can be modified. In any case, specific local implementations of this interface will certainly have methods to add or remove nodes or edges</p>
-<p>Just from the previous definition we can already start to implement general methods in graphs, whatever their underlying implementation. For example, we can already compute the neighborhood of any given vertex, albeit with an extremely slow procedure:</p>
+<p>You may be wondering, what if we want to modify the graph? While that makes total sense in some applications, since we want to use this graph abstraction as flexibly as possible. (E.g., as a read only interface to some external resource, such as the graph of your Twitter followers.) We don’t want to constrain ourselves to graphs that are stored in local memory or that can be modified. In any case, specific local implementations of this interface will certainly have methods to add or remove nodes or edges</p>
+<p>Just from the previous definitions, we can already start implementing general methods in graphs, whatever their underlying implementation might be. For example, we can already find the neighborhood and the degree of any given vertex. (Albeit in an extremely slow manner.)</p>
+<!--
+Tivadar: It's me again with my comments about trimming :) I suggest to not use generators, as they are quite advanced, and I don't see a need for them right now. Here's my suggestion:
+
+```python
+# class Graph(...)
+#   ...
+
+    def neighborhood(self, x: T):
+        N_x = set()
+        for y in self.nodes():
+            if self.adjacent(x, y):
+                N_x.add(y)
+
+        return N_x
+
+    def degree(self, x: T) -> int:
+        return len(self.neighborhood(x))
+
+#   ...
+```
+-->
 <!-- SNIPPET core.py @graph-extra @graph-end -->
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># class Graph(...)</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   ...</span></span>
@@ -368,13 +411,13 @@ Optional coding sections
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">len</span>(<span class="bu">list</span>(<span class="va">self</span>.neighborhood(x)))</span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#   ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled" data-appereance="minimal">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<i class="fa-brands fa-github" aria-label="github"></i> See on Github: <a href="https://github.com/apiad/graphs/blob/main/graphs/core.py#L21-L32" class="uri">https://github.com/apiad/graphs/blob/main/graphs/core.py#L21-L32</a>
+<i class="fa-brands fa-github" aria-label="github"></i> <a href="https://github.com/apiad/graphs/blob/main/graphs/core.py#L21-L32">See on Github</a>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -382,11 +425,15 @@ Optional coding sections
 </div>
 </div>
 <!-- /SNIPPET -->
-<p>This is of course the worst way to compute neighborhoods, but it works. In cases where we have nothing better, this method will do, but some specific representations of graphs we will see shortly can override these methods and provide more efficient implementations.</p>
+<p>This is admittedly the worst way to compute neighborhoods, but hey, at least it works. And it’s simple! “Simple first, optimized later” is our mantra for now.</p>
+<p>In cases where we have nothing better, this method will do. We will see shortly that we can easily provide more efficient implementations for specific graph representations.</p>
 <section id="computational-representations-of-graphs" class="level4">
 <h4 class="anchored" data-anchor-id="computational-representations-of-graphs">Computational representations of graphs</h4>
-<p>There are several computational representations of graphs, with advantages and limitations of their own.</p>
+<p>There are several computational representations of graphs, each with their advantages and limitations.</p>
 <p>The most straightforward representation is called the <em>adjacency list</em> method, which references all neighbors of a given node in a structure associated to that node, such as an array. In Python, we can store a dictionary of nodes mapping to a set of their adjacent nodes. We use a set to store the adjacency information so we can answer as fast as possible whether two nodes are adjacent.</p>
+<!--
+Tivadar: we should omit directed graphs for now. We haven't talked about them, and adding the directed option to the implementation only adds confusion at this point.
+-->
 <!-- SNIPPET core.py @adjgraph-main @adjgraph-extra -->
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> AdjGraph(Graph[T]):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, <span class="op">*</span>nodes, directed<span class="op">=</span><span class="va">False</span>) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
@@ -411,13 +458,13 @@ Optional coding sections
 <span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">len</span>(<span class="va">self</span>._links[x])</span>
 <span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ... rest of AdjGraph</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled" data-appereance="minimal">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<i class="fa-brands fa-github" aria-label="github"></i> See on Github: <a href="https://github.com/apiad/graphs/blob/main/graphs/core.py#L83-L105" class="uri">https://github.com/apiad/graphs/blob/main/graphs/core.py#L83-L105</a>
+<i class="fa-brands fa-github" aria-label="github"></i> <a href="https://github.com/apiad/graphs/blob/main/graphs/core.py#L83-L105">See on Github</a>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -425,6 +472,9 @@ Optional coding sections
 </div>
 </div>
 <!-- /SNIPPET -->
+<!--
+Tivadar: I suggest to add an example here where we instantiate an AdjGraph object.
+-->
 <p>Note that this implementation allows computing the neighborhood much more directly. It also allows us to dynamically modify the graph by adding vertices and edges.</p>
 <!-- SNIPPET core.py @adjgraph-extra @adjgraph-extra-2 -->
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># class AdjGraph(...)</span></span>
@@ -453,13 +503,13 @@ Optional coding sections
 <span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span></span>
 <span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co">#   ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled" data-appereance="minimal">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<i class="fa-brands fa-github" aria-label="github"></i> See on Github: <a href="https://github.com/apiad/graphs/blob/main/graphs/core.py#L108-L133" class="uri">https://github.com/apiad/graphs/blob/main/graphs/core.py#L108-L133</a>
+<i class="fa-brands fa-github" aria-label="github"></i> <a href="https://github.com/apiad/graphs/blob/main/graphs/core.py#L108-L133">See on Github</a>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -474,71 +524,71 @@ Optional coding sections
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-A bit of syntax sugar
+A bit of syntactic sugar
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>If you noticed that <code>return self</code> at the end of the <code>link</code> method, you may be wondering why is that line there. The reason is so can chain successive calls to <code>link</code> to quickly create custom graphs. For example:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> AdjGraph(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>).link(<span class="dv">2</span>,<span class="dv">3</span>).link(<span class="dv">1</span>,<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This pattern is often called a “fluent interface” and is very common in object-oriented design. Here it is not strictly necessary but it’s a nice little syntactic sugar, and we can treat ourselves sometimes, right?</p>
+<p>This pattern is often called a “fluent interface” and is very common in object-oriented design. It is not strictly necessary, but it’s a nice little syntactic sugar. We can treat ourselves sometimes, right?</p>
 <p>There are a few other similar methods in <code>AdjGraph</code> that let you quickly build a graph, adding paths, cycles, and other common structures with a single function call, and using method chaining to combine multiple operations in a single line. We will use and explain them when we need them.</p>
 </div>
 </div>
-<p>Another commonly used representation is the <em>adjacency matrix</em> method, in which we store a separate structure (like a bidimensional array) that explicitely marks which pairs of nodes are related. The main advantage of this representation is that there is a single place to query or modify for adjacency information. The main disadvantages are the extra wasted space (unless you use a sparse matrix) and the added complexity in computing the neighborhood of a given node (unless you use an extra adjacency list for that, which nullifies the main advantage).</p>
-<p>For those reasons, we don’t really gain much with adjacency matrices, and thus we will mostly use the <code>AdjGraph</code> implementation throughout the book. It provides a nice balance between flexibility and performance, although is neither the most flexible nor the most performant implementation possible. When we need to, we will devise other more appropriate implementations.</p>
+<p>Another commonly used representation is the <em>adjacency matrix</em> method, in which we store a separate structure (like a bidimensional array) that explicitely marks which pairs of nodes are related. The main advantage of this representation is that there is a single place to query or modify for adjacency information. The main disadvantages are the extra wasted space, as the adjacency matrix contains a lot of zeros. (Unless we use a sparse matrix. But that’s for another lesson.) Another disadvantage is the added complexity in computing the neighborhood of a given node. This can be solved with using an extra adjacency list, which would nullify the main advantage of the adjacency matrix implementation.</p>
+<p>For those reasons, we don’t really gain much with adjacency matrices, and thus we will mostly build on the basic <code>AdjGraph</code> implementation throughout the book. It provides a nice balance between flexibility and performance, although is neither the most flexible nor the most performant implementation possible. When we need to, we will devise other more appropriate implementations.</p>
 </section>
 </section>
 </section>
 <section id="common-graphs" class="level2">
 <h2 class="anchored" data-anchor-id="common-graphs">Common graphs</h2>
 <p>Throughout this book we will refer to several common graphs by name. These are graphs that appear over and over in proofs and examples, so it pays to enumerate them briefly here.</p>
-<p><strong>The complete graph <span class="math inline">\(K_n\)</span></strong> is the graph of <span class="math inline">\(n\)</span> vertices and all possible edges. It is, by definition, the densest graph one can have with <span class="math inline">\(n\)</span> vertices. Here is one example:</p>
-<div id="b2884986" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display" data-execution_count="2">
+<p><em>The complete graph <span class="math inline">\(K_n\)</span></em> is the graph of <span class="math inline">\(n\)</span> vertices and all possible edges. It is, by definition, the densest graph one can have with <span class="math inline">\(n\)</span> vertices. Here is one example:</p>
+<div id="b91f1f7f" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 <figure class="figure">
-<p><img src="intro_files/figure-html/cell-3-output-1.svg" class="img-fluid figure-img"></p>
+<p><img src="intro_files/figure-html/cell-7-output-1.svg" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<p><strong>The path graph <span class="math inline">\(P_n\)</span></strong> is a graph composed of <span class="math inline">\(n\)</span> vertices stitched together in sequence, hence it’s a “path”. (We will formalize this concept in the next chapter). Here is one example:</p>
-<div id="a64bb5c7" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="3">
+<p><em>The path graph <span class="math inline">\(P_n\)</span></em> is a graph composed of <span class="math inline">\(n\)</span> vertices stitched together in sequence, hence it’s a “path”. (We will formalize this concept in the next chapter). Here is one example:</p>
+<div id="2f744561" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 <figure class="figure">
-<p><img src="intro_files/figure-html/cell-4-output-1.svg" class="img-fluid figure-img"></p>
+<p><img src="intro_files/figure-html/cell-8-output-1.svg" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<p><strong>The cycle graph <span class="math inline">\(C_n\)</span></strong> is a closed-loop of <span class="math inline">\(n\)</span> vertices. So, just like a path, but the first and last vertices are also adjacent. Here is one example:</p>
-<div id="74b0c465" class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display" data-execution_count="4">
+<p><em>The cycle graph <span class="math inline">\(C_n\)</span></em> is a closed-loop of <span class="math inline">\(n\)</span> vertices. So, just like a path, but the first and last vertices are also adjacent. Here is one example:</p>
+<div id="306fe66e" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 <figure class="figure">
-<p><img src="intro_files/figure-html/cell-5-output-1.svg" class="img-fluid figure-img"></p>
+<p><img src="intro_files/figure-html/cell-9-output-1.svg" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<p><strong>The random uniform graph <span class="math inline">\(U(n,p)\)</span></strong> is a graph of <span class="math inline">\(n\)</span> vertices, where each pair of vertices has a probability <span class="math inline">\(p \in [0,1]\)</span> to exist. It is the simplest random graph one can conceive. Here is one example:</p>
-<div id="5cf98555" class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display" data-execution_count="5">
+<p><em>The random uniform graph <span class="math inline">\(U(n,p)\)</span></em> is a graph of <span class="math inline">\(n\)</span> vertices, where each pair of vertices has a probability <span class="math inline">\(p \in [0,1]\)</span> to exist. It is the simplest random graph one can conceive. Here is one example:</p>
+<div id="9d70886b" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 <figure class="figure">
-<p><img src="intro_files/figure-html/cell-6-output-1.svg" class="img-fluid figure-img"></p>
+<p><img src="intro_files/figure-html/cell-10-output-1.svg" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<i class="fa-solid fa-laptop-code" aria-label="laptop-code"></i> Generating common graphs
+<span class="math inline">\(\small[\lambda]\)</span> Generating common graphs
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -549,17 +599,22 @@ A bit of syntax sugar
 <section id="other-types-of-graphs" class="level2">
 <h2 class="anchored" data-anchor-id="other-types-of-graphs">Other types of graphs</h2>
 <p>So far, we’ve been talking about <em>undirected</em> and <em>unweighted</em> graphs, called like this because there is no specific direction in each edge, and there is no cost associated to edges.</p>
-<p>Thus, we can either say the edge <span class="math inline">\(ab\)</span> or the edge <span class="math inline">\(ba\)</span> is in the graph, because both are exactly the same edge, and it would redundant –and incorrect– to mention them both. And each edge is similarly “important”.</p>
-<p>However, in some applications, we will need a bit more information. Two specific types of graphs that appear over and over are <em>directed</em> and <em>weighted</em> graphs, sometimes both in the same problem.</p>
+<p>Thus, the edges <span class="math inline">\(ab\)</span> and <span class="math inline">\(ba\)</span> are exactly the same. It would redundant – and incorrect – to mention them both. And each edge is similarly “important”.</p>
+<!--# Tivadar: I don't understand this comment: "And each edge is similarly "important"." -->
+<!--# Alex: To contrast it with weighted graphs, "important" is not the best word, I know. -->
+<p>However, in some applications, we need a bit more information. Two specific types of graphs that pop up all the time are <em>directed</em> and <em>weighted</em> graphs, sometimes both in the same problem.</p>
 <section id="directed-graphs" class="level3">
 <h3 class="anchored" data-anchor-id="directed-graphs">Directed graphs</h3>
-<p>In some applications it is interesting to give a direction to edges, and consider that <span class="math inline">\(ab\)</span> is different from <span class="math inline">\(ba\)</span>. For example, in modeling transportation networks, sometimes you have single-direction routes. These are called <strong>directed graphs</strong> and although in practical applications they are essential, the fundamental theory is almost identical to undirected graphs, so we will only mention them when there’s some relevant difference.</p>
+<!--#
+Tivadar: IMO we shouldn't even implement the directed version of AdjGraph for now, just include the illustration.
+-->
+<p>In some applications it is interesting to give a direction to edges, and consider that <span class="math inline">\(ab\)</span> is different from <span class="math inline">\(ba\)</span>. For example, in modeling transportation networks, sometimes you have single-direction routes. These are called <em>directed graphs.</em> Although they are essential in practical applications, the fundamental theory is almost identical to undirected graphs, so we will only mention them when there’s some relevant difference.</p>
 <p>Here is an example of a directed graph:</p>
-<div id="8cf73fbb" class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div id="11357927" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <div>
 <figure class="figure">
-<p><img src="intro_files/figure-html/cell-7-output-1.svg" class="img-fluid figure-img"></p>
+<p><img src="intro_files/figure-html/cell-11-output-1.svg" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -567,14 +622,16 @@ A bit of syntax sugar
 </section>
 <section id="weighted-graphs" class="level3">
 <h3 class="anchored" data-anchor-id="weighted-graphs">Weighted graphs</h3>
-<p>In planning and routing in particular, edges often represent roads or general connections that involve some cost –either a distance, a price, or any other similar notion of cost. In these cases we use <strong>weighted graphs</strong>, where each edge has an associated number called a <em>weight</em>, and we can ask questions like what is the optimal path between two nodes (where the sum of the weights of the edges involved is smaller).</p>
+<!--#
+Tivadar: We should add an illustration for weighted graphs, but not an implementation.
+-->
+<p>In planning and routing in particular, edges often represent roads or general connections that involve some cost – either a distance, a price, or any other similar notion of cost. In these cases we use <em>weighted graphs</em>, where each edge has an associated number called a <em>weight</em>, and we can ask questions like what is the optimal path between two nodes (where the sum of the weights of the edges involved is smaller).</p>
 <p>We will see more weighted graphs very soon.</p>
 </section>
 </section>
 <section id="final-remarks" class="level2">
 <h2 class="anchored" data-anchor-id="final-remarks">Final remarks</h2>
 <p>Now that we have laid out the foundational theory, we are ready to move on to specific types of graphs and some concrete problems. In the upcoming chapters we will be looking at specific problems and both learn the necessary theory and design clever algorithms to solve them.</p>
-<p><strong>NOTE:</strong> The list of upcoming chapters is temporary. I may change, add, or remove any of these chapters if I see the need.</p>
 
 
 </section>
@@ -974,9 +1031,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./walks.html" class="pagination-link" aria-label="The Minotaur's Labyrinth">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Minotaur’s Labyrinth</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
