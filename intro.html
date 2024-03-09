@@ -235,8 +235,8 @@ window.Quarto = {
 <p>Intuitively, a graph is just a (finite) collection of elements called <em>vertices</em> (or sometimes <em>nodes</em>), connected via <em>edges</em>. Graph represents an abstract <em>relation space</em>, in which the edges define who’s related to whom, whatever the nature of that relation is.</p>
 <p>Mathematically speaking, a graph is an object composed of two sets: one for the vertices, and another for the edges. In fact, edges themselves are sets of two vertices. There is nothing about an edge that matters beyond which are the two vertices it connects. (We will see this isn’t the case for some special classes of graphs, but we’ll only deal with them later.)</p>
 <p>Graphs are abstract objects, which we can visualize by drawing dots for vertices and lines for edges. An example of a simple graph is shown below:</p>
-<div id="fd3e8152" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div id="853a4b16" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="33">
 <div>
 <figure class="figure">
 <p><img src="intro_files/figure-html/cell-4-output-1.svg" class="img-fluid figure-img"></p>
@@ -252,8 +252,8 @@ Tivadar: I have changed the formatting of your LaTeX snippets. Sorry, but my OCD
 <!--#
 Tivadar: The example below should be the implementation of a 3D cube's edge graph. How can I add an alternative drawing of this?
 -->
-<div id="2d76bc8e" class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div id="2789ecde" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="34">
 <div>
 <figure class="figure">
 <p><img src="intro_files/figure-html/cell-5-output-1.svg" class="img-fluid figure-img"></p>
@@ -308,8 +308,8 @@ Tivadar: I've changed your bolds (i.e. **graph**) to italics (to *graph*) when f
 </div>
 <p>(We’ll often use the notation <span class="math inline">\(V(G)\)</span> and <span class="math inline">\(E(G)\)</span> for clarity to indicate the source graph <span class="math inline">\(G\)</span>. This is useful when juggling with multiple graphs and subgraphs.)</p>
 <p>Let’s unpack this definition. Here’s our previous example one more time.</p>
-<div id="8fa65c1a" class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div id="84bad9ca" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="35">
 <div>
 <figure class="figure">
 <p><img src="intro_files/figure-html/cell-6-output-1.svg" class="img-fluid figure-img"></p>
@@ -543,8 +543,8 @@ A bit of syntactic sugar
 <h2 class="anchored" data-anchor-id="common-graphs">Common graphs</h2>
 <p>Throughout this book we will refer to several common graphs by name. These are graphs that appear over and over in proofs and examples, so it pays to enumerate them briefly here.</p>
 <p><em>The complete graph <span class="math inline">\(K_n\)</span></em> is the graph of <span class="math inline">\(n\)</span> vertices and all possible edges. It is, by definition, the densest graph one can have with <span class="math inline">\(n\)</span> vertices. Here is one example:</p>
-<div id="b91f1f7f" class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div id="b57de8c7" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="36">
 <div>
 <figure class="figure">
 <p><img src="intro_files/figure-html/cell-7-output-1.svg" class="img-fluid figure-img"></p>
@@ -553,8 +553,8 @@ A bit of syntactic sugar
 </div>
 </div>
 <p><em>The path graph <span class="math inline">\(P_n\)</span></em> is a graph composed of <span class="math inline">\(n\)</span> vertices stitched together in sequence, hence it’s a “path”. (We will formalize this concept in the next chapter). Here is one example:</p>
-<div id="2f744561" class="cell" data-execution_count="7">
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div id="b8ed2d88" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="37">
 <div>
 <figure class="figure">
 <p><img src="intro_files/figure-html/cell-8-output-1.svg" class="img-fluid figure-img"></p>
@@ -563,8 +563,8 @@ A bit of syntactic sugar
 </div>
 </div>
 <p><em>The cycle graph <span class="math inline">\(C_n\)</span></em> is a closed-loop of <span class="math inline">\(n\)</span> vertices. So, just like a path, but the first and last vertices are also adjacent. Here is one example:</p>
-<div id="306fe66e" class="cell" data-execution_count="8">
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div id="718955a9" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="38">
 <div>
 <figure class="figure">
 <p><img src="intro_files/figure-html/cell-9-output-1.svg" class="img-fluid figure-img"></p>
@@ -573,8 +573,8 @@ A bit of syntactic sugar
 </div>
 </div>
 <p><em>The random uniform graph <span class="math inline">\(U(n,p)\)</span></em> is a graph of <span class="math inline">\(n\)</span> vertices, where each pair of vertices has a probability <span class="math inline">\(p \in [0,1]\)</span> to exist. It is the simplest random graph one can conceive. Here is one example:</p>
-<div id="9d70886b" class="cell" data-execution_count="9">
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div id="4ebf0ce5" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="39">
 <div>
 <figure class="figure">
 <p><img src="intro_files/figure-html/cell-10-output-1.svg" class="img-fluid figure-img"></p>
@@ -610,8 +610,8 @@ Tivadar: IMO we shouldn't even implement the directed version of AdjGraph for no
 -->
 <p>In some applications it is interesting to give a direction to edges, and consider that <span class="math inline">\(ab\)</span> is different from <span class="math inline">\(ba\)</span>. For example, in modeling transportation networks, sometimes you have single-direction routes. These are called <em>directed graphs.</em> Although they are essential in practical applications, the fundamental theory is almost identical to undirected graphs, so we will only mention them when there’s some relevant difference.</p>
 <p>Here is an example of a directed graph:</p>
-<div id="11357927" class="cell" data-execution_count="10">
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div id="c0467a80" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="40">
 <div>
 <figure class="figure">
 <p><img src="intro_files/figure-html/cell-11-output-1.svg" class="img-fluid figure-img"></p>
