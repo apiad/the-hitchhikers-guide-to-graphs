@@ -269,7 +269,7 @@ window.Quarto = {
 <p>Mathematically speaking, a graph is an object composed of two sets: one for the vertices, and another for the edges. In fact, edges themselves are sets of two vertices. There is nothing about an edge that matters beyond which are the two vertices it connects. (We will see this isn’t the case for some special classes of graphs, but we’ll only deal with them later.)</p>
 <p>Graphs are abstract objects, which we can visualize by drawing dots for vertices and lines for edges. An example of a simple graph is shown in <a href="#fig-example-graph" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>.</p>
 <div id="cell-fig-example-graph" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <div id="fig-example-graph" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-example-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -608,11 +608,12 @@ A bit of syntactic sugar
 <section id="common-graphs" class="level2">
 <h2 class="anchored" data-anchor-id="common-graphs">Common graphs</h2>
 <p>Throughout this book we will refer to several common graphs by name. These are graphs that appear over and over in proofs and examples, so it pays to enumerate them briefly here.</p>
+<div class="cell" data-layout="[[1,1,1],[1]]" data-execution_count="5">
 <div id="fig-examples" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-examples" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-examples" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div id="fig-examples-1" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-examples-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -624,40 +625,40 @@ A bit of syntactic sugar
 </figure>
 </div>
 </div>
-<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-examples" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-examples" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div id="fig-examples-2" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-examples-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="intro_files/figure-html/fig-examples-output-2.svg" class="img-fluid figure-img" data-ref-parent="fig-examples">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-examples-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(b) A path graph with 5 nodes.
+(b) A cycle graph with 5 nodes.
 </figcaption>
 </figure>
 </div>
 </div>
-</div>
-<div class="quarto-layout-row">
-<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-examples" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-examples" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div id="fig-examples-3" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-examples-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="intro_files/figure-html/fig-examples-output-3.svg" class="img-fluid figure-img" data-ref-parent="fig-examples">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-examples-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(c) A cycle graph with 5 nodes.
+(c) A uniform random graph.
 </figcaption>
 </figure>
 </div>
 </div>
-<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-examples" style="flex-basis: 50.0%;justify-content: flex-start;">
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-examples" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div id="fig-examples-4" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-examples-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="intro_files/figure-html/fig-examples-output-4.svg" class="img-fluid figure-img" data-ref-parent="fig-examples">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-examples-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(d) A uniform random graph.
+(d) A path graph with 5 nodes.
 </figcaption>
 </figure>
 </div>
@@ -668,6 +669,7 @@ A bit of syntactic sugar
 Figure&nbsp;1.3: Examples of common graphs.
 </figcaption>
 </figure>
+</div>
 </div>
 <p><em>The complete graph <span class="math inline">\(K_n\)</span></em> is the graph of <span class="math inline">\(n\)</span> vertices and all possible edges. It is, by definition, the densest graph one can have with <span class="math inline">\(n\)</span> vertices. Here is one example:</p>
 <p><em>The path graph <span class="math inline">\(P_n\)</span></em> is a graph composed of <span class="math inline">\(n\)</span> vertices stitched together in sequence, hence it’s a “path”. (We will formalize this concept in the next chapter). Here is one example:</p>
@@ -701,8 +703,8 @@ Tivadar: IMO we shouldn't even implement the directed version of AdjGraph for no
 -->
 <p>In some applications it is interesting to give a direction to edges, and consider that <span class="math inline">\(ab\)</span> is different from <span class="math inline">\(ba\)</span>. For example, in modeling transportation networks, sometimes you have single-direction routes. These are called <em>directed graphs.</em> Although they are essential in practical applications, the fundamental theory is almost identical to undirected graphs, so we will only mention them when there’s some relevant difference.</p>
 <p>Here is an example of a directed graph:</p>
-<div id="cb343d79" class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div id="9871e9e3" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="18">
 <div>
 <figure class="figure">
 <p><img src="intro_files/figure-html/cell-7-output-1.svg" class="img-fluid figure-img"></p>
