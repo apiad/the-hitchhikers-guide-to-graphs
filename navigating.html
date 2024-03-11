@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The Hitchhiker’s Guide to Graphs - Appendix C — The hitchhiker-graphs Python Package</title>
+<title>The Hitchhiker’s Guide to Graphs - Graphs as maps</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,7 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./appendix-python.html" rel="prev">
+<link href="./planning.html" rel="next">
+<link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,6 +41,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -114,7 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-math.html">Appendices</a></li><li class="breadcrumb-item"><a href="./appendix-core.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">The <code>hitchhiker-graphs</code> Python Package</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./navigating.html">Navigating</a></li><li class="breadcrumb-item"><a href="./navigating.html">Graphs as maps</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -171,7 +140,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./navigating.html" class="sidebar-item-text sidebar-link">
+  <a href="./navigating.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Graphs as maps</span></a>
   </div>
 </li>
@@ -268,7 +237,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-core.html" class="sidebar-item-text sidebar-link active">
+  <a href="./appendix-core.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">The <code>hitchhiker-graphs</code> Python Package</span></span></a>
   </div>
 </li>
@@ -285,9 +254,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-math.html">Appendices</a></li><li class="breadcrumb-item"><a href="./appendix-core.html"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">The <code>hitchhiker-graphs</code> Python Package</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./navigating.html">Navigating</a></li><li class="breadcrumb-item"><a href="./navigating.html">Graphs as maps</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-library" class="quarto-section-identifier">Appendix C — The <code>hitchhiker-graphs</code> Python Package</span></h1>
+<h1 class="title">Graphs as maps</h1>
 </div>
 
 
@@ -304,37 +273,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled">
+<p>In this part of the book, we interpret graphs as locations (nodes) connected by routes (edges). This is probably the most natural interpretation, and one of the main applications of graph theory for real-life problems.</p>
+<p>Once we consider that edges are routes between places, we can start asking questions like <em>what is the fastest way to get somewhere</em> or <em>in how many ways can one travel between two places</em>.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lots of code ahead
+<i class="fa-solid fa-question" aria-label="question"></i> Interested in reading more?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This whole appendix is dedicated to the <code>hitchhiker-graphs</code> Python package. You are free to skip it if you don’t care about the coding part of the book.</p>
-</div>
-</div>
-<p>The <code>hitchhikers-graph</code> package contains the main code used in this book, including class definitions for all the graph types and functions for all search algorithms. It does not contain scripting code that we used to illustrate how the algorithms run.</p>
-<p>To install the package, just type:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip install hitchhiker-graphs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Once installation is ready, you can import the <code>AdjGraph</code> class and start doing fun stuff.</p>
-<div id="39b4db65" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> graphs <span class="im">import</span> AdjGraph</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> AdjGraph().cycle(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>).link(<span class="dv">2</span>,<span class="dv">4</span>).link(<span class="dv">3</span>,<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Which generates the following graph:</p>
-<div id="7871b41d" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-display" data-execution_count="4">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="appendix-core_files/figure-html/cell-3-output-1.svg" class="img-fluid figure-img"></p>
-<figcaption>A simple graph</figcaption>
-</figure>
-</div>
+<p>This part of the book is still under construction.</p>
+<p>However, if you are really interested in it, you can get a sneak peek by supporting this book with an <a href="https://store.apiad.net/l/graphs"><strong>Early Access Pass</strong></a>.</p>
+<p>An early access pass gives you:</p>
+<ul>
+<li>Early access to all drafts and future versions of the book (including incomplete parts like this one).</li>
+<li>PDF and EPUB formats.</li>
+<li>Access to a private Discord for discussions about the book.</li>
+<li>And a special mention in the Acknowledgment section!</li>
+</ul>
+<p>Please consider getting the <a href="https://store.apiad.net/l/graphs"><strong>Early Access Pass</strong></a> and help us make this project come true.</p>
 </div>
 </div>
 
@@ -730,11 +690,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./appendix-python.html" class="pagination-link" aria-label="A Primer on Python">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">A Primer on Python</span></span>
+      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./planning.html" class="pagination-link" aria-label="Graphs as plans">
+        <span class="nav-page-text">Graphs as plans</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
