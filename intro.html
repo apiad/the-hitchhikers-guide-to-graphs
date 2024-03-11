@@ -161,6 +161,15 @@ window.Quarto = {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">The Hitchhiker’s Guide to Graphs</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/apiad/graphs" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://store.apiad.net/l/graphs" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-book"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -230,39 +239,98 @@ window.Quarto = {
 
 
 <p>This chapter introduces the basic ideas in graph theory that we will need in the rest of the book. If there is one required chapter, is this one. Even if you are already familiar with the basic notions of graph theory, I recommend you read this chapter. Not only as a refresher, but also because we will refer to these concepts over and over using the notation defined here, which may differ a bit from other traditional textbooks.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-solid fa-heart" aria-label="heart"></i> Please consider supporting this book!
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><em>The Hitchhiker’s Guide to Graphs</em> is free to read online for everyone. You can support the development of the book by purchasing an <a href="https://store.apiad.net/l/graphs"><strong>Early Access Pass</strong></a>.</p>
+<p>An early access pass gives you:</p>
+<ul>
+<li>Early access to all drafts and future versions of the book.</li>
+<li>PDF and EPUB formats.</li>
+<li>Access to a private Discord for discussions about the book.</li>
+<li>And a special mention in the Acknowledgment section!</li>
+</ul>
+<p>Please consider getting the <a href="https://store.apiad.net/l/graphs"><strong>Early Access Pass</strong></a> and help us make this project come true.</p>
+</div>
+</div>
+</div>
 <section id="what-is-a-graph" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-a-graph">What is a graph</h2>
 <p>Intuitively, a graph is just a (finite) collection of elements called <em>vertices</em> (or sometimes <em>nodes</em>), connected via <em>edges</em>. Graph represents an abstract <em>relation space</em>, in which the edges define who’s related to whom, whatever the nature of that relation is.</p>
 <p>Mathematically speaking, a graph is an object composed of two sets: one for the vertices, and another for the edges. In fact, edges themselves are sets of two vertices. There is nothing about an edge that matters beyond which are the two vertices it connects. (We will see this isn’t the case for some special classes of graphs, but we’ll only deal with them later.)</p>
-<p>Graphs are abstract objects, which we can visualize by drawing dots for vertices and lines for edges. An example of a simple graph is shown below:</p>
-<div id="853a4b16" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="33">
-<div>
-<figure class="figure">
-<p><img src="intro_files/figure-html/cell-4-output-1.svg" class="img-fluid figure-img"></p>
+<p>Graphs are abstract objects, which we can visualize by drawing dots for vertices and lines for edges. An example of a simple graph is shown in <a href="#fig-example-graph" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>.</p>
+<div id="cell-fig-example-graph" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div id="fig-example-graph" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-example-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="intro_files/figure-html/fig-example-graph-output-1.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-example-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: An example of a graph, with 5 vertices and 7 edges.
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>This graph is composed of the vertices <span class="math inline">\(a, b, c, d, e\)</span> and the edges <span class="math inline">\(ab, ae, bc, bd, cd, ce, de\)</span>. Of course, there is nothing intrinsic to names or the exact location of the vertices in the drawing. Except in very concrete cases – such as when a graph represents a geometrical or geographical object – the layout of a graph is arbitrary, and the same graph can be represented in an infinite number of ways.</p>
+<p>This graph is composed of 5 vertices (labeled as <span class="math inline">\(a, b, c, d, e\)</span>) and 7 edges. Of course, there is nothing intrinsic to names or the exact location of the vertices in the drawing. Except in very concrete cases – such as when a graph represents a geometrical or geographical object – the layout of a graph is arbitrary, and the same graph can be represented in an infinite number of ways.</p>
 <!--#
 Tivadar: I have changed the formatting of your LaTeX snippets. Sorry, but my OCD is triggered when it comes to LaTeX :D
+Ale: Unfortunately the website doesn't render if you have spaces inside the $ :(
 -->
-<p>For instance, here are two different representations of the very same graph.</p>
+<p>For instance, <a href="#fig-two-graphs" class="quarto-xref">Figure&nbsp;<span>1.2</span></a> are two different representations of the very same graph.</p>
 <!--#
 Tivadar: The example below should be the implementation of a 3D cube's edge graph. How can I add an alternative drawing of this?
+Ale: I think this is what you meant?
 -->
-<div id="2789ecde" class="cell" data-execution_count="4">
-<div class="cell-output cell-output-display" data-execution_count="34">
-<div>
-<figure class="figure">
-<p><img src="intro_files/figure-html/cell-5-output-1.svg" class="img-fluid figure-img"></p>
+<div id="fig-two-graphs" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-two-graphs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-two-graphs" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-two-graphs-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-two-graphs-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="intro_files/figure-html/fig-two-graphs-output-1.svg" class="img-fluid figure-img" data-ref-parent="fig-two-graphs">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-two-graphs-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) A flat layout
+</figcaption>
 </figure>
 </div>
 </div>
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-two-graphs" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-two-graphs-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-two-graphs-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="intro_files/figure-html/fig-two-graphs-output-2.svg" class="img-fluid figure-img" data-ref-parent="fig-two-graphs">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-two-graphs-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Simulating a “3d” layout
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-two-graphs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.2: Two different representations of the same graph.
+</figcaption>
+</figure>
 </div>
 <!--#
 Tivadar: We have to figure out a way to reference and automatically number definitions, theorems, remarks, etc. Things will get complicated really fast without this.
+
+Ale: Done, check _utils.qmd and the start of this section.
 -->
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -274,7 +342,7 @@ Intersecting edges
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The first representation on the previous figure is drawn without no edges intersecting each other, the second one is not. Can we draw any graph without intersecting edges? This simple question leads us to the beautiful domain of <em>planar graphs</em>. We’ll deal this with much later. Let’s see first what graphs are!</p>
+<p>The first representation on <a href="#fig-two-graphs-1" class="quarto-xref">Figure&nbsp;<span>1.2 (a)</span></a> is drawn without no edges intersecting each other, while <a href="#fig-two-graphs-2" class="quarto-xref">Figure&nbsp;<span>1.2 (b)</span></a> is not. Can we draw any graph without intersecting edges? This simple question leads us to the beautiful domain of <em>planar graphs</em>. We’ll deal this with much later. Let’s see first what graphs are!</p>
 </div>
 </div>
 <section id="formalizing-graphs-smallsigma" class="level3">
@@ -293,9 +361,6 @@ Optional math sections
 </div>
 </div>
 <p>We are ready to use the tools of logic and set theory to formally define the concept of a <em>graph</em> in the language of mathematics.</p>
-<!--#
-Tivadar: I've changed your bolds (i.e. **graph**) to italics (to *graph*) when first introducing a concept. AFAIK this is the convention.
--->
 <div class="callout callout-style-simple callout-none no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -307,18 +372,9 @@ Tivadar: I've changed your bolds (i.e. **graph**) to italics (to *graph*) when f
 </div>
 </div>
 <p>(We’ll often use the notation <span class="math inline">\(V(G)\)</span> and <span class="math inline">\(E(G)\)</span> for clarity to indicate the source graph <span class="math inline">\(G\)</span>. This is useful when juggling with multiple graphs and subgraphs.)</p>
-<p>Let’s unpack this definition. Here’s our previous example one more time.</p>
-<div id="84bad9ca" class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display" data-execution_count="35">
-<div>
-<figure class="figure">
-<p><img src="intro_files/figure-html/cell-6-output-1.svg" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>In the language of mathematics, this graph is defined by <span class="math inline">\(G = (V, E)\)</span>, where the vertices are defined by <span class="math inline">\(V = \{ a, b, c, d, e \}\)</span> and the edges are defined by <span class="math inline">\(E = \{ (a, e), (a, b), (b, e), (b, c), (b, d), (c, d), (c, e), (d, e) \}\)</span>.</p>
-<p>To prevent the proliferation of commas and parentheses, we’ll often denote the edge <span class="math inline">\((u, v)\)</span> with <span class="math inline">\(uv\)</span>. You can thank us later.</p>
+<p>Let’s unpack this definition. Take a look at <a href="#fig-example-graph" class="quarto-xref">Figure&nbsp;<span>1.1</span></a> one more time.</p>
+<p>In the language of mathematics, this graph is defined by <span class="math inline">\(G = (V, E)\)</span>, where the vertices are defined by: <span class="math display">\[V = \{ a, b, c, d, e \}\]</span> and the edges are defined by: <span class="math display">\[E = \{ (a, e), (a, b), (b, e), (b, c), (b, d), (c, d), (c, e), (d, e) \}\]</span></p>
+<p>To prevent the unnecessary proliferation of commas and parentheses, we’ll often denote the edge <span class="math inline">\((u, v)\)</span> with <span class="math inline">\(uv\)</span>. You can thank us later.</p>
 <p>The most important characteristic of a vertex is its <em>degree</em>, which basically measures the number of edges between this vertex and any other in the graph. The degree of a vertex <span class="math inline">\(v\)</span> is denoted by <span class="math inline">\(d(v)\)</span>. Thus, in our example, <span class="math inline">\(d(a) = 2\)</span>, because only the edges <span class="math inline">\(ab\)</span> and <span class="math inline">\(ae\)</span> connect <span class="math inline">\(a\)</span> to another vertex. In contrast, the remaining vertices have degree <span class="math inline">\(3\)</span>.</p>
 <p>We call the set of vertices adjacent to an arbitrary vertex <span class="math inline">\(v\)</span> its <em>neighborhood</em>, denoted by <span class="math inline">\(N(v)\)</span>. Thus, the neighborhood of vertex <span class="math inline">\(c\)</span> is the set of vertices <span class="math inline">\(\{ b, d, e \}\)</span>.</p>
 <p>By definition, the degree of a vertex is the size of its neighborhood; that is, <span class="math inline">\(d(v) = |N(v)|\)</span>.</p>
@@ -348,6 +404,8 @@ I emphasize that this is just a suggestion from my part. I haven't thought the c
 There's also the consideration of the final form of the graphs lib. Perhaps you want the code snippets to exactly match the final implementations in the lib, conflicting with the objective of simplicity. A solution for that is to create a separate branch in the lib for each chapter, where we only include the current implementations.
 
 What do you think about this?
+
+Ale: Agree, working on it :)
  ->
 
 <!-- SNIPPET core.py @graph-main @graph-extra -->
@@ -379,6 +437,10 @@ What do you think about this?
 <p>Just from the previous definitions, we can already start implementing general methods in graphs, whatever their underlying implementation might be. For example, we can already find the neighborhood and the degree of any given vertex. (Albeit in an extremely slow manner.)</p>
 <!--
 Tivadar: It's me again with my comments about trimming :) I suggest to not use generators, as they are quite advanced, and I don't see a need for them right now. Here's my suggestion:
+
+Ale: Still undecided, I can see your point, though :) The thing is pretty soon
+most algorithms will involve iterators (or become pretty cumbersome to write)
+so we might as well introduce that now and leave a collapsible note for beginners.
 
 ```python
 # class Graph(...)
@@ -433,6 +495,8 @@ Tivadar: It's me again with my comments about trimming :) I suggest to not use g
 <p>The most straightforward representation is called the <em>adjacency list</em> method, which references all neighbors of a given node in a structure associated to that node, such as an array. In Python, we can store a dictionary of nodes mapping to a set of their adjacent nodes. We use a set to store the adjacency information so we can answer as fast as possible whether two nodes are adjacent.</p>
 <!--
 Tivadar: we should omit directed graphs for now. We haven't talked about them, and adding the directed option to the implementation only adds confusion at this point.
+
+Ale: Agree, working on it.
 -->
 <!-- SNIPPET core.py @adjgraph-main @adjgraph-extra -->
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> AdjGraph(Graph[T]):</span>
@@ -474,6 +538,8 @@ Tivadar: we should omit directed graphs for now. We haven't talked about them, a
 <!-- /SNIPPET -->
 <!--
 Tivadar: I suggest to add an example here where we instantiate an AdjGraph object.
+
+Ale: Agree, working on it.
 -->
 <p>Note that this implementation allows computing the neighborhood much more directly. It also allows us to dynamically modify the graph by adding vertices and edges.</p>
 <!-- SNIPPET core.py @adjgraph-extra @adjgraph-extra-2 -->
@@ -542,46 +608,71 @@ A bit of syntactic sugar
 <section id="common-graphs" class="level2">
 <h2 class="anchored" data-anchor-id="common-graphs">Common graphs</h2>
 <p>Throughout this book we will refer to several common graphs by name. These are graphs that appear over and over in proofs and examples, so it pays to enumerate them briefly here.</p>
+<div id="fig-examples" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-examples" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-examples-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-examples-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="intro_files/figure-html/fig-examples-output-1.svg" class="img-fluid figure-img" data-ref-parent="fig-examples">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-examples-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) A complete graph with 5 nodes.
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-examples" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-examples-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-examples-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="intro_files/figure-html/fig-examples-output-2.svg" class="img-fluid figure-img" data-ref-parent="fig-examples">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-examples-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) A path graph with 5 nodes.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-examples" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-examples-3" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-examples-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="intro_files/figure-html/fig-examples-output-3.svg" class="img-fluid figure-img" data-ref-parent="fig-examples">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-examples-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) A cycle graph with 5 nodes.
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-examples" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-examples-4" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-examples-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="intro_files/figure-html/fig-examples-output-4.svg" class="img-fluid figure-img" data-ref-parent="fig-examples">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-examples-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) A uniform random graph.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.3: Examples of common graphs.
+</figcaption>
+</figure>
+</div>
 <p><em>The complete graph <span class="math inline">\(K_n\)</span></em> is the graph of <span class="math inline">\(n\)</span> vertices and all possible edges. It is, by definition, the densest graph one can have with <span class="math inline">\(n\)</span> vertices. Here is one example:</p>
-<div id="b57de8c7" class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display" data-execution_count="36">
-<div>
-<figure class="figure">
-<p><img src="intro_files/figure-html/cell-7-output-1.svg" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
 <p><em>The path graph <span class="math inline">\(P_n\)</span></em> is a graph composed of <span class="math inline">\(n\)</span> vertices stitched together in sequence, hence it’s a “path”. (We will formalize this concept in the next chapter). Here is one example:</p>
-<div id="b8ed2d88" class="cell" data-execution_count="7">
-<div class="cell-output cell-output-display" data-execution_count="37">
-<div>
-<figure class="figure">
-<p><img src="intro_files/figure-html/cell-8-output-1.svg" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
 <p><em>The cycle graph <span class="math inline">\(C_n\)</span></em> is a closed-loop of <span class="math inline">\(n\)</span> vertices. So, just like a path, but the first and last vertices are also adjacent. Here is one example:</p>
-<div id="718955a9" class="cell" data-execution_count="8">
-<div class="cell-output cell-output-display" data-execution_count="38">
-<div>
-<figure class="figure">
-<p><img src="intro_files/figure-html/cell-9-output-1.svg" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
 <p><em>The random uniform graph <span class="math inline">\(U(n,p)\)</span></em> is a graph of <span class="math inline">\(n\)</span> vertices, where each pair of vertices has a probability <span class="math inline">\(p \in [0,1]\)</span> to exist. It is the simplest random graph one can conceive. Here is one example:</p>
-<div id="4ebf0ce5" class="cell" data-execution_count="9">
-<div class="cell-output cell-output-display" data-execution_count="39">
-<div>
-<figure class="figure">
-<p><img src="intro_files/figure-html/cell-10-output-1.svg" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -610,11 +701,11 @@ Tivadar: IMO we shouldn't even implement the directed version of AdjGraph for no
 -->
 <p>In some applications it is interesting to give a direction to edges, and consider that <span class="math inline">\(ab\)</span> is different from <span class="math inline">\(ba\)</span>. For example, in modeling transportation networks, sometimes you have single-direction routes. These are called <em>directed graphs.</em> Although they are essential in practical applications, the fundamental theory is almost identical to undirected graphs, so we will only mention them when there’s some relevant difference.</p>
 <p>Here is an example of a directed graph:</p>
-<div id="c0467a80" class="cell" data-execution_count="10">
-<div class="cell-output cell-output-display" data-execution_count="40">
+<div id="cb343d79" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 <figure class="figure">
-<p><img src="intro_files/figure-html/cell-11-output-1.svg" class="img-fluid figure-img"></p>
+<p><img src="intro_files/figure-html/cell-7-output-1.svg" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1034,6 +1125,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2024 - The Authors</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link active" href="https://github.com/apiad/graphs" aria-current="page">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://store.apiad.net/l/graphs">
+      <i class="bi bi-book" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 

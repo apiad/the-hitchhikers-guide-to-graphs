@@ -42,6 +42,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -127,6 +129,15 @@ window.Quarto = {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">The Hitchhiker’s Guide to Graphs</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/apiad/graphs" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://store.apiad.net/l/graphs" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-book"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -200,19 +211,39 @@ window.Quarto = {
 </header>
 
 
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="cover.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
-</figure>
-</div>
+
 <section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
+<h1 class="unnumbered">Preface</h1><p><img src="cover.jpg" title="The Hitchhiker's Guide to Graphs" class="quarto-cover-image img-fluid"></p>
 <p>What do the World Wide Web, your brain, the corpus of scientific knowledge accumulated by all of humanity, the entire list of people you’ve ever met, and the city you live in have in common?</p>
 <p>These are all very different types of things, from physical, to virtual, to social in nature, but they share a very important trait. They are all <em>networks</em> that establish <em>relationships</em> between some <em>entities</em>.</p>
 <p>The World Wide Web is a network of interconnected computational resources, data, software, and hardware infrastructure. Your brain is a network of interconnected neurons. The accumulated human knowledge is also a network of interconnected ideas, as all discoveries depend upon prior knowledge, and unlock new discoveries. The city you live in is also an interconnected network of roads and buildings. And the people you know is also network, as many of them know each other, or know someone that knows someone you know.</p>
 <p>As distinct as these things are, they all share common properties, by virtue of their networked nature. For example, you can think of how “close” two entities in this network are. The meaning of “distance” will be different if you’re considering physical networks (like roads) versus information networks (like published papers with citations to other papers) versus social networks (like your Facebook friends), but in all cases there is some sense in which some entities are “closer” together than others.</p>
 <p>What if we could study this abstract notion of <em>networks</em>, and understand their fundamental properties all at once?</p>
 <p>Welcome to graph theory.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-solid fa-heart" aria-label="heart"></i> Please consider supporting this book!
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><em>The Hitchhiker’s Guide to Graphs</em> is free to read online for everyone. You can support the development of the book by purchasing an <a href="https://store.apiad.net/l/graphs"><strong>Early Access Pass</strong></a>.</p>
+<p>An early access pass gives you:</p>
+<ul>
+<li>Early access to all drafts and future versions of the book.</li>
+<li>PDF and EPUB formats.</li>
+<li>Access to a private Discord for discussions about the book.</li>
+<li>And a special mention in the Acknowledgment section!</li>
+</ul>
+<p>Please consider getting the <a href="https://store.apiad.net/l/graphs"><strong>Early Access Pass</strong></a> and help us make this project come true.</p>
+</div>
+</div>
+</div>
 <section id="welcome-to-graph-theory" class="level2">
 <h2 class="anchored" data-anchor-id="welcome-to-graph-theory">Welcome to Graph Theory!</h2>
 <p>To study these seemingly disparate objects in the deepest possible way, we need an abstract concept that captures the fundamental notion of <em>things connected together</em>. In mathematics and computer science, they are called <strong>graphs</strong>. Graphs lie at the intersection of mathematics and computer science, and their study is one of the most fascinating branches of math, science, and human knowledge in general.</p>
@@ -240,7 +271,12 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="how-to-read-this-book">How to read this book</h2>
 <p>This book is divided into several parts that are more or less independent. Except for <a href="intro.html" class="quarto-xref">Chapter&nbsp;<span>1&nbsp; Introduction</span></a>, all other chapters can be read roughly in any order, although the first few chapters introduce the most important algorithms. In some rare cases a later chapter may reference a previous result or algorithm, but in those cases you’ll find an explicit link to any required content. Thus, unless you’ve already familiar with the basic notations and concepts in graph theory, I recommend you read <a href="intro.html" class="quarto-xref">Chapter&nbsp;<span>1&nbsp; Introduction</span></a> first. Afterwards, you’re free to hop around and take any chapter that suits your interest.</p>
 <p>Each part deals with solving problems of a similar nature, and is divided into chapters that grow in complexity. That means, say, the last chapter of Part 2 may be more advanced than the first chapter of Part 4.</p>
-<p>Each chapter is dedicated to solving one specific problem, introducing ideas and algorithms that emerge from our journey towards the solution. In each chapter, we will * understand and mathematically formulate the problem, * build intuitions to channel our ideas towards the solution, * and discover the solution in the form of a theorem or an algorithm. If it’s an algorithm, we’ll build a reference implementation in Python as well.</p>
+<p>Each chapter is dedicated to solving one specific problem, introducing ideas and algorithms that emerge from our journey towards the solution. In each chapter, we will</p>
+<ul>
+<li>understand and mathematically formulate the problem,</li>
+<li>build intuitions to channel our ideas towards the solution,</li>
+<li>and discover the solution in the form of a theorem or an algorithm. If it’s an algorithm, we’ll build a reference implementation in Python as well.</li>
+</ul>
 <p>Intermixed between all of this, we’ll drop some theoretical sections that delve into the underlying math and provide some formal proofs. These sections will be clearly marked and are absolutely optional, so you are free to skip them, at least on a first read.</p>
 <p>In summary, you can read this book top-to-bottom, or you can skim and jump around as much as you want.</p>
 </section>
@@ -258,7 +294,7 @@ window.Quarto = {
 <li><span class="math inline">\(\small(\Sigma)\)</span> All sections or blocks marked with this symbol are math-heavy, and usually include proofs for theorems just discussed in the previous sections.</li>
 <li><span class="math inline">\(\small[\lambda]\)</span> All sections or block marked with this symbol are code-heavy, and most often include a Python implementation of an algorithm previously discussed.</li>
 </ul>
-<p>For emphasis: although you can definitely skip these sections and still enjoy and get a lot out of this book, I strongly encourage you to, at least on a second read, give them a try. We’ve made our best to be as clear and intuitive as possible even in these more advanced sections.</p>
+<p>For emphasis: although you can definitely skip these sections and still enjoy and get a lot out of this book, we strongly encourage you to, at least on a second read, give them a try. We’ve made our best to be as clear and intuitive as possible even in these more advanced sections.</p>
 
 
 </section>
@@ -668,6 +704,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2024 - The Authors</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link active" href="https://github.com/apiad/graphs" aria-current="page">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://store.apiad.net/l/graphs">
+      <i class="bi bi-book" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 

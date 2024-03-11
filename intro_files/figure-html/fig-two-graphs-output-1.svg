@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="188pt" height="188pt" viewBox="0.00 0.00 188.00 188.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>%3</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 184,-184 184,4 -4,4"/>
+<!-- a -->
+<g id="node1" class="node">
+<title>a</title>
+<ellipse fill="none" stroke="black" cx="54" cy="-54" rx="18" ry="18"/>
+<text text-anchor="middle" x="54" y="-50.3" font-family="Times,serif" font-size="14.00">a</text>
+</g>
+<!-- b -->
+<g id="node2" class="node">
+<title>b</title>
+<ellipse fill="none" stroke="black" cx="126" cy="-54" rx="18" ry="18"/>
+<text text-anchor="middle" x="126" y="-50.3" font-family="Times,serif" font-size="14.00">b</text>
+</g>
+<!-- a&#45;&#45;b -->
+<g id="edge3" class="edge">
+<title>a--b</title>
+<path fill="none" stroke="black" d="M72.17,-54C83,-54 96.71,-54 107.59,-54"/>
+</g>
+<!-- d -->
+<g id="node4" class="node">
+<title>d</title>
+<ellipse fill="none" stroke="black" cx="54" cy="-126" rx="18" ry="18"/>
+<text text-anchor="middle" x="54" y="-122.3" font-family="Times,serif" font-size="14.00">d</text>
+</g>
+<!-- a&#45;&#45;d -->
+<g id="edge2" class="edge">
+<title>a--d</title>
+<path fill="none" stroke="black" d="M54,-72.17C54,-83 54,-96.71 54,-107.59"/>
+</g>
+<!-- e -->
+<g id="node5" class="node">
+<title>e</title>
+<ellipse fill="none" stroke="black" cx="18" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="18" y="-14.3" font-family="Times,serif" font-size="14.00">e</text>
+</g>
+<!-- a&#45;&#45;e -->
+<g id="edge1" class="edge">
+<title>a--e</title>
+<path fill="none" stroke="black" d="M41,-41C37.78,-37.78 34.33,-34.33 31.1,-31.1"/>
+</g>
+<!-- c -->
+<g id="node3" class="node">
+<title>c</title>
+<ellipse fill="none" stroke="black" cx="126" cy="-126" rx="18" ry="18"/>
+<text text-anchor="middle" x="126" y="-122.3" font-family="Times,serif" font-size="14.00">c</text>
+</g>
+<!-- b&#45;&#45;c -->
+<g id="edge5" class="edge">
+<title>b--c</title>
+<path fill="none" stroke="black" d="M126,-72.17C126,-83 126,-96.71 126,-107.59"/>
+</g>
+<!-- f -->
+<g id="node6" class="node">
+<title>f</title>
+<ellipse fill="none" stroke="black" cx="162" cy="-18" rx="18" ry="18"/>
+<text text-anchor="middle" x="162" y="-14.3" font-family="Times,serif" font-size="14.00">f</text>
+</g>
+<!-- b&#45;&#45;f -->
+<g id="edge4" class="edge">
+<title>b--f</title>
+<path fill="none" stroke="black" d="M139,-41C142.22,-37.78 145.67,-34.33 148.9,-31.1"/>
+</g>
+<!-- c&#45;&#45;d -->
+<g id="edge6" class="edge">
+<title>c--d</title>
+<path fill="none" stroke="black" d="M107.83,-126C97,-126 83.29,-126 72.41,-126"/>
+</g>
+<!-- g -->
+<g id="node7" class="node">
+<title>g</title>
+<ellipse fill="none" stroke="black" cx="162" cy="-162" rx="18" ry="18"/>
+<text text-anchor="middle" x="162" y="-158.3" font-family="Times,serif" font-size="14.00">g</text>
+</g>
+<!-- c&#45;&#45;g -->
+<g id="edge7" class="edge">
+<title>c--g</title>
+<path fill="none" stroke="black" d="M139,-139C142.22,-142.22 145.67,-145.67 148.9,-148.9"/>
+</g>
+<!-- h -->
+<g id="node8" class="node">
+<title>h</title>
+<ellipse fill="none" stroke="black" cx="18" cy="-162" rx="18" ry="18"/>
+<text text-anchor="middle" x="18" y="-158.3" font-family="Times,serif" font-size="14.00">h</text>
+</g>
+<!-- d&#45;&#45;h -->
+<g id="edge8" class="edge">
+<title>d--h</title>
+<path fill="none" stroke="black" d="M41,-139C37.78,-142.22 34.33,-145.67 31.1,-148.9"/>
+</g>
+<!-- e&#45;&#45;f -->
+<g id="edge9" class="edge">
+<title>e--f</title>
+<path fill="none" stroke="black" d="M36.24,-18C63.94,-18 116.3,-18 143.91,-18"/>
+</g>
+<!-- e&#45;&#45;h -->
+<g id="edge10" class="edge">
+<title>e--h</title>
+<path fill="none" stroke="black" d="M18,-36.24C18,-63.94 18,-116.3 18,-143.91"/>
+</g>
+<!-- f&#45;&#45;g -->
+<g id="edge11" class="edge">
+<title>f--g</title>
+<path fill="none" stroke="black" d="M162,-36.24C162,-63.94 162,-116.3 162,-143.91"/>
+</g>
+<!-- g&#45;&#45;h -->
+<g id="edge12" class="edge">
+<title>g--h</title>
+<path fill="none" stroke="black" d="M143.76,-162C116.06,-162 63.7,-162 36.09,-162"/>
+</g>
+</g>
+</svg>
