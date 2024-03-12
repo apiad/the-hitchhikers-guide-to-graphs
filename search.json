@@ -142,56 +142,101 @@
   {
     "objectID": "navigating.html",
     "href": "navigating.html",
-    "title": "Graphs as maps",
+    "title": "Navigating",
     "section": "",
-    "text": "In this part of the book, we interpret graphs as locations (nodes) connected by routes (edges). This is probably the most natural interpretation, and one of the main applications of graph theory for real-life problems.\nOnce we consider that edges are routes between places, we can start asking questions like what is the fastest way to get somewhere or in how many ways can one travel between two places.\n\n\n\n\n\n\n Interested in reading more?\n\n\n\nThis part of the book is still under construction.\nHowever, if you are really interested in it, you can get a sneak peek by supporting this book with an Early Access Pass.\nAn early access pass gives you:\n\nEarly access to all drafts and future versions of the book (including incomplete parts like this one).\nPDF and EPUB formats.\nAccess to a private Discord for discussions about the book.\nAnd a special mention in the Acknowledgment section!\n\nPlease consider getting the Early Access Pass and help us make this project come true.",
+    "text": "Work in Progress",
     "crumbs": [
-      "Navigating",
-      "Graphs as maps"
+      "Navigating"
+    ]
+  },
+  {
+    "objectID": "navigating.html#work-in-progress",
+    "href": "navigating.html#work-in-progress",
+    "title": "Navigating",
+    "section": "",
+    "text": "Interested in reading more?\n\n\n\nThis part of the book is still under construction.\nHowever, if you are really interested in it, you can get a sneak peek by supporting this book with an Early Access Pass.\nAn early access pass gives you:\n\nEarly access to all drafts and future versions of the book (including incomplete parts like this one).\nPDF and EPUB formats.\nAccess to a private Discord for discussions about the book.\nAnd a special mention in the Acknowledgment section!\n\nPlease consider getting the Early Access Pass and help us make this project come true.",
+    "crumbs": [
+      "Navigating"
     ]
   },
   {
     "objectID": "planning.html",
     "href": "planning.html",
-    "title": "Graphs as plans",
+    "title": "Planning",
     "section": "",
-    "text": "In this part, we interpret a graph in a more abstract nature, such as collections of tasks with prerequisites or people with skills.\nIn such scenarios, we can ask questions about the best way to organize stuff: making schedules, sorting tasks, or assigning people to jobs.\n\n\n\n\n\n\n Interested in reading more?\n\n\n\nThis part of the book is still under construction.\nHowever, if you are really interested in it, you can get a sneak peek by supporting this book with an Early Access Pass.\nAn early access pass gives you:\n\nEarly access to all drafts and future versions of the book (including incomplete parts like this one).\nPDF and EPUB formats.\nAccess to a private Discord for discussions about the book.\nAnd a special mention in the Acknowledgment section!\n\nPlease consider getting the Early Access Pass and help us make this project come true.",
+    "text": "Work in Progress",
     "crumbs": [
-      "Planning",
-      "Graphs as plans"
+      "Planning"
+    ]
+  },
+  {
+    "objectID": "planning.html#work-in-progress",
+    "href": "planning.html#work-in-progress",
+    "title": "Planning",
+    "section": "",
+    "text": "Interested in reading more?\n\n\n\nThis part of the book is still under construction.\nHowever, if you are really interested in it, you can get a sneak peek by supporting this book with an Early Access Pass.\nAn early access pass gives you:\n\nEarly access to all drafts and future versions of the book (including incomplete parts like this one).\nPDF and EPUB formats.\nAccess to a private Discord for discussions about the book.\nAnd a special mention in the Acknowledgment section!\n\nPlease consider getting the Early Access Pass and help us make this project come true.",
+    "crumbs": [
+      "Planning"
     ]
   },
   {
     "objectID": "socializing.html",
     "href": "socializing.html",
-    "title": "Graphs as social networks",
+    "title": "Socializing",
     "section": "",
-    "text": "In this part we consider a graph as a social network, were nodes are people, or social entities in general, and the edges represent social interactions –such as a follow in Twitter or a handshake.\nIn this scenario we can interpret structures in the graph as telling something about the social aspects of the world: finding who’s an influential person or determining who’s patient zero in a zombie apocalypse.\n\n\n\n\n\n\n Interested in reading more?\n\n\n\nThis part of the book is still under construction.\nHowever, if you are really interested in it, you can get a sneak peek by supporting this book with an Early Access Pass.\nAn early access pass gives you:\n\nEarly access to all drafts and future versions of the book (including incomplete parts like this one).\nPDF and EPUB formats.\nAccess to a private Discord for discussions about the book.\nAnd a special mention in the Acknowledgment section!\n\nPlease consider getting the Early Access Pass and help us make this project come true.",
+    "text": "Work in Progress",
     "crumbs": [
-      "Socializing",
-      "Graphs as social networks"
+      "Socializing"
+    ]
+  },
+  {
+    "objectID": "socializing.html#work-in-progress",
+    "href": "socializing.html#work-in-progress",
+    "title": "Socializing",
+    "section": "",
+    "text": "Interested in reading more?\n\n\n\nThis part of the book is still under construction.\nHowever, if you are really interested in it, you can get a sneak peek by supporting this book with an Early Access Pass.\nAn early access pass gives you:\n\nEarly access to all drafts and future versions of the book (including incomplete parts like this one).\nPDF and EPUB formats.\nAccess to a private Discord for discussions about the book.\nAnd a special mention in the Acknowledgment section!\n\nPlease consider getting the Early Access Pass and help us make this project come true.",
+    "crumbs": [
+      "Socializing"
     ]
   },
   {
     "objectID": "reasoning.html",
     "href": "reasoning.html",
-    "title": "Graphs as knowledge bases",
+    "title": "Reasoning",
     "section": "",
-    "text": "In this part we consider a graph as a knowledge base, connecting concepts (nodes) in a given domain through semantic relations (edges).\nIn this scenario, we can use graphs to answer technical questions in that domain, such as what are the causes of a given disease.\n\n\n\n\n\n\n Interested in reading more?\n\n\n\nThis part of the book is still under construction.\nHowever, if you are really interested in it, you can get a sneak peek by supporting this book with an Early Access Pass.\nAn early access pass gives you:\n\nEarly access to all drafts and future versions of the book (including incomplete parts like this one).\nPDF and EPUB formats.\nAccess to a private Discord for discussions about the book.\nAnd a special mention in the Acknowledgment section!\n\nPlease consider getting the Early Access Pass and help us make this project come true.",
+    "text": "Work in Progress",
     "crumbs": [
-      "Reasoning",
-      "Graphs as knowledge bases"
+      "Reasoning"
+    ]
+  },
+  {
+    "objectID": "reasoning.html#work-in-progress",
+    "href": "reasoning.html#work-in-progress",
+    "title": "Reasoning",
+    "section": "",
+    "text": "Interested in reading more?\n\n\n\nThis part of the book is still under construction.\nHowever, if you are really interested in it, you can get a sneak peek by supporting this book with an Early Access Pass.\nAn early access pass gives you:\n\nEarly access to all drafts and future versions of the book (including incomplete parts like this one).\nPDF and EPUB formats.\nAccess to a private Discord for discussions about the book.\nAnd a special mention in the Acknowledgment section!\n\nPlease consider getting the Early Access Pass and help us make this project come true.",
+    "crumbs": [
+      "Reasoning"
     ]
   },
   {
     "objectID": "drawing.html",
     "href": "drawing.html",
-    "title": "Graphs as figures",
+    "title": "Drawing",
     "section": "",
-    "text": "In this part, we consider many problems related to visualizing graphs, from how to draw them on a plane in the least messy way (e.g., with the least amount of edge crossings) to drawing maps.\n\n\n\n\n\n\n Interested in reading more?\n\n\n\nThis part of the book is still under construction.\nHowever, if you are really interested in it, you can get a sneak peek by supporting this book with an Early Access Pass.\nAn early access pass gives you:\n\nEarly access to all drafts and future versions of the book (including incomplete parts like this one).\nPDF and EPUB formats.\nAccess to a private Discord for discussions about the book.\nAnd a special mention in the Acknowledgment section!\n\nPlease consider getting the Early Access Pass and help us make this project come true.",
+    "text": "Work in Progress",
     "crumbs": [
-      "Drawing",
-      "Graphs as figures"
+      "Drawing"
+    ]
+  },
+  {
+    "objectID": "drawing.html#work-in-progress",
+    "href": "drawing.html#work-in-progress",
+    "title": "Drawing",
+    "section": "",
+    "text": "Interested in reading more?\n\n\n\nThis part of the book is still under construction.\nHowever, if you are really interested in it, you can get a sneak peek by supporting this book with an Early Access Pass.\nAn early access pass gives you:\n\nEarly access to all drafts and future versions of the book (including incomplete parts like this one).\nPDF and EPUB formats.\nAccess to a private Discord for discussions about the book.\nAnd a special mention in the Acknowledgment section!\n\nPlease consider getting the Early Access Pass and help us make this project come true.",
+    "crumbs": [
+      "Drawing"
     ]
   },
   {
