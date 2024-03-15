@@ -244,7 +244,29 @@
     "href": "appendix-math.html",
     "title": "Appendix A — A Primer on Logic and Discrete Math",
     "section": "",
-    "text": "Important\n\n\n\nThis is a very superficial introduction to some of the most important ideas in logic and discrete math that support the proof techniques we’ll use throughout the book. This appendix does not pretend to be a full introduction to either branch of maths, but a quick refresher for those who are already at least somewhat familiar with these notions.",
+    "text": "Sets",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>A Primer on Logic and Discrete Math</span>"
+    ]
+  },
+  {
+    "objectID": "appendix-math.html#logical-proofs",
+    "href": "appendix-math.html#logical-proofs",
+    "title": "Appendix A — A Primer on Logic and Discrete Math",
+    "section": "Logical proofs",
+    "text": "Logical proofs\n\nProof by Induction\n\n\nProof by Contradiction",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>A Primer on Logic and Discrete Math</span>"
+    ]
+  },
+  {
+    "objectID": "appendix-math.html#the-well-ordering-principle",
+    "href": "appendix-math.html#the-well-ordering-principle",
+    "title": "Appendix A — A Primer on Logic and Discrete Math",
+    "section": "The Well-ordering Principle",
+    "text": "The Well-ordering Principle",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>A</span>  <span class='chapter-title'>A Primer on Logic and Discrete Math</span>"
@@ -255,7 +277,40 @@
     "href": "appendix-python.html",
     "title": "Appendix B — A Primer on Python",
     "section": "",
-    "text": "Important\n\n\n\nThis is a very shallow introduction to the Python programming language, focusing only on the basic features of the language that we use throughout the book. This appendix does not pretend to be a full introduction to neither Python nor programming in general.\n\n\nPython is a multi-paradigm, dynamically-typed programming language with strong influences from both the object-oriented and the functional paradigms. As such, Python features all the basic notions in most traditional OOP and functional languages, including classes, multiple inheritance, single-dispatch polymorphism, top-level and nested functions, lambdas, iterators, and optional support for nominal typing and some basic structural typing.\nIf all or some of the above sounds alien to you, just believe us: if you’ve tried any of the top 20 most popular programming languages before, learning Python will be a breeze.\nThat being said, this is not intended to be a complete introduction to Python. We assume you already code in some other language and are familiar with the basic notions of variable declarations, loops, function declaration and invocation, and some object-oriented programming. As such, this appendix focuses only on the syntactic and the most important semantic aspects of the Python programming language that make it different from other well-known languages such as C++ or Java.",
+    "text": "Basic syntax",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>A Primer on Python</span>"
+    ]
+  },
+  {
+    "objectID": "appendix-python.html#functions",
+    "href": "appendix-python.html#functions",
+    "title": "Appendix B — A Primer on Python",
+    "section": "Functions",
+    "text": "Functions",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>A Primer on Python</span>"
+    ]
+  },
+  {
+    "objectID": "appendix-python.html#classes",
+    "href": "appendix-python.html#classes",
+    "title": "Appendix B — A Primer on Python",
+    "section": "Classes",
+    "text": "Classes",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>A Primer on Python</span>"
+    ]
+  },
+  {
+    "objectID": "appendix-python.html#generators-and-iterators",
+    "href": "appendix-python.html#generators-and-iterators",
+    "title": "Appendix B — A Primer on Python",
+    "section": "Generators and Iterators",
+    "text": "Generators and Iterators",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>A Primer on Python</span>"
