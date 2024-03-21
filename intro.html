@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./navigating.html" rel="next">
+<link href="./01-navigating/intro.html" rel="next">
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -223,19 +223,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-math.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">A Primer on Logic and Discrete Math</span></span></a>
+  <a href="./appendix/math.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">A Primer on Logic</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-python.html" class="sidebar-item-text sidebar-link">
+  <a href="./appendix/python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">A Primer on Python</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-core.html" class="sidebar-item-text sidebar-link">
+  <a href="./appendix/core.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">The <code>hitchhiker-graphs</code> Python Package</span></span></a>
   </div>
 </li>
@@ -288,6 +288,16 @@ window.Quarto = {
 </header>
 
 
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/intro.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
+</figure>
+</div>
+<p><em>The city of Graphtopia just elected a new Major!</em></p>
+<p><em>As all previous Majors in charge, the job of Major Groff von Veertex is to ensure the citizens of Graphtopia enjoy all the benefits of being the only city in the world that is fully run based on the most solid concepts and techniques of graph theory.</em></p>
+<p><em>To do so, Major von Vertex has appointed a stellar staff, with experts well-versed in all the subfields of graph theory. We have amazing people like Ariadne Wanderlust as Chief Explorer, Rothbert Topos, BsC. as Head of Planning, Mrs.&nbsp;Paige Rank as Community Manager, and Dr.&nbsp;Peter Linkage as Director of Connectivity.</em></p>
+<p><em>The first task the Major will be tackling, is to revamp the graph theory manual of the City Council.</em></p>
+<hr>
 <p>This chapter introduces the basic ideas in graph theory that we will need in the rest of the book. If there is one required chapter, is this one. Even if you are already familiar with the basic notions of graph theory, I recommend you read this chapter. Not only as a refresher, but also because we will refer to these concepts over and over using the notation defined here, which may differ a bit from other traditional textbooks.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -530,6 +540,21 @@ so we might as well introduce that now and leave a collapsible note for beginner
 </div>
 </div>
 <!-- /SNIPPET -->
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+On Python iterators and generators
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You may have noticed we used the <code>yield</code> keyword in the <code>neighborhood</code> method up there. In Python, this is the syntax used to define <em>generators</em>.</p>
+<p>In short, generators allow us to write iterative code without storing intermediate values in a list, instead “returning” each processed node or edge as we find it. The details are quite technical, but you don’t need to understand the full machinery to use them effectively.</p>
+<p>If this is your first encounter with generators and iterators, check the <a href="appendix/python.html#sec-python-iterators" class="quarto-xref">Appendix&nbsp;<span>B.4</span></a> for a quick reference.</p>
+</div>
+</div>
 <p>This is admittedly the worst way to compute neighborhoods, but hey, at least it works. And it’s simple! “Simple first, optimized later” is our mantra for now.</p>
 <p>In cases where we have nothing better, this method will do. We will see shortly that we can easily provide more efficient implementations for specific graph representations.</p>
 <section id="computational-representations-of-graphs" class="level4">
@@ -1185,7 +1210,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./navigating.html" class="pagination-link" aria-label="Navigating">
+      <a href="./01-navigating/intro.html" class="pagination-link" aria-label="Navigating">
         <span class="nav-page-text">Navigating</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

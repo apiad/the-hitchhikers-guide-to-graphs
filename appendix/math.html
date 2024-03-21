@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Alejandro Piad Morffis">
-<meta name="author" content="Tivadar Danka">
 
-<title>The Hitchhiker’s Guide to Graphs</title>
+<title>The Hitchhiker’s Guide to Graphs - Appendix A — A Primer on Logic</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,25 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../appendix/python.html" rel="next">
+<link href="../05-drawing/intro.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,35 +69,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -113,7 +81,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../appendix/math.html">Appendices</a></li><li class="breadcrumb-item"><a href="../appendix/math.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">A Primer on Logic</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -128,7 +96,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">The Hitchhiker’s Guide to Graphs</a> 
+      <a href="../">The Hitchhiker’s Guide to Graphs</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/apiad/graphs" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
     <a href="https://store.apiad.net/l/graphs" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-book"></i></a>
@@ -149,13 +117,13 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
@@ -190,19 +158,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix/math.html" class="sidebar-item-text sidebar-link">
+  <a href="../appendix/math.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">A Primer on Logic</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix/python.html" class="sidebar-item-text sidebar-link">
+  <a href="../appendix/python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">A Primer on Python</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix/core.html" class="sidebar-item-text sidebar-link">
+  <a href="../appendix/core.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">The <code>hitchhiker-graphs</code> Python Package</span></span></a>
   </div>
 </li>
@@ -218,38 +186,28 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <li><a href="#sets" id="toc-sets" class="nav-link active" data-scroll-target="#sets">Sets</a></li>
+  <li><a href="#logical-proofs" id="toc-logical-proofs" class="nav-link" data-scroll-target="#logical-proofs">Logical proofs</a>
   <ul class="collapse">
-  <li><a href="#welcome-to-graph-theory" id="toc-welcome-to-graph-theory" class="nav-link" data-scroll-target="#welcome-to-graph-theory">Welcome to Graph Theory!</a></li>
-  <li><a href="#what-this-book-is-and-what-is-not" id="toc-what-this-book-is-and-what-is-not" class="nav-link" data-scroll-target="#what-this-book-is-and-what-is-not">What this book is (and what is not)</a></li>
-  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
-  <li><a href="#how-to-read-this-book" id="toc-how-to-read-this-book" class="nav-link" data-scroll-target="#how-to-read-this-book">How to read this book</a></li>
-  <li><a href="#complementary-source-code" id="toc-complementary-source-code" class="nav-link" data-scroll-target="#complementary-source-code">Complementary source code</a></li>
-  <li><a href="#a-word-on-notation" id="toc-a-word-on-notation" class="nav-link" data-scroll-target="#a-word-on-notation">A word on notation</a></li>
+  <li><a href="#proof-by-induction" id="toc-proof-by-induction" class="nav-link" data-scroll-target="#proof-by-induction">Proof by Induction</a></li>
+  <li><a href="#proof-by-contradiction" id="toc-proof-by-contradiction" class="nav-link" data-scroll-target="#proof-by-contradiction">Proof by Contradiction</a></li>
   </ul></li>
+  <li><a href="#the-well-ordering-principle" id="toc-the-well-ordering-principle" class="nav-link" data-scroll-target="#the-well-ordering-principle">The Well-ordering Principle</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../appendix/math.html">Appendices</a></li><li class="breadcrumb-item"><a href="../appendix/math.html"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">A Primer on Logic</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">The Hitchhiker’s Guide to Graphs</h1>
-<p class="subtitle lead">Work in Progress</p>
+<h1 class="title"><span id="sec-math" class="quarto-section-identifier">Appendix A — A Primer on Logic</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Authors</div>
-    <div class="quarto-title-meta-contents">
-             <p>Alejandro Piad Morffis <a href="mailto:apiad@apiad.net" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
-             <p>Tivadar Danka <a href="mailto:tivadar.danka@telesto.ai" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
-          </div>
-  </div>
     
   
     
@@ -260,114 +218,35 @@ window.Quarto = {
 </header>
 
 
-
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1><p><img src="cover.jpg" title="The Hitchhiker's Guide to Graphs" class="quarto-cover-image img-fluid"></p>
-<p>What do the World Wide Web, your brain, the corpus of scientific knowledge accumulated by all of humanity, the entire list of people you’ve ever met, and the city you live in have in common?</p>
-<p>These are all very different types of things, from physical, to virtual, to social in nature, but they share a very important trait. They are all <em>networks</em> that establish <em>relationships</em> between some <em>entities</em>.</p>
-<p>The World Wide Web is a network of interconnected computational resources, data, software, and hardware infrastructure. Your brain is a network of interconnected neurons. The accumulated human knowledge is also a network of interconnected ideas, as all discoveries depend upon prior knowledge, and unlock new discoveries. The city you live in is also an interconnected network of roads and buildings. And the people you know is also network, as many of them know each other, or know someone that knows someone you know.</p>
-<p>As distinct as these things are, they all share common properties, by virtue of their networked nature. For example, you can think of how “close” two entities in this network are. The meaning of “distance” will be different if you’re considering physical networks (like roads) versus information networks (like published papers with citations to other papers) versus social networks (like your Facebook friends), but in all cases there is some sense in which some entities are “closer” together than others.</p>
-<p>What if we could study this abstract notion of <em>networks</em>, and understand their fundamental properties all at once?</p>
-<p>Welcome to graph theory.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<i class="fa-solid fa-heart" aria-label="heart"></i> Please consider supporting this book!
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><em>The Hitchhiker’s Guide to Graphs</em> is free to read online for everyone. You can support the development of the book by purchasing an <a href="https://store.apiad.net/l/graphs"><strong>Early Access Pass</strong></a>.</p>
-<p>An early access pass gives you:</p>
-<ul>
-<li>Early access to all drafts and future versions of the book.</li>
-<li>PDF and EPUB formats.</li>
-<li>Access to a private Discord for discussions about the book.</li>
-<li>And a special mention in the Acknowledgment section!</li>
-</ul>
-<p>Please consider getting the <a href="https://store.apiad.net/l/graphs"><strong>Early Access Pass</strong></a> and help us make this project come true.</p>
-</div>
-</div>
-</div>
-<section id="welcome-to-graph-theory" class="level2">
-<h2 class="anchored" data-anchor-id="welcome-to-graph-theory">Welcome to Graph Theory!</h2>
-<p>To study these seemingly disparate objects in the deepest possible way, we need an abstract concept that captures the fundamental notion of <em>things connected together</em>. In mathematics and computer science, they are called <strong>graphs</strong>. Graphs lie at the intersection of mathematics and computer science, and their study is one of the most fascinating branches of math, science, and human knowledge in general.</p>
-<p>This book is a journey through the theory and applications of graphs, synthesizing the practical and the mathematical points of view. In each chapter, we will look at one specific problem and see how it can be translated into the language of graphs. Then we will design a computational strategy – an <em>algorithm</em> – to solve that problem, or at least to attempt an approximation – because some problems are too hard to solve them completely. In doing so, we will also look at the underlying theory that makes our solution work.</p>
-<p>In the next few hundred pages, we will teach you almost everything we know about graphs, including their most intriguing mathematical properties, but also their most practical uses to solve real-world scientific, engineering, and social problems.</p>
-<p>Thus, when you’ve finished reading this book, you will have a solid understanding and familiarity of graphs, similar to the level expected from a Computer Science graduate in most curricula out there. (And perhaps deeper in some niche topics that are usually not taught in a CS major.)</p>
-</section>
-<section id="what-this-book-is-and-what-is-not" class="level2">
-<h2 class="anchored" data-anchor-id="what-this-book-is-and-what-is-not">What this book is (and what is not)</h2>
-<p>This book is not a textbook for a computer science course. There are plenty of wonderful books you can use if you’re learning (or teaching) about graphs at college. The most essential of these books is <em>Introduction to Algorithms</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, which I strongly recommend you check out if you want a more traditional – and complete – introduction to, well, algorithms in general and graphs in particular. It is the best selling book in the history of computer science.</p>
-<p>This book will cover both some of the simplest and some of the most advanced algorithms and concepts in graph theory, so there is no single one-semester course where all this content could be taught. Depending on your background and interests, this book will serve you in different ways.</p>
-<p>If you are a Computer Science student, think of this book as a complement to all you will see in college. As you learn about graphs in different subjects, you can come to this book and find algorithms, theorems, and proofs suitable to the level of depth you’re exploring.</p>
-<p>If you are a CS professor, this book can give you some cool ideas to introduce specific graph theorems and algorithms, along with clean and simple reference implementations. The explanations are also more intuitive than what you can find in more traditional textbooks. The book also features follow-up questions and problems that you can mix-and-match with your own to enrich your classes or exams.</p>
-<p>If you are a software developer, you can use this book to complement your knowledge about graphs, or fill any gaps you may have from your background studies. You can also use it as a quick reference to many of the most used graph algorithms, and as an inspiration to introduce graph theory into your current projects, perhaps improving some of your work.</p>
-<p>If you are a casual coder, this book will give you plenty of cool problems to play with and ideas to build some cool projects on your own. It may even give you the inspiration to go deeper into other computer science fields such as AI and optimization.</p>
-<p>And if you are none of the above, you can still enjoy this book. Some of the most beautiful ideas in math emerge naturally from graph theory. In any case, as I’ll try to convince you in this book, graphs are everywhere. Knowing more about them can only help you see the world around you with a new pair of glasses, and that’s always a good thing.</p>
-</section>
-<section id="prerequisites" class="level2">
-<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
-<p>This book assumes some basic knowledge of programming. If you have some experience with the Python programming language, you’ll find it easier to understand the code examples. However, even if you’ve never seen Python before, a minimal familiarity with any programming language will probably be more than enough, since Python is super intuitive – at least its small subset that we’ll use throughout this book. If you’re new to Python or need a refresher, check the <a href="appendix/python.html" class="quarto-xref"><span>Appendix B — A Primer on Python</span></a> for a quick intro to the basic features of the language that we’ll need in this book.</p>
-<p>If you have never, ever seen a programming language before, then the coding part of this book will be harder for you. However, you can still enjoy the intuitive and visual explanations and the mathematical proofs, and skip all the code. We will always present an informal explanation of any algorithms that we study. And if getting the most out of this book is the nudge you need to learn a little bit of coding, even better!</p>
-<p>Regarding math, you should be at least comfortable with high-school level, but no college-level math is necessary. Specially, no advanced calculus or algebra appears anywhere in this book. The majority of the proofs use only basic logic, and we’ll introduce any mathematical tool we need – such as strong induction or <em>reductio ad absurdum</em> – in the <a href="appendix/math.html" class="quarto-xref"><span>Appendix A — A Primer on Logic</span></a>. That being said, some minimal previous exposure to discrete math won’t hurt you.</p>
-</section>
-<section id="how-to-read-this-book" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-read-this-book">How to read this book</h2>
-<p>This book is divided into several parts that are more or less independent. Except for <a href="intro.html" class="quarto-xref"><span>1&nbsp; Introduction</span></a>, all other chapters can be read roughly in any order, although the first few chapters introduce the most important algorithms. In some cases a later chapter may reference a previous result or algorithm, but in those cases you’ll find an explicit link to any required content.</p>
-<p>Thus, unless you’ve already familiar with the basic notations and concepts in graph theory, I recommend you read the <a href="intro.html" class="quarto-xref"><span>1&nbsp; Introduction</span></a> first. Afterwards, you’re free to hop around and take any chapter that suits your interest.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Actually, we can model the problem of reading this book as a graph problem, where each chapter is a node, and the edges indicate dependencies. In this graph, you can quickly find what is the optimal way to read the book if you are only interested in some chapters, so that you are guarantee to cover all pre-requisites. We will solve this very problem in <span class="quarto-unresolved-ref">?sec-toposort</span>.</p>
+<p>This is a very superficial introduction to some of the most important ideas in logic that support the proof techniques we’ll use throughout the book. This appendix does not pretend to be a full introduction to either branch of maths, but a quick refresher for those who are already at least somewhat familiar with these notions.</p>
 </div>
 </div>
-<p>Each part deals with solving problems of a similar nature, and is divided into chapters that grow in complexity. That means, say, the last chapter of Part 2 may be more advanced than the first chapter of Part 4.</p>
-<p>Each chapter is dedicated to solving one specific problem, introducing ideas and algorithms that emerge from our journey towards the solution. In each chapter, we will</p>
-<ul>
-<li>understand and mathematically formulate the problem,</li>
-<li>build intuitions to channel our ideas towards the solution,</li>
-<li>and discover the solution in the form of a theorem or an algorithm. If it’s an algorithm, we’ll build a reference implementation in Python as well.</li>
-</ul>
-<p>Intermixed between all of this, we’ll drop some theoretical sections that delve into the underlying math and provide some formal proofs. These sections will be clearly marked and are absolutely optional, so you are free to skip them, at least on a first read.</p>
-<p>And to keep things a bit on the fun side, instead of simply tackling dry, boring, abstract graph problems, we will frame our discussions in the context of the fictional city of “Graphtopia”, where all citizens are crazy about graphs and everything is done using graph theory.</p>
-<p>In summary, you can read this book top-to-bottom, or you can skim and jump around as much as you want.</p>
+<section id="sets" class="level2">
+<h2 class="anchored" data-anchor-id="sets">Sets</h2>
 </section>
-<section id="complementary-source-code" class="level2">
-<h2 class="anchored" data-anchor-id="complementary-source-code">Complementary source code</h2>
-<p>This book comes with by a simple Python library called <code>hitchhikers-graphs</code> that contains all the code we’ll write and use throughout the book. You will find a short reference for this library in the <a href="appendix/core.html" class="quarto-xref"><span>Appendix C — The hitchhiker-graphs Python Package</span></a>.</p>
-<p>The library itself is open-source and can serve as a starting point for other projects, but it is not designed to be a production-ready solution for solving graph problems. It is merely an educational device, designed to help you truly understand graph theory. For this reason, all implementations are purposefully oversimplified and more care is given to clarity and simplicity than performance.</p>
-<p>That being said, you’re free to download, modify, and use it as you see fit.</p>
+<section id="logical-proofs" class="level2">
+<h2 class="anchored" data-anchor-id="logical-proofs">Logical proofs</h2>
+<section id="proof-by-induction" class="level3">
+<h3 class="anchored" data-anchor-id="proof-by-induction">Proof by Induction</h3>
 </section>
-<section id="a-word-on-notation" class="level2">
-<h2 class="anchored" data-anchor-id="a-word-on-notation">A word on notation</h2>
-<p>This book follows the standard mathematical notation for graphs that you can find anywhere, and we will learn that notation in due time, incorporating new concepts as we need them.</p>
-<p>Most of the math- and code-heavy parts are optional and clearly marked so you can decide whether to skip them or dive into them. This is how you identify them:</p>
-<ul>
-<li><span class="math inline">\(\small(\Sigma)\)</span> All sections or blocks marked with this symbol are math-heavy, and usually include proofs for theorems just discussed in the previous sections.</li>
-<li><span class="math inline">\(\small[\lambda]\)</span> All sections or block marked with this symbol are code-heavy, and most often include a Python implementation of an algorithm previously discussed.</li>
-</ul>
-<p>For emphasis: although you can definitely skip these sections and still enjoy and get a lot out of this book, we strongly encourage you to, at least on a second read, give them a try. We’ve made our best to be as clear and intuitive as possible even in these more advanced sections.</p>
+<section id="proof-by-contradiction" class="level3">
+<h3 class="anchored" data-anchor-id="proof-by-contradiction">Proof by Contradiction</h3>
+</section>
+</section>
+<section id="the-well-ordering-principle" class="level2">
+<h2 class="anchored" data-anchor-id="the-well-ordering-principle">The Well-ordering Principle</h2>
 
 
-</section>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p><a href="https://mitpress.mit.edu/9780262367509/introduction-to-algorithms/">https://mitpress.mit.edu/9780262367509/introduction-to-algorithms/</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->
@@ -760,10 +639,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../05-drawing/intro.html" class="pagination-link" aria-label="Drawing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Drawing</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../appendix/python.html" class="pagination-link" aria-label="A Primer on Python">
+        <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">A Primer on Python</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

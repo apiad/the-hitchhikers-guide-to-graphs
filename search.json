@@ -34,7 +34,7 @@
     "href": "index.html#prerequisites",
     "title": "The Hitchhiker’s Guide to Graphs",
     "section": "Prerequisites",
-    "text": "Prerequisites\nThis book assumes some basic knowledge of programming. If you have some experience with the Python programming language, you’ll find it easier to understand the code examples. However, even if you’ve never seen Python before, a minimal familiarity with any programming language will probably be more than enough, since Python is super intuitive – at least its small subset that we’ll use throughout this book. If you’re new to Python or need a refresher, check the Appendix B — A Primer on Python for a quick intro to the basic features of the language that we’ll need in this book.\nIf you have never, ever seen a programming language before, then the coding part of this book will be harder for you. However, you can still enjoy the intuitive and visual explanations and the mathematical proofs, and skip all the code. We will always present an informal explanation of any algorithms that we study. And if getting the most out of this book is the nudge you need to learn a little bit of coding, even better!\nRegarding math, you should be at least comfortable with high-school level, but no college-level math is necessary. Specially, no advanced calculus or algebra appears anywhere in this book. The majority of the proofs use only basic logic, and we’ll introduce any mathematical tool we need – such as strong induction or reductio ad absurdum – in the Appendix A — A Primer on Logic and Discrete Math. That being said, some minimal previous exposure to discrete math won’t hurt you.",
+    "text": "Prerequisites\nThis book assumes some basic knowledge of programming. If you have some experience with the Python programming language, you’ll find it easier to understand the code examples. However, even if you’ve never seen Python before, a minimal familiarity with any programming language will probably be more than enough, since Python is super intuitive – at least its small subset that we’ll use throughout this book. If you’re new to Python or need a refresher, check the Appendix B — A Primer on Python for a quick intro to the basic features of the language that we’ll need in this book.\nIf you have never, ever seen a programming language before, then the coding part of this book will be harder for you. However, you can still enjoy the intuitive and visual explanations and the mathematical proofs, and skip all the code. We will always present an informal explanation of any algorithms that we study. And if getting the most out of this book is the nudge you need to learn a little bit of coding, even better!\nRegarding math, you should be at least comfortable with high-school level, but no college-level math is necessary. Specially, no advanced calculus or algebra appears anywhere in this book. The majority of the proofs use only basic logic, and we’ll introduce any mathematical tool we need – such as strong induction or reductio ad absurdum – in the Appendix A — A Primer on Logic. That being said, some minimal previous exposure to discrete math won’t hurt you.",
     "crumbs": [
       "Preface"
     ]
@@ -44,7 +44,7 @@
     "href": "index.html#how-to-read-this-book",
     "title": "The Hitchhiker’s Guide to Graphs",
     "section": "How to read this book",
-    "text": "How to read this book\nThis book is divided into several parts that are more or less independent. Except for Chapter 1  Introduction, all other chapters can be read roughly in any order, although the first few chapters introduce the most important algorithms. In some rare cases a later chapter may reference a previous result or algorithm, but in those cases you’ll find an explicit link to any required content. Thus, unless you’ve already familiar with the basic notations and concepts in graph theory, I recommend you read Chapter 1  Introduction first. Afterwards, you’re free to hop around and take any chapter that suits your interest.\nEach part deals with solving problems of a similar nature, and is divided into chapters that grow in complexity. That means, say, the last chapter of Part 2 may be more advanced than the first chapter of Part 4.\nEach chapter is dedicated to solving one specific problem, introducing ideas and algorithms that emerge from our journey towards the solution. In each chapter, we will\n\nunderstand and mathematically formulate the problem,\nbuild intuitions to channel our ideas towards the solution,\nand discover the solution in the form of a theorem or an algorithm. If it’s an algorithm, we’ll build a reference implementation in Python as well.\n\nIntermixed between all of this, we’ll drop some theoretical sections that delve into the underlying math and provide some formal proofs. These sections will be clearly marked and are absolutely optional, so you are free to skip them, at least on a first read.\nIn summary, you can read this book top-to-bottom, or you can skim and jump around as much as you want.",
+    "text": "How to read this book\nThis book is divided into several parts that are more or less independent. Except for 1  Introduction, all other chapters can be read roughly in any order, although the first few chapters introduce the most important algorithms. In some cases a later chapter may reference a previous result or algorithm, but in those cases you’ll find an explicit link to any required content.\nThus, unless you’ve already familiar with the basic notations and concepts in graph theory, I recommend you read the 1  Introduction first. Afterwards, you’re free to hop around and take any chapter that suits your interest.\n\n\n\n\n\n\nNote\n\n\n\nActually, we can model the problem of reading this book as a graph problem, where each chapter is a node, and the edges indicate dependencies. In this graph, you can quickly find what is the optimal way to read the book if you are only interested in some chapters, so that you are guarantee to cover all pre-requisites. We will solve this very problem in ?sec-toposort.\n\n\nEach part deals with solving problems of a similar nature, and is divided into chapters that grow in complexity. That means, say, the last chapter of Part 2 may be more advanced than the first chapter of Part 4.\nEach chapter is dedicated to solving one specific problem, introducing ideas and algorithms that emerge from our journey towards the solution. In each chapter, we will\n\nunderstand and mathematically formulate the problem,\nbuild intuitions to channel our ideas towards the solution,\nand discover the solution in the form of a theorem or an algorithm. If it’s an algorithm, we’ll build a reference implementation in Python as well.\n\nIntermixed between all of this, we’ll drop some theoretical sections that delve into the underlying math and provide some formal proofs. These sections will be clearly marked and are absolutely optional, so you are free to skip them, at least on a first read.\nAnd to keep things a bit on the fun side, instead of simply tackling dry, boring, abstract graph problems, we will frame our discussions in the context of the fictional city of “Graphtopia”, where all citizens are crazy about graphs and everything is done using graph theory.\nIn summary, you can read this book top-to-bottom, or you can skim and jump around as much as you want.",
     "crumbs": [
       "Preface"
     ]
@@ -94,7 +94,7 @@
     "href": "intro.html#what-is-a-graph",
     "title": "1  Introduction",
     "section": "",
-    "text": "(a) A flat layout\n\n\n\n\n\n\n\n\n\n\n\n(b) Simulating a “3d” layout\n\n\n\n\n\n\n\nFigure 1.2: Two different representations of the same graph.\n\n\n\n\n\n\n\n\n\n\nIntersecting edges\n\n\n\nThe first representation on Figure 1.2 (a) is drawn without no edges intersecting each other, while Figure 1.2 (b) is not. Can we draw any graph without intersecting edges? This simple question leads us to the beautiful domain of planar graphs. We’ll deal this with much later. Let’s see first what graphs are!\n\n\n\nFormalizing graphs \\(\\small(\\Sigma)\\)\n\n\n\n\n\n\nOptional math sections\n\n\n\nSections with a \\(\\small(\\Sigma)\\) symbol are mathematical definitions or proofs that you can safely ignore if you don’t care about the formalization.\n\n\nWe are ready to use the tools of logic and set theory to formally define the concept of a graph in the language of mathematics.\n\n\n\n\n\n\nDefinition 1.1 (Graphs.) A graph \\(G = (V, E)\\) is a collection of two sets, a set of vertices \\(V\\), and a set of edges \\(E \\subseteq V \\times V\\).\n\n\n\n(We’ll often use the notation \\(V(G)\\) and \\(E(G)\\) for clarity to indicate the source graph \\(G\\). This is useful when juggling with multiple graphs and subgraphs.)\nLet’s unpack this definition. Take a look at Figure 1.1 one more time.\nIn the language of mathematics, this graph is defined by \\(G = (V, E)\\), where the vertices are defined by: \\[V = \\{ a, b, c, d, e \\}\\] and the edges are defined by: \\[E = \\{ (a, e), (a, b), (b, e), (b, c), (b, d), (c, d), (c, e), (d, e) \\}\\]\nTo prevent the unnecessary proliferation of commas and parentheses, we’ll often denote the edge \\((u, v)\\) with \\(uv\\). You can thank us later.\nThe most important characteristic of a vertex is its degree, which basically measures the number of edges between this vertex and any other in the graph. The degree of a vertex \\(v\\) is denoted by \\(d(v)\\). Thus, in our example, \\(d(a) = 2\\), because only the edges \\(ab\\) and \\(ae\\) connect \\(a\\) to another vertex. In contrast, the remaining vertices have degree \\(3\\).\nWe call the set of vertices adjacent to an arbitrary vertex \\(v\\) its neighborhood, denoted by \\(N(v)\\). Thus, the neighborhood of vertex \\(c\\) is the set of vertices \\(\\{ b, d, e \\}\\).\nBy definition, the degree of a vertex is the size of its neighborhood; that is, \\(d(v) = |N(v)|\\).\n\n\nProgramming with graphs \\(\\small[\\lambda]\\)\n\n\n\n\n\n\nOptional coding sections\n\n\n\nSections with a \\(\\small[\\lambda]\\) symbol are related to coding, and you can safely ignore them if you don’t care about the programming part.\n\n\nComputationally speaking, you can think of a graph as an abstract class (or an interface in languages that support that notion) that provides two key operations: listing all nodes, and determining if two nodes are connected.\n\nclass Graph:\n    def nodes(self):\n        raise NotImplemented\n\n    def adjacent(self, x, y) -&gt; bool:\n        raise NotImplemented\n\n    # ... rest of class Graph\n\n\n\n\n\n\n See on Github\n\n\n\n\n\n\n\nYou may be wondering, what if we want to modify the graph? While that makes total sense in some applications, since we want to use this graph abstraction as flexibly as possible. (E.g., as a read only interface to some external resource, such as the graph of your Twitter followers.) We don’t want to constrain ourselves to graphs that are stored in local memory or that can be modified. In any case, specific local implementations of this interface will certainly have methods to add or remove nodes or edges\nJust from the previous definitions, we can already start implementing general methods in graphs, whatever their underlying implementation might be. For example, we can already find the neighborhood and the degree of any given vertex. (Albeit in an extremely slow manner.)\n\n\n# class Graph(...)\n#   ...\n\n    def neighborhood(self, x):\n        for y in self.nodes():\n            if self.adjacent(x, y):\n                yield y\n\n    def degree(self, x) -&gt; int:\n        return len(list(self.neighborhood(x)))\n\n#   ...\n\n\n\n\n\n\n See on Github\n\n\n\n\n\n\n\nThis is admittedly the worst way to compute neighborhoods, but hey, at least it works. And it’s simple! “Simple first, optimized later” is our mantra for now.\nIn cases where we have nothing better, this method will do. We will see shortly that we can easily provide more efficient implementations for specific graph representations.\n\nComputational representations of graphs\nThere are several computational representations of graphs, each with their advantages and limitations.\nThe most straightforward representation is called the adjacency list method, which references all neighbors of a given node in a structure associated to that node, such as an array. In Python, we can store a dictionary of nodes mapping to a set of their adjacent nodes. We use a set to store the adjacency information so we can answer as fast as possible whether two nodes are adjacent.\n\n\nclass AdjGraph(Graph):\n    def __init__(self, *nodes) -&gt; None:\n        super().__init__()\n        self._links = {n: set() for n in nodes}\n\n    def nodes(self):\n        return iter(self._links)\n\n    def adjacent(self, x, y) -&gt; bool:\n        return y in self._links[x]\n\n    def neighborhood(self, x):\n        return iter(self._links[x])\n\n    def degree(self, x) -&gt; int:\n        return len(self._links[x])\n\n    def __len__(self):\n        return len(self._links)\n\n    # ... rest of AdjGraph\n\n\n\n\n\n\n See on Github\n\n\n\n\n\n\n\n\nNote that this implementation allows computing the neighborhood much more directly. It also allows us to dynamically modify the graph by adding vertices and edges.\n\n# class AdjGraph(...)\n#   ...\n\n    def add(self, *nodes):\n        for n in nodes:\n            if n in self._links:\n                return False\n\n            self._links[n] = set()\n\n        return self\n\n    def link(self, x, y):\n        if x == y:\n            raise ValueError(\"Self-links not allowed.\")\n\n        self.add(x)\n        self.add(y)\n        self._links[x].add(y)\n        self._links[y].add(x)\n\n        return self\n\n#   ...\n\n\n\n\n\n\n See on Github\n\n\n\n\n\n\n\nNotice that we are quite flexible in our modification methods, i.e., we don’t complain if a vertex is already added, and we take care of adding new vertices in link if necessary. This makes it way easier to use our implementation to dynamically construct a graph without taking too much hassle verifying that we aren’t adding duplicated things, paying a minimal overhead in performance.\nHere is how we can use this class to generate our first example graph:\nfrom graphs import AdjGraph\n\nexample_graph = (\n    AdjGraph(*\"abcde\")\n    .link(\"a\",\"b\")\n    .link(\"b\",\"c\")\n    .link(\"c\",\"d\")\n    .link(\"d\",\"a\")\n    .link(\"b\",\"e\")\n    .link(\"c\",\"e\")\n    .link(\"b\",\"d\")\n)\n\n\n\n\n\n\nA bit of syntactic sugar\n\n\n\nIf you noticed that return self at the end of the link method, you may be wondering why is that line there. The reason is so can chain successive calls to link to quickly create custom graphs, like in the previous example.\nThis pattern is often called a “fluent interface” and is very common in object-oriented design. It is not strictly necessary, but it’s a nice little syntactic sugar. We can treat ourselves sometimes, right?\nThere are a few other similar methods in AdjGraph that let you quickly build a graph, adding paths, cycles, and other common structures with a single function call, and using method chaining to combine multiple operations in a single line. We will use and explain them when we need them.\n\n\nAnother commonly used representation is the adjacency matrix method, in which we store a separate structure (like a bidimensional array) that explicitely marks which pairs of nodes are related. The main advantage of this representation is that there is a single place to query or modify for adjacency information. The main disadvantages are the extra wasted space, as the adjacency matrix contains a lot of zeros. (Unless we use a sparse matrix. But that’s for another lesson.) Another disadvantage is the added complexity in computing the neighborhood of a given node. This can be solved with using an extra adjacency list, which would nullify the main advantage of the adjacency matrix implementation.\nFor those reasons, we don’t really gain much with adjacency matrices, and thus we will mostly build on the basic AdjGraph implementation throughout the book. It provides a nice balance between flexibility and performance, although is neither the most flexible nor the most performant implementation possible. When we need to, we will devise other more appropriate implementations.",
+    "text": "(a) A flat layout\n\n\n\n\n\n\n\n\n\n\n\n(b) Simulating a “3d” layout\n\n\n\n\n\n\n\nFigure 1.2: Two different representations of the same graph.\n\n\n\n\n\n\n\n\n\n\nIntersecting edges\n\n\n\nThe first representation on Figure 1.2 (a) is drawn without no edges intersecting each other, while Figure 1.2 (b) is not. Can we draw any graph without intersecting edges? This simple question leads us to the beautiful domain of planar graphs. We’ll deal this with much later. Let’s see first what graphs are!\n\n\n\nFormalizing graphs \\(\\small(\\Sigma)\\)\n\n\n\n\n\n\nOptional math sections\n\n\n\nSections with a \\(\\small(\\Sigma)\\) symbol are mathematical definitions or proofs that you can safely ignore if you don’t care about the formalization.\n\n\nWe are ready to use the tools of logic and set theory to formally define the concept of a graph in the language of mathematics.\n\n\n\n\n\n\nDefinition 1.1 (Graphs.) A graph \\(G = (V, E)\\) is a collection of two sets, a set of vertices \\(V\\), and a set of edges \\(E \\subseteq V \\times V\\).\n\n\n\n(We’ll often use the notation \\(V(G)\\) and \\(E(G)\\) for clarity to indicate the source graph \\(G\\). This is useful when juggling with multiple graphs and subgraphs.)\nLet’s unpack this definition. Take a look at Figure 1.1 one more time.\nIn the language of mathematics, this graph is defined by \\(G = (V, E)\\), where the vertices are defined by: \\[V = \\{ a, b, c, d, e \\}\\] and the edges are defined by: \\[E = \\{ (a, e), (a, b), (b, e), (b, c), (b, d), (c, d), (c, e), (d, e) \\}\\]\nTo prevent the unnecessary proliferation of commas and parentheses, we’ll often denote the edge \\((u, v)\\) with \\(uv\\). You can thank us later.\nThe most important characteristic of a vertex is its degree, which basically measures the number of edges between this vertex and any other in the graph. The degree of a vertex \\(v\\) is denoted by \\(d(v)\\). Thus, in our example, \\(d(a) = 2\\), because only the edges \\(ab\\) and \\(ae\\) connect \\(a\\) to another vertex. In contrast, the remaining vertices have degree \\(3\\).\nWe call the set of vertices adjacent to an arbitrary vertex \\(v\\) its neighborhood, denoted by \\(N(v)\\). Thus, the neighborhood of vertex \\(c\\) is the set of vertices \\(\\{ b, d, e \\}\\).\nBy definition, the degree of a vertex is the size of its neighborhood; that is, \\(d(v) = |N(v)|\\).\n\n\nProgramming with graphs \\(\\small[\\lambda]\\)\n\n\n\n\n\n\nOptional coding sections\n\n\n\nSections with a \\(\\small[\\lambda]\\) symbol are related to coding, and you can safely ignore them if you don’t care about the programming part.\n\n\nComputationally speaking, you can think of a graph as an abstract class (or an interface in languages that support that notion) that provides two key operations: listing all nodes, and determining if two nodes are connected.\n\nclass Graph:\n    def nodes(self):\n        raise NotImplemented\n\n    def adjacent(self, x, y) -&gt; bool:\n        raise NotImplemented\n\n    # ... rest of class Graph\n\n\n\n\n\n\n See on Github\n\n\n\n\n\n\n\nYou may be wondering, what if we want to modify the graph? While that makes total sense in some applications, since we want to use this graph abstraction as flexibly as possible. (E.g., as a read only interface to some external resource, such as the graph of your Twitter followers.) We don’t want to constrain ourselves to graphs that are stored in local memory or that can be modified. In any case, specific local implementations of this interface will certainly have methods to add or remove nodes or edges\nJust from the previous definitions, we can already start implementing general methods in graphs, whatever their underlying implementation might be. For example, we can already find the neighborhood and the degree of any given vertex. (Albeit in an extremely slow manner.)\n\n\n# class Graph(...)\n#   ...\n\n    def neighborhood(self, x):\n        for y in self.nodes():\n            if self.adjacent(x, y):\n                yield y\n\n    def degree(self, x) -&gt; int:\n        return len(list(self.neighborhood(x)))\n\n#   ...\n\n\n\n\n\n\n See on Github\n\n\n\n\n\n\n\n\n\n\n\n\n\nOn Python iterators and generators\n\n\n\nYou may have noticed we used the yield keyword in the neighborhood method up there. In Python, this is the syntax used to define generators.\nIn short, generators allow us to write iterative code without storing intermediate values in a list, instead “returning” each processed node or edge as we find it. The details are quite technical, but you don’t need to understand the full machinery to use them effectively.\nIf this is your first encounter with generators and iterators, check the Appendix B.4 for a quick reference.\n\n\nThis is admittedly the worst way to compute neighborhoods, but hey, at least it works. And it’s simple! “Simple first, optimized later” is our mantra for now.\nIn cases where we have nothing better, this method will do. We will see shortly that we can easily provide more efficient implementations for specific graph representations.\n\nComputational representations of graphs\nThere are several computational representations of graphs, each with their advantages and limitations.\nThe most straightforward representation is called the adjacency list method, which references all neighbors of a given node in a structure associated to that node, such as an array. In Python, we can store a dictionary of nodes mapping to a set of their adjacent nodes. We use a set to store the adjacency information so we can answer as fast as possible whether two nodes are adjacent.\n\n\nclass AdjGraph(Graph):\n    def __init__(self, *nodes) -&gt; None:\n        super().__init__()\n        self._links = {n: set() for n in nodes}\n\n    def nodes(self):\n        return iter(self._links)\n\n    def adjacent(self, x, y) -&gt; bool:\n        return y in self._links[x]\n\n    def neighborhood(self, x):\n        return iter(self._links[x])\n\n    def degree(self, x) -&gt; int:\n        return len(self._links[x])\n\n    def __len__(self):\n        return len(self._links)\n\n    # ... rest of AdjGraph\n\n\n\n\n\n\n See on Github\n\n\n\n\n\n\n\n\nNote that this implementation allows computing the neighborhood much more directly. It also allows us to dynamically modify the graph by adding vertices and edges.\n\n# class AdjGraph(...)\n#   ...\n\n    def add(self, *nodes):\n        for n in nodes:\n            if n in self._links:\n                return False\n\n            self._links[n] = set()\n\n        return self\n\n    def link(self, x, y):\n        if x == y:\n            raise ValueError(\"Self-links not allowed.\")\n\n        self.add(x)\n        self.add(y)\n        self._links[x].add(y)\n        self._links[y].add(x)\n\n        return self\n\n#   ...\n\n\n\n\n\n\n See on Github\n\n\n\n\n\n\n\nNotice that we are quite flexible in our modification methods, i.e., we don’t complain if a vertex is already added, and we take care of adding new vertices in link if necessary. This makes it way easier to use our implementation to dynamically construct a graph without taking too much hassle verifying that we aren’t adding duplicated things, paying a minimal overhead in performance.\nHere is how we can use this class to generate our first example graph:\nfrom graphs import AdjGraph\n\nexample_graph = (\n    AdjGraph(*\"abcde\")\n    .link(\"a\",\"b\")\n    .link(\"b\",\"c\")\n    .link(\"c\",\"d\")\n    .link(\"d\",\"a\")\n    .link(\"b\",\"e\")\n    .link(\"c\",\"e\")\n    .link(\"b\",\"d\")\n)\n\n\n\n\n\n\nA bit of syntactic sugar\n\n\n\nIf you noticed that return self at the end of the link method, you may be wondering why is that line there. The reason is so can chain successive calls to link to quickly create custom graphs, like in the previous example.\nThis pattern is often called a “fluent interface” and is very common in object-oriented design. It is not strictly necessary, but it’s a nice little syntactic sugar. We can treat ourselves sometimes, right?\nThere are a few other similar methods in AdjGraph that let you quickly build a graph, adding paths, cycles, and other common structures with a single function call, and using method chaining to combine multiple operations in a single line. We will use and explain them when we need them.\n\n\nAnother commonly used representation is the adjacency matrix method, in which we store a separate structure (like a bidimensional array) that explicitely marks which pairs of nodes are related. The main advantage of this representation is that there is a single place to query or modify for adjacency information. The main disadvantages are the extra wasted space, as the adjacency matrix contains a lot of zeros. (Unless we use a sparse matrix. But that’s for another lesson.) Another disadvantage is the added complexity in computing the neighborhood of a given node. This can be solved with using an extra adjacency list, which would nullify the main advantage of the adjacency matrix implementation.\nFor those reasons, we don’t really gain much with adjacency matrices, and thus we will mostly build on the basic AdjGraph implementation throughout the book. It provides a nice balance between flexibility and performance, although is neither the most flexible nor the most performant implementation possible. When we need to, we will devise other more appropriate implementations.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -140,8 +140,8 @@
     ]
   },
   {
-    "objectID": "navigating.html",
-    "href": "navigating.html",
+    "objectID": "01-navigating/intro.html",
+    "href": "01-navigating/intro.html",
     "title": "Navigating",
     "section": "",
     "text": "Work in Progress",
@@ -150,8 +150,8 @@
     ]
   },
   {
-    "objectID": "navigating.html#work-in-progress",
-    "href": "navigating.html#work-in-progress",
+    "objectID": "01-navigating/intro.html#work-in-progress",
+    "href": "01-navigating/intro.html#work-in-progress",
     "title": "Navigating",
     "section": "",
     "text": "Interested in reading more?\n\n\n\nThis part of the book is still under construction.\nHowever, if you are really interested in it, you can get a sneak peek by supporting this book with an Early Access Pass.\nAn early access pass gives you:\n\nEarly access to all drafts and future versions of the book (including incomplete parts like this one).\nPDF and EPUB formats.\nAccess to a private Discord for discussions about the book.\nAnd a special mention in the Acknowledgment section!\n\nPlease consider getting the Early Access Pass and help us make this project come true.",
@@ -160,8 +160,8 @@
     ]
   },
   {
-    "objectID": "planning.html",
-    "href": "planning.html",
+    "objectID": "02-planning/intro.html",
+    "href": "02-planning/intro.html",
     "title": "Planning",
     "section": "",
     "text": "Work in Progress",
@@ -170,8 +170,8 @@
     ]
   },
   {
-    "objectID": "planning.html#work-in-progress",
-    "href": "planning.html#work-in-progress",
+    "objectID": "02-planning/intro.html#work-in-progress",
+    "href": "02-planning/intro.html#work-in-progress",
     "title": "Planning",
     "section": "",
     "text": "Interested in reading more?\n\n\n\nThis part of the book is still under construction.\nHowever, if you are really interested in it, you can get a sneak peek by supporting this book with an Early Access Pass.\nAn early access pass gives you:\n\nEarly access to all drafts and future versions of the book (including incomplete parts like this one).\nPDF and EPUB formats.\nAccess to a private Discord for discussions about the book.\nAnd a special mention in the Acknowledgment section!\n\nPlease consider getting the Early Access Pass and help us make this project come true.",
@@ -180,8 +180,8 @@
     ]
   },
   {
-    "objectID": "socializing.html",
-    "href": "socializing.html",
+    "objectID": "03-socializing/intro.html",
+    "href": "03-socializing/intro.html",
     "title": "Socializing",
     "section": "",
     "text": "Work in Progress",
@@ -190,8 +190,8 @@
     ]
   },
   {
-    "objectID": "socializing.html#work-in-progress",
-    "href": "socializing.html#work-in-progress",
+    "objectID": "03-socializing/intro.html#work-in-progress",
+    "href": "03-socializing/intro.html#work-in-progress",
     "title": "Socializing",
     "section": "",
     "text": "Interested in reading more?\n\n\n\nThis part of the book is still under construction.\nHowever, if you are really interested in it, you can get a sneak peek by supporting this book with an Early Access Pass.\nAn early access pass gives you:\n\nEarly access to all drafts and future versions of the book (including incomplete parts like this one).\nPDF and EPUB formats.\nAccess to a private Discord for discussions about the book.\nAnd a special mention in the Acknowledgment section!\n\nPlease consider getting the Early Access Pass and help us make this project come true.",
@@ -200,8 +200,8 @@
     ]
   },
   {
-    "objectID": "reasoning.html",
-    "href": "reasoning.html",
+    "objectID": "04-reasoning/intro.html",
+    "href": "04-reasoning/intro.html",
     "title": "Reasoning",
     "section": "",
     "text": "Work in Progress",
@@ -210,8 +210,8 @@
     ]
   },
   {
-    "objectID": "reasoning.html#work-in-progress",
-    "href": "reasoning.html#work-in-progress",
+    "objectID": "04-reasoning/intro.html#work-in-progress",
+    "href": "04-reasoning/intro.html#work-in-progress",
     "title": "Reasoning",
     "section": "",
     "text": "Interested in reading more?\n\n\n\nThis part of the book is still under construction.\nHowever, if you are really interested in it, you can get a sneak peek by supporting this book with an Early Access Pass.\nAn early access pass gives you:\n\nEarly access to all drafts and future versions of the book (including incomplete parts like this one).\nPDF and EPUB formats.\nAccess to a private Discord for discussions about the book.\nAnd a special mention in the Acknowledgment section!\n\nPlease consider getting the Early Access Pass and help us make this project come true.",
@@ -220,8 +220,8 @@
     ]
   },
   {
-    "objectID": "drawing.html",
-    "href": "drawing.html",
+    "objectID": "05-drawing/intro.html",
+    "href": "05-drawing/intro.html",
     "title": "Drawing",
     "section": "",
     "text": "Work in Progress",
@@ -230,8 +230,8 @@
     ]
   },
   {
-    "objectID": "drawing.html#work-in-progress",
-    "href": "drawing.html#work-in-progress",
+    "objectID": "05-drawing/intro.html#work-in-progress",
+    "href": "05-drawing/intro.html#work-in-progress",
     "title": "Drawing",
     "section": "",
     "text": "Interested in reading more?\n\n\n\nThis part of the book is still under construction.\nHowever, if you are really interested in it, you can get a sneak peek by supporting this book with an Early Access Pass.\nAn early access pass gives you:\n\nEarly access to all drafts and future versions of the book (including incomplete parts like this one).\nPDF and EPUB formats.\nAccess to a private Discord for discussions about the book.\nAnd a special mention in the Acknowledgment section!\n\nPlease consider getting the Early Access Pass and help us make this project come true.",
@@ -240,41 +240,41 @@
     ]
   },
   {
-    "objectID": "appendix-math.html",
-    "href": "appendix-math.html",
-    "title": "Appendix A — A Primer on Logic and Discrete Math",
+    "objectID": "appendix/math.html",
+    "href": "appendix/math.html",
+    "title": "Appendix A — A Primer on Logic",
     "section": "",
     "text": "Sets",
     "crumbs": [
       "Appendices",
-      "<span class='chapter-number'>A</span>  <span class='chapter-title'>A Primer on Logic and Discrete Math</span>"
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>A Primer on Logic</span>"
     ]
   },
   {
-    "objectID": "appendix-math.html#logical-proofs",
-    "href": "appendix-math.html#logical-proofs",
-    "title": "Appendix A — A Primer on Logic and Discrete Math",
+    "objectID": "appendix/math.html#logical-proofs",
+    "href": "appendix/math.html#logical-proofs",
+    "title": "Appendix A — A Primer on Logic",
     "section": "Logical proofs",
     "text": "Logical proofs\n\nProof by Induction\n\n\nProof by Contradiction",
     "crumbs": [
       "Appendices",
-      "<span class='chapter-number'>A</span>  <span class='chapter-title'>A Primer on Logic and Discrete Math</span>"
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>A Primer on Logic</span>"
     ]
   },
   {
-    "objectID": "appendix-math.html#the-well-ordering-principle",
-    "href": "appendix-math.html#the-well-ordering-principle",
-    "title": "Appendix A — A Primer on Logic and Discrete Math",
+    "objectID": "appendix/math.html#the-well-ordering-principle",
+    "href": "appendix/math.html#the-well-ordering-principle",
+    "title": "Appendix A — A Primer on Logic",
     "section": "The Well-ordering Principle",
     "text": "The Well-ordering Principle",
     "crumbs": [
       "Appendices",
-      "<span class='chapter-number'>A</span>  <span class='chapter-title'>A Primer on Logic and Discrete Math</span>"
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>A Primer on Logic</span>"
     ]
   },
   {
-    "objectID": "appendix-python.html",
-    "href": "appendix-python.html",
+    "objectID": "appendix/python.html",
+    "href": "appendix/python.html",
     "title": "Appendix B — A Primer on Python",
     "section": "",
     "text": "Basic syntax",
@@ -284,8 +284,8 @@
     ]
   },
   {
-    "objectID": "appendix-python.html#functions",
-    "href": "appendix-python.html#functions",
+    "objectID": "appendix/python.html#functions",
+    "href": "appendix/python.html#functions",
     "title": "Appendix B — A Primer on Python",
     "section": "Functions",
     "text": "Functions",
@@ -295,8 +295,8 @@
     ]
   },
   {
-    "objectID": "appendix-python.html#classes",
-    "href": "appendix-python.html#classes",
+    "objectID": "appendix/python.html#classes",
+    "href": "appendix/python.html#classes",
     "title": "Appendix B — A Primer on Python",
     "section": "Classes",
     "text": "Classes",
@@ -306,8 +306,8 @@
     ]
   },
   {
-    "objectID": "appendix-python.html#generators-and-iterators",
-    "href": "appendix-python.html#generators-and-iterators",
+    "objectID": "appendix/python.html#sec-python-iterators",
+    "href": "appendix/python.html#sec-python-iterators",
     "title": "Appendix B — A Primer on Python",
     "section": "Generators and Iterators",
     "text": "Generators and Iterators",
@@ -317,8 +317,8 @@
     ]
   },
   {
-    "objectID": "appendix-core.html",
-    "href": "appendix-core.html",
+    "objectID": "appendix/core.html",
+    "href": "appendix/core.html",
     "title": "Appendix C — The hitchhiker-graphs Python Package",
     "section": "",
     "text": "Lots of code ahead\n\n\n\nThis whole appendix is dedicated to the hitchhiker-graphs Python package. You are free to skip it if you don’t care about the coding part of the book.\n\n\nThe hitchhikers-graph package contains the main code used in this book, including class definitions for all the graph types and functions for all search algorithms. It does not contain scripting code that we used to illustrate how the algorithms run.\nTo install the package, just type:\n$ pip install hitchhiker-graphs\nOnce installation is ready, you can import the AdjGraph class and start doing fun stuff.\n\nfrom graphs import AdjGraph\n\ng = AdjGraph().cycle(1,2,3,4,5).link(2,4).link(3,5)\n\nWhich generates the following graph:\n\n\n\n\n\nA simple graph",
