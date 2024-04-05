@@ -15,7 +15,7 @@
 <text text-anchor="middle" x="126" y="-50.3" font-family="Times,serif" font-size="14.00">b</text>
 </g>
 <!-- a&#45;&#45;b -->
-<g id="edge3" class="edge">
+<g id="edge2" class="edge">
 <title>a--b</title>
 <path fill="none" stroke="black" d="M72.17,-54C83,-54 96.71,-54 107.59,-54"/>
 </g>
@@ -37,7 +37,7 @@
 <text text-anchor="middle" x="18" y="-14.3" font-family="Times,serif" font-size="14.00">e</text>
 </g>
 <!-- a&#45;&#45;e -->
-<g id="edge2" class="edge">
+<g id="edge3" class="edge">
 <title>a--e</title>
 <path fill="none" stroke="black" d="M41,-41C37.78,-37.78 34.33,-34.33 31.1,-31.1"/>
 </g>
@@ -91,12 +91,12 @@
 <path fill="none" stroke="black" d="M41,-139C37.78,-142.22 34.33,-145.67 31.1,-148.9"/>
 </g>
 <!-- e&#45;&#45;f -->
-<g id="edge9" class="edge">
+<g id="edge10" class="edge">
 <title>e--f</title>
 <path fill="none" stroke="black" d="M36.24,-18C63.94,-18 116.3,-18 143.91,-18"/>
 </g>
 <!-- e&#45;&#45;h -->
-<g id="edge10" class="edge">
+<g id="edge9" class="edge">
 <title>e--h</title>
 <path fill="none" stroke="black" d="M18,-36.24C18,-63.94 18,-116.3 18,-143.91"/>
 </g>

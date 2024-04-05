@@ -210,7 +210,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Drawing</span></span>
+ <span class="menu-text">Laying out</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -328,8 +328,8 @@ window.Quarto = {
 <p>Intuitively, a graph is just a (finite) collection of elements called <em>vertices</em> (or sometimes <em>nodes</em>), connected via <em>edges</em>. Graph represents an abstract <em>relation space</em>, in which the edges define who’s related to whom, whatever the nature of that relation is.</p>
 <p>Mathematically speaking, a graph is an object composed of two sets: one for the vertices, and another for the edges. In fact, edges themselves are sets of two vertices. There is nothing about an edge that matters beyond which are the two vertices it connects. (We will see this isn’t the case for some special classes of graphs, but we’ll only deal with them later.)</p>
 <p>Graphs are abstract objects, which we can visualize by drawing dots for vertices and lines for edges. An example of a simple graph is shown in <a href="#fig-example-graph" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>.</p>
-<div id="cell-fig-example-graph" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div id="cell-fig-example-graph" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div id="fig-example-graph" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-example-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -417,16 +417,11 @@ Optional math sections
 </div>
 </div>
 <p>We are ready to use the tools of logic and set theory to formally define the concept of a <em>graph</em> in the language of mathematics.</p>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<hr>
+<div id="def-graphs" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1.1 (Graph)</strong></span> A graph <span class="math inline">\(G = (V, E)\)</span> is a collection of two sets, a set of vertices <span class="math inline">\(V\)</span>, and a set of edges <span class="math inline">\(E \subseteq V \times V\)</span>.</p>
 </div>
-<div class="callout-body-container">
-<p><strong>Definition 1.1</strong> <em>(Graphs.)</em> A graph <span class="math inline">\(G = (V, E)\)</span> is a collection of two sets, a set of vertices <span class="math inline">\(V\)</span>, and a set of edges <span class="math inline">\(E \subseteq V \times V\)</span>.</p>
-</div>
-</div>
-</div>
+<hr>
 <p>(We’ll often use the notation <span class="math inline">\(V(G)\)</span> and <span class="math inline">\(E(G)\)</span> for clarity to indicate the source graph <span class="math inline">\(G\)</span>. This is useful when juggling with multiple graphs and subgraphs.)</p>
 <p>Let’s unpack this definition. Take a look at <a href="#fig-example-graph" class="quarto-xref">Figure&nbsp;<span>1.1</span></a> one more time.</p>
 <p>In the language of mathematics, this graph is defined by <span class="math inline">\(G = (V, E)\)</span>, where the vertices are defined by: <span class="math display">\[V = \{ a, b, c, d, e \}\]</span> and the edges are defined by: <span class="math display">\[E = \{ (a, e), (a, b), (b, e), (b, c), (b, d), (c, d), (c, e), (d, e) \}\]</span></p>
@@ -668,7 +663,7 @@ A bit of syntactic sugar
 <section id="common-graphs" class="level2">
 <h2 class="anchored" data-anchor-id="common-graphs">Common graphs</h2>
 <p>Throughout this book we will refer to several common graphs by name. These are graphs that appear over and over in proofs and examples, so it pays to enumerate them briefly here.</p>
-<div class="cell" data-layout="[[1,1,1],[1]]" data-execution_count="5">
+<div class="cell" data-layout="[[1,1,1],[1]]" data-execution_count="3">
 <div id="fig-examples" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -762,8 +757,8 @@ Figure&nbsp;1.3: Examples of common graphs.
 Tivadar: IMO we shouldn't even implement the directed version of AdjGraph for now, just include the illustration.
 -->
 <p>In some applications it is interesting to give a direction to edges, and consider that <span class="math inline">\(ab\)</span> is different from <span class="math inline">\(ba\)</span>. For example, in modeling transportation networks, sometimes you have single-direction routes. These are called <em>directed graphs.</em> Although they are essential in practical applications, the fundamental theory and the majority of algorithms are almost identical to undirected graphs, so we will only mention them when there’s some relevant difference. <a href="#fig-directed" class="quarto-xref">Figure&nbsp;<span>1.4</span></a> shows an example.</p>
-<div id="cell-fig-directed" class="cell" data-execution_count="6">
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div id="cell-fig-directed" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div id="fig-directed" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-directed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
