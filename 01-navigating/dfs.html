@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>The Hitchhiker’s Guide to Graphs - 2&nbsp; The Lurker’s Labyrinth</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../02-planning/intro.html" rel="next">
+<link href="../01-navigating/intro.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01-navigating/intro.html">Navigating</a></li><li class="breadcrumb-item"><a href="../01-navigating/dfs.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Lurker’s Labyrinth</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">The Hitchhiker’s Guide to Graphs</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/apiad/graphs" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="https://store.apiad.net/l/graphs" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-book"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../01-navigating/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Navigating</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../01-navigating/dfs.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Lurker’s Labyrinth</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Planning</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Socializing</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Reasoning</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Laying out</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendix/math.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">A Primer on Logic</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendix/python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">A Primer on Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendix/core.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">The <code>hitchhiker-graphs</code> Python Package</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#modelling-the-labyrinth" id="toc-modelling-the-labyrinth" class="nav-link active" data-scroll-target="#modelling-the-labyrinth">Modelling the labyrinth</a></li>
+  <li><a href="#walking-through-a-graph" id="toc-walking-through-a-graph" class="nav-link" data-scroll-target="#walking-through-a-graph">Walking through a graph</a>
+  <ul class="collapse">
+  <li><a href="#all-trails-contain-a-path-smallsigma" id="toc-all-trails-contain-a-path-smallsigma" class="nav-link" data-scroll-target="#all-trails-contain-a-path-smallsigma">All trails contain a path <span class="math inline">\(\small(\Sigma)\)</span></a></li>
+  </ul></li>
+  <li><a href="#graph-traversal" id="toc-graph-traversal" class="nav-link" data-scroll-target="#graph-traversal">Graph traversal</a>
+  <ul class="collapse">
+  <li><a href="#abstract-traversals-smalllambda" id="toc-abstract-traversals-smalllambda" class="nav-link" data-scroll-target="#abstract-traversals-smalllambda">Abstract traversals <span class="math inline">\(\small[\lambda]\)</span></a></li>
+  </ul></li>
+  <li><a href="#depth-first-search" id="toc-depth-first-search" class="nav-link" data-scroll-target="#depth-first-search">Depth-first search</a>
+  <ul class="collapse">
+  <li><a href="#programming-dfs-smalllambda" id="toc-programming-dfs-smalllambda" class="nav-link" data-scroll-target="#programming-dfs-smalllambda">Programming DFS <span class="math inline">\(\small[\lambda]\)</span></a></li>
+  </ul></li>
+  <li><a href="#finding-your-way-out" id="toc-finding-your-way-out" class="nav-link" data-scroll-target="#finding-your-way-out">Finding your way out</a>
+  <ul class="collapse">
+  <li><a href="#computing-paths-smalllambda" id="toc-computing-paths-smalllambda" class="nav-link" data-scroll-target="#computing-paths-smalllambda">Computing paths <span class="math inline">\(\small[\lambda]\)</span></a></li>
+  </ul></li>
+  <li><a href="#analyzing-dfs" id="toc-analyzing-dfs" class="nav-link" data-scroll-target="#analyzing-dfs">Analyzing DFS</a></li>
+  <li><a href="#final-remarks" id="toc-final-remarks" class="nav-link" data-scroll-target="#final-remarks">Final remarks</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../01-navigating/intro.html">Navigating</a></li><li class="breadcrumb-item"><a href="../01-navigating/dfs.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Lurker’s Labyrinth</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Lurker’s Labyrinth</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../img/labyrinth2.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+<p><em>Ariadne Wanderlust has been tasked by Major von Veertex with mapping out the legendary underground labyrinth of Graphtopia, where a fearsome beast called the Lurker lives. Many brave adventurers had entered the maze, hoping to slay the monster or find the treasure hidden within, but none had ever returned.</em></p>
+<p><em>Ariadne was not afraid, for she was well-versed in the arcane knowledge of graph traversal algorithms! Before being appointed Chief Explorer, she had been teaching graph search in the Graphtopia University, and was considered a world expert on depth-first exploration.</em></p>
+<p><em>She knew what she had to do: walk deep into the maze for as long as possible, until she hit a wall, and then backtrack her steps to find an alternative route, carefully marking the walls of the already explored paths to avoid getting stuck in a loop –all adventurers travel with a bag full of chalk, you know?. She hoped to find the Lurker’s lair and then exit, before her bag of chalks ran out.</em></p>
+<p><em>However, she soon realized that the labyrinth was more complex and dangerous than she had imagined. It was full of traps, dead ends, and loops. She also heard the Lurker’s roars getting closer, as it followed her scent. She wondered if she had made a mistake by choosing this exploration technique, but it was too late to switch. Now all she could do was hope to find the exit before the Minotaur could found her.</em></p>
+<section id="modelling-the-labyrinth" class="level2">
+<h2 class="anchored" data-anchor-id="modelling-the-labyrinth">Modelling the labyrinth</h2>
+<p>The first step in solving any problem with graphs is, well, turning that problem into a graph problem!</p>
+<p>In this case, what we must do is find a way out of the labyrinth, so we must decide how to model the labyrinth as a graph such that nodes and edges map to concepts in the labyrinth that are useful for this task. The most natural mapping, and the one you’re probably thinking about, is using edges to model the corridors in the labyrinth, and nodes to model the intersections.</p>
+<p>A possible graph that models a labyrinth is show in <a href="#fig-labyrinth" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>.</p>
+<div id="cell-fig-labyrinth" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="19">
+<div id="fig-labyrinth" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-labyrinth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="dfs_files/figure-html/fig-labyrinth-output-1.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-labyrinth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: A possible graph depicting a labyrinth.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<!--#
+Tivadar: The start and the end should be indicated on the illustration.
+Ale: Jaja, was already doing it :)
+-->
+<p>In this model, the solution to our problem –finding a way out of the labyrinth– translates into finding a sequence of nodes, each adjacent to next, that take us from the start <code>S</code> to the end <code>E</code>.</p>
+<p>Let’s begin by formalizing this notion of “walking” through the graph, and meet the most important algorithms that will free Ariadne from the Minotaur.</p>
+</section>
+<section id="walking-through-a-graph" class="level2">
+<h2 class="anchored" data-anchor-id="walking-through-a-graph">Walking through a graph</h2>
+<p>The most important structure in a graph is a sequence of connected vertices. This is called a <em>walk</em> in the general case, where the only restriction is that between any pair of consecutive vertices there is an edge. Let’s look at our usual example graph one more time to see what are we talking about.</p>
+<!--#
+Tivadar: Can we center the illustrations?
+-->
+<div id="fig-example" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-example" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-example-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-example-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="dfs_files/figure-html/fig-example-output-1.svg" class="img-fluid figure-img" data-ref-parent="fig-example">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-example-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) A walk
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-example" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-example-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-example-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="dfs_files/figure-html/fig-example-output-2.svg" class="img-fluid figure-img" data-ref-parent="fig-example">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-example-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) A trail
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-example" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-example-3" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-example-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="dfs_files/figure-html/fig-example-output-3.svg" class="img-fluid figure-img" data-ref-parent="fig-example">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-example-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) A path
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-example" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-example-4" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-example-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="dfs_files/figure-html/fig-example-output-4.svg" class="img-fluid figure-img" data-ref-parent="fig-example">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-example-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(d) A cycle
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: Our overused example graph.
+</figcaption>
+</figure>
+</div>
+<p>For example, the sequence <span class="math inline">\(a, b, e, d, e, c\)</span> is a valid walk in our example graph, one that happens to touch all vertices. (But a walk doesn’t have to touch all vertices.) Notice that we can move over the same edge back and forth as we want, so we can extend any walk infinitely.</p>
+<p>If we never repeat an edge (via backtracking or making a loop), then we have a <em>trail</em>. The previous walk is not trail because we backtrack through <span class="math inline">\((d,e)\)</span>. But <span class="math inline">\(a, b, e, d, c, e\)</span> is a valid trail in our example graph, because although <span class="math inline">\(e\)</span> appears twice, we get to it via different edges each time.</p>
+<p>If we also never repeat a vertex, then we have a <em>path</em>. (Some literature will use <em>path</em> to refer to what we call a <em>trail</em>, and <em>simple path</em> to refer to a path with no repeated vertices). In our example graph, <span class="math inline">\(a, b, d, c, e\)</span> is a path that happens to involve all vertices.</p>
+<p>If the path loops over from the final vertex back into the first one, like <span class="math inline">\(a, b, d, c, e, a\)</span>, then we call it a <em>cycle</em>.</p>
+<section id="all-trails-contain-a-path-smallsigma" class="level3">
+<h3 class="anchored" data-anchor-id="all-trails-contain-a-path-smallsigma">All trails contain a path <span class="math inline">\(\small(\Sigma)\)</span></h3>
+<p>You might have noticed that the difference between trails and paths is that trails can have small sub-cycles inside them. Intuitively, every time we find one such cycle, we can skip it and continue directly in the “main path”. Thus, it makes sense to think that we can always remove all detours from a trail and extract a path that begins and ends in the same vertices.</p>
+<p>If we can get from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span> at all, then we must be able to get from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span> without making any unnecessary loops, right? The answer is yes, of course. This is our first theorem, and one we will use often in the rest of the book.</p>
+<div id="thm-trail" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2.1</strong></span> In any graph <span class="math inline">\(G\)</span>, if there is a trail from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>, then there is a path from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Here is one intuitive, but rigorous demonstration for <a href="#thm-trail" class="quarto-xref">Theorem&nbsp;<span>2.1</span></a>. We will use something called the <em>well-ordering principle</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, a fundamental axiom of natural numbers, saying that every non-empty subset of the natural numbers have a least element.</p>
+<p>In this case, we will consider the set of all possible trails between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. Since, by the condition of the theorem, there exists a trail from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>, we know this is a non-empty set. Then we can invoke the well-ordering principle and ask for the smallest possible such trail<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>; let’s denote it by <span class="math inline">\(P\)</span>.</p>
+<!-- Nice! -->
+<p>We claim that the shortest trail between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> must be a path. Why? Here we will use another fundamental tool of logical reasoning: <em>proof by contradiction</em><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+<!--#
+Tivadar: I am fine with this reference, but this is a paid article.
+Ale: Ok maybe we can link to Wikipedia as well?
+-->
+<p>Suppose that <span class="math inline">\(P\)</span> is not a path. Then, it must contain some internal loop, for otherwise it would be a path and the proof would be done. Thus, if it contains a loop, we can make the trail shorter by removing that loop, and it will still fo from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span>. This is in contradiction with the claim that we had the shortest possible trail. Thus, by <em>reductio ad absurdum</em>, <strong>the shortest trail must be a path</strong>.</p>
+<p>The proof is almost complete. The only step we slightly overlooked is the claim that the existence of a loop implies that we can make the trail shorter. To airtight this part of the proof, we need to show how to construct a shorter trail by cutting a loop.</p>
+<!--#
+TODO
+Tivadar: The $P = a \rightarrow^n b$ notation should be introduced earlier, when we introduce walks.
+Ale: Ok, yeah, I agree.
+-->
+<p>Let <span class="math inline">\(P = a \rightarrow^n b\)</span> be the shortest trail between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, with length (i.e.&nbsp;number of edges) <span class="math inline">\(n = |P| - 1\)</span>. Assume that <span class="math inline">\(P\)</span> has a loop; in other words, there is a vertex <span class="math inline">\(x\)</span>, that appears twice inside the trail. (<span class="math inline">\(x\)</span> could be <span class="math inline">\(a\)</span> or <span class="math inline">\(b\)</span> as well.)</p>
+<p>Thus, <span class="math inline">\(P\)</span> looks like</p>
+<p><span class="math display">\[
+P = a \rightarrow^{k_{1}} x^{(1)} \rightarrow^{k_{2}} x^{(2)} \rightarrow^{k_{3}} b,
+\]</span></p>
+<p>where <span class="math inline">\(x^{(i)}\)</span> indicates the $i $-th time the vertex <span class="math inline">\(x\)</span> appears. Note that <span class="math inline">\(k_{1} + k_{2} + k_{3} = n\)</span>, where <span class="math inline">\(k_{1} \geq 0\)</span>, <span class="math inline">\(k_{2} &gt; 0\)</span>, and <span class="math inline">\(k_{3} \geq 0\)</span>. That is, the part between <span class="math inline">\(x^{(1)}\)</span> and <span class="math inline">\(x^{(2)}\)</span> must have at least one edge. (In fact, it must have at least two, but we don’t need that.)</p>
+<p>Now we need to construct a valid trail from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span> that is strictly smaller than <span class="math inline">\(n\)</span>. In trail <span class="math inline">\(P\)</span> we have two trails <span class="math inline">\(a \rightarrow^{k_1} x\)</span> and <span class="math inline">\(x \rightarrow^{k_2} b\)</span> that we can stitch together and make a new trail <span class="math inline">\(P’ = a  \rightarrow^{k_1+k_3} b\)</span>, where the length of <span class="math inline">\(P’\)</span> (equal to <span class="math inline">\(k_1+k_3\)</span>) must be strictly less than <span class="math inline">\(n\)</span> because <span class="math inline">\(k_2 &gt; 0\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
+</div>
+</section>
+</section>
+<section id="graph-traversal" class="level2">
+<h2 class="anchored" data-anchor-id="graph-traversal">Graph traversal</h2>
+<p>The simplest procedure in graphs that involves some notion of “walking” is graph traversal. This is the task of enumerating all nodes in a predefined order by moving through the edges. That is, we don’t want to simply list all nodes, but to order them in a way that uses the graph structure such that subsequent nodes are connected.</p>
+<p>There are two basic graph traversal algorithms: <em>depth-first search</em> (DFS) and <em>breadth-first search</em> (BFS). Both algorithms are very similar, and will produce a full enumeration of a graph – assuming that all nodes are reachable, a topic we’ll discuss in next chapter. DFS and BFS differ in how they prioritize being eager versus being comprehensive.</p>
+<section id="abstract-traversals-smalllambda" class="level3">
+<h3 class="anchored" data-anchor-id="abstract-traversals-smalllambda">Abstract traversals <span class="math inline">\(\small[\lambda]\)</span></h3>
+<p>We will begin by defining how our abstract notion of “search” looks like. To keep things simple, we assume that a search algorithm provides a single method <code>traverse</code> that simply enumerates all edges in the order in which they are discovered.</p>
+<!-- SNIPPET search.py @search @search-extra -->
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>graphs/search.py</code> <i class="fa-brands fa-github" aria-label="github"></i> <a href="https://github.com/apiad/graphs/blob/main/graphs/search.py#L32-L39">See on Github</a>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Search:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> traverse(<span class="va">self</span>, graph: Graph, root):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> nodes(<span class="va">self</span>, graph: Graph, root):</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (y <span class="cf">for</span> (x, y) <span class="kw">in</span> <span class="va">self</span>.traverse(graph, root))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ... extra methods in Search</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<!-- /SNIPPET -->
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>nodes</code> method is just a thing wrapper around <code>traverse</code> that yields the nodes instead the full edges.</p>
+</div>
+</div>
+<p>Why make this a class? Isn’t this just a method? Well, it’s a bit of mouthful at the moment, for sure. But later, as we explore many search algorithms, we’ll want to compare different strategies. That’s when the <code>search</code> interface will shine.</p>
+<p>Plus, this abstract method allows us to implement a very common search pattern that we’ll’ reuse over and over: searching for an specific set of nodes. (Including a single node.) We can have the general-purpose case that matches any node with a given property, and the special case when we need to find one particular node – e.g., like the exit of the labyrinth.</p>
+<!-- SNIPPET search.py @search-extra @search-extra-2 -->
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>graphs/search.py</code> <i class="fa-brands fa-github" aria-label="github"></i> <a href="https://github.com/apiad/graphs/blob/main/graphs/search.py#L42-L53">See on Github</a>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># class Search(...)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">#   ...</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> find_any(<span class="va">self</span>, graph: Graph, origin, goal):</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> node <span class="kw">in</span> <span class="va">self</span>.traverse(graph, origin):</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> goal(node):</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> find(<span class="va">self</span>, graph: Graph, origin, destination):</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.find_any(graph, origin, goal<span class="op">=</span><span class="kw">lambda</span> n: n <span class="op">==</span> destination)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<!-- /SNIPPET -->
+<p>With this code in place, we’re ready for some actual search algorithms.</p>
+</section>
+</section>
+<section id="depth-first-search" class="level2">
+<h2 class="anchored" data-anchor-id="depth-first-search">Depth-first search</h2>
+<p>As the name implies, depth-first search is a graph traversal algorithm that prioritizes going as deep as possible as fast as possible. In our labyrinth analogy, this means turning right until a dead end and backtracking to the last unexplored intersection.</p>
+<p>More precisely, DFS starts at an arbitrary root node in the graph, then jumps to one of its neighbors, continuing the traversal from there. You can select which neighbor to visit by a random choice, but most commonly one simply defines an order – e.g., the order in which neighbors are listed in the adjacency list.</p>
+<p>In a practical scenario, this could mean always trying to move south, then east, then north, then west. Of course, you must keep track of which nodes (or intersections in this case) you have already visited. Otherwise you can easily get stuck in a loop.</p>
+<p>This is how DFS looks like in our sample graph that models the labyrinth problem.</p>
+<div id="cell-fig-labyrinth-solve" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="21">
+<div id="fig-labyrinth-solve" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-labyrinth-solve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="dfs_files/figure-html/fig-labyrinth-solve-output-1.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-labyrinth-solve-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.3: One possible solution to our labyrinth using DFS.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<!-- Ale: I don't really like this visualization, is there a better way to
+show the result of DFS in a single image? (without animations) -->
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Understanding this image
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the previous image, we label each edge by a number that indicates the order in which it is discovered by DFS. Thus, edges that have consecutive numbers indicate that DFS traveled along that path. When you see two contiguous edges with non-consecutive numbers, that means DFS backtracked to the corresponding node after getting stuck to explore a different path.</p>
+</div>
+</div>
+<section id="programming-dfs-smalllambda" class="level3">
+<h3 class="anchored" data-anchor-id="programming-dfs-smalllambda">Programming DFS <span class="math inline">\(\small[\lambda]\)</span></h3>
+<p>Let’s implement DFS! The easiest way is via recursion<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>: we start at the root node and recursively visit all non-visited neighbors. To make sure we don’t get stuck in a loop, we keep track of the explored nodes throughout all the recursive calls.</p>
+<p>Each iteration returns the edge <span class="math inline">\((x, y)\)</span>, where <span class="math inline">\(y\)</span> is the current node under consideration, and <span class="math inline">\(x\)</span> is the “parent” node – that we must also keep track of during recursion.</p>
+<p>Here is the full implementation:</p>
+<!-- SNIPPET search.py @dfs @dfs-end -->
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>graphs/search.py</code> <i class="fa-brands fa-github" aria-label="github"></i> <a href="https://github.com/apiad/graphs/blob/main/graphs/search.py#L72-L84">See on Github</a>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> DFS(Search):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> traverse(<span class="va">self</span>, graph: Graph, root):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._dfs(graph, root, <span class="va">None</span>, <span class="bu">set</span>())</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> _dfs(<span class="va">self</span>, graph: Graph, current, parent, visited: <span class="bu">set</span>):</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">yield</span> parent, current</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        visited.add(current)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> node <span class="kw">in</span> graph.neighborhood(current):</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> node <span class="kw">in</span> visited:</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>                <span class="cf">continue</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">yield</span> <span class="cf">from</span> <span class="va">self</span>._dfs(graph, node, current, visited)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<!-- /SNIPPET -->
+<!--#
+Tivadar: There NEEDS to be an example run of this implementation on a simple example!
+Ale: True.
+-->
+<p>As it’s common in recursive methods, we have a public “portal” method <code>traverse</code> that exposes the public arguments, which in turn defers to a private implementation <code>_dfs</code> that takes any additional arguments we need for bookkeeping.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Recursive iterators
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>You may be stumped by the use of the <code>yield from</code> syntax at the end of the DFS implementation. This is the Python solution to the problem of building recursive generators that are flattened automatically. It is semantically equivalent to something like:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> e <span class="kw">in</span> <span class="va">self</span>._dfs(graph, node, current, visited):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">yield</span> e</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>But <code>yield from</code> does a bit more work to solve some nasty edge cases. To understand why we need this, notice that just using <code>yield</code> at this point would return the whole sub-generator as an element of the parent generator, which is not what you want. Instead, you must unpack the sub-generator and yield each element individually, which is what <code>yield from</code> does under the hood.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="finding-your-way-out" class="level2">
+<h2 class="anchored" data-anchor-id="finding-your-way-out">Finding your way out</h2>
+<p>Armed with the arcane knowledge of depth-first search, it is now trivial to exit the labyrinth (provided there is indeed a way out). We just need to run DFS in the start node and, eventually, we will reach the end node. We might have to backtrack once or twice if we are unlucky to pick to wrong turn, but as long as we keep track of every node we visit, and make sure not repeat any of them, the way out is guaranteed to be found.</p>
+<section id="computing-paths-smalllambda" class="level3">
+<h3 class="anchored" data-anchor-id="computing-paths-smalllambda">Computing paths <span class="math inline">\(\small[\lambda]\)</span></h3>
+<p>While knowing that a goal node exists is useful, we often want to find the actual path that takes us there. Fortunately, our abstract <code>Search</code> strategy can implement this operation easily using the <code>parent</code> from the tuple <code>(parent, node)</code> available in each iteration in the <code>traverse</code> method.</p>
+<p>To quickly compute paths, we can define a simple structure (<code>Paths</code>) that stores a reference to the parent of each node found during search. With this information, the path between our origin vertex and an arbitrary destination is easy to compute by following the links backwards. That is, we start at the destination node, and iteratively add the parent node to a list, until we find the origin node. Then, we simply reverse the list.</p>
+<!-- SNIPPET search.py @paths @paths-end -->
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>graphs/search.py</code> <i class="fa-brands fa-github" aria-label="github"></i> <a href="https://github.com/apiad/graphs/blob/main/graphs/search.py#L5-L25">See on Github</a>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Paths:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, origin) <span class="op">-&gt;</span> <span class="va">None</span>:</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._parents <span class="op">=</span> {}</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.origin <span class="op">=</span> origin</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> add(<span class="va">self</span>, node, parent):</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> node <span class="kw">in</span> <span class="va">self</span>._parents:</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>            <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Node already exists"</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._parents[node] <span class="op">=</span> parent</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> path(<span class="va">self</span>, destination):</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        path <span class="op">=</span> [destination]</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        node <span class="op">=</span> destination</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> node <span class="op">!=</span> <span class="va">self</span>.origin:</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>            node <span class="op">=</span> <span class="va">self</span>._parents[node]</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>            path.append(node)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        path.reverse()</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> path</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<!-- /SNIPPET -->
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Paths are origin-dependent
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You’ll notice we don’t require an <code>origin</code> parameter in the <code>Paths.path</code> method. That is because this structure holds paths precomputed from a fixed origin node, that is, the node from which the search algorithm started.</p>
+<p>If you need to precompute paths for arbitrary pairs of nodes, there is little you can do other than using a <code>Path</code> instance for each origin node.</p>
+</div>
+</div>
+<p>With this structure in place, we can add a method to the <code>Search</code> class to compute all paths for a given graph and origin.</p>
+<!-- SNIPPET search.py @search-extra-2 @search-end -->
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>graphs/search.py</code> <i class="fa-brands fa-github" aria-label="github"></i> <a href="https://github.com/apiad/graphs/blob/main/graphs/search.py#L56-L65">See on Github</a>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># class Search(...)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">#   ...</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> compute_paths(<span class="va">self</span>, graph: Graph, origin) <span class="op">-&gt;</span> Paths:</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        paths <span class="op">=</span> Paths(origin)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> parent, node <span class="kw">in</span> <span class="va">self</span>.traverse(graph, origin):</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>            paths.add(node, parent)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> paths</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<!-- /SNIPPET -->
+</section>
+</section>
+<section id="analyzing-dfs" class="level2">
+<h2 class="anchored" data-anchor-id="analyzing-dfs">Analyzing DFS</h2>
+<p>Before finishing, let’s turn our attention now to the analysis of this algorithm. In computer science, we are often interested in answering a few critical questions for every algorithm:</p>
+<ol type="1">
+<li>Does the algorithm always work?</li>
+<li>How fast does it work?</li>
+<li>How much memory does it need?</li>
+<li>Is there any better algorithm?</li>
+</ol>
+<p>The first question asks about the <em>correctness</em> of the algorithm. An algorithm is only useful if it always works – or if, at least, we can determine beforehand whether it will work or not. In the case of DFS, we can claim with absolute certainty that, if there is a path from origin to destination, the algorithm will eventually find it.</p>
+<p>¿Why? We can give an intuitive justification of correctness for DFS as follows. Since we never repeat any vertex, and we explore all neighbors of the vertices we visit, we must visit every vertex, that is reachable from the origin, eventually.</p>
+<p>Now, there is one massive caveat with DFS. You have no guarantee the path you find is <em>the shortest path</em> from the origin to the destination. Because DFS walks down a path as long as possible, and then never revisits those nodes, you can actually discover the destination first by going throught the long way, instead of taking a shortcut.</p>
+<!-- TODO: Add an image to illustrate this problem. -->
+<p>The second and third questions ask about the <em>performance</em> of the algorithm. If we want to compare two algorithms for the same problem, there are almost always at least two obvious dimensions: running time and memory requirement. We usually want the fastest algorithm, provided we have enough memory to run it, right?</p>
+<p>Now, for reasons beyond the scope of this book, it is almost always useless to think in terms of actual time (like seconds) and memory (like megabytes), since the exact values of those properties for any given algorithm will depend on many circumstancial details like the speed of your microprocessor or the programming language you used.</p>
+<p>Instead, to compare two algorithms in the most abstract and fair possible way, we use a relative run-time and memory, that just considers the “size” of the problem. In most cases in this book, the “size” of our problem is something we can approximate by the total number of edges and vertices in our graph.</p>
+<p>Thus, we can formulate questions 2 and 3 in terms of, given a graph of <span class="math inline">\(n\)</span> vertices and <span class="math inline">\(m\)</span> edges, how many steps of DFS do we need? You can probably suspect the answer by looking at <a href="#fig-labyrinth-solve" class="quarto-xref">Figure&nbsp;<span>2.3</span></a> and counting the numbers. You will notice the answer is just the number of edges, since DFS explores the whole graph, and never repeats any path. In general, most search algorithms in this book will take a time that is proportional to the total number of vertices and edges in the graph.</p>
+<p>Regarding memory, we could assume we also need something proportional to the total size of the graph, since we need to mark every visited node, right? Well, that is true only if there are loops in the graph. But if you know beforehand there are no loops, then once you hit a dead end and backtrack, you can forget that whole branch up until the bifurcation. This means that, on average, you will only need enough memory to remember as many nodes as there are in the longest possible path in the graph.</p>
+<!-- TODO: Add an image here to illustrate this concept -->
+<p>Finally, we can ask if there is any way to discover the exit faster. The general answer is “no”, unless we know something special about the graph. That is, in a general graph, without any extra knowledge, you have absolutely no idea where the exit (or the destination nodes in general) will be, so at worst you’ll have to explore the whole graph.</p>
+<p>However, as we will see a few chapters down the road, in many ocassions you do know something extra about the graph – e.g., when driving around a city, you have some sense of which direction your destination is. In these cases, we can often speed-up the search massively with some clever strategies.</p>
+</section>
+<section id="final-remarks" class="level2">
+<h2 class="anchored" data-anchor-id="final-remarks">Final remarks</h2>
+<p>Depth-First Search is a cornerstone of graph search. Almost all algorithms in this book will either include it as an explicit step, or use it as a building block.</p>
+<p>Besides being extremely simple and elegant to implement, DFS is also the easiest to adapt to a real-life situation. Unlike most other graph search algorithms, DFS only moves to adjacent nodes. So, if you are an agent exploring a graph-like structure in real-life – just like Ariadne – DFS is what you would most likely use.</p>
+<p>The main caveat of DFS, as we already saw, is that you cannot guarantee that the first time you discover a node, you did so via the shortest path to the origin. In fact, it is easy to come up with examples where you actually reach your destination through the longest possible path –it all depends on how lucky you are selecting which neighboor to visit next.</p>
+<p>Next chapter, we will look at an alternative way to explore a graph that guarantees shortests paths, but it requires that you can teleport to any given node.</p>
+<!--#
+Tivadar: Things to add to the chapter:
+1. Is DFS or BFS the better for Ariadne? We could also include a runtime analysis, even if it is preliminary.
+
+Ale: I think this is covered now?
+-->
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>See <a href="https://en.wikipedia.org/wiki/Well-ordering_principle">https://en.wikipedia.org/wiki/Well-ordering_principle</a>.</p>
+<p>Technically, we don’t need the full well-ordering principle in this proof because we have a <em>finite set</em> of things, so of course one of them must be the smallest. The well-ordering principle applies also to infinite sets, which is where it becomes really handy.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Mathematically speaking, we used the well-ordering principle on the lengths of the trails, but that’s in a one-to-many relation with the set of trails. Thus, we can select a trail that has the shortest length.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><a href="https://thepalindrome.org/p/proof-by-induction-and-contradiction">https://thepalindrome.org/p/proof-by-induction-and-contradiction</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>As the saying goes, to understand recursion, you first need to understand recursion.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../01-navigating/intro.html" class="pagination-link" aria-label="Navigating">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Navigating</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../02-planning/intro.html" class="pagination-link" aria-label="Planning">
+        <span class="nav-page-text">Planning</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2024 - The Authors</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link active" href="https://github.com/apiad/graphs" aria-current="page">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://store.apiad.net/l/graphs">
+      <i class="bi bi-book" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
