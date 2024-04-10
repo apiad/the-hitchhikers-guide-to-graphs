@@ -409,7 +409,7 @@
     "href": "appendix/core.html",
     "title": "Appendix C — The hitchhiker-graphs Python Package",
     "section": "",
-    "text": "Lots of code ahead\n\n\n\nThis whole appendix is dedicated to the hitchhiker-graphs Python package. You are free to skip it if you don’t care about the coding part of the book.\n\n\nThe hitchhikers-graph package contains the main code used in this book, including class definitions for all the graph types and functions for all search algorithms. It does not contain scripting code that we used to illustrate how the algorithms run.\nTo install the package, just type:\n$ pip install hitchhiker-graphs\nOnce installation is ready, you can import the AdjGraph class and start doing fun stuff.\n\nfrom graphs import AdjGraph\n\ng = AdjGraph().cycle(1,2,3,4,5).link(2,4).link(3,5)\n\nWhich generates the following graph:\n\n\n\n\n\nA simple graph",
+    "text": "This appendix is dedicated to the hitchhiker-graphs Python package. You are free to skip it if you don’t care about the coding part of the book.\nThe hitchhikers-graph package contains the main code used in this book, including class definitions for all the graph types and functions for all search algorithms. It does not contain scripting code that we used to illustrate how the algorithms run.\nTo install the package, just type:\n$ pip install hitchhiker-graphs\nOnce installation is ready, you can import the AdjGraph class and start doing fun stuff.\n\nfrom graphs import AdjGraph\n\ng = AdjGraph().cycle(1,2,3,4,5).link(2,4).link(3,5)\n\nWhich generates the following graph:\n\n\n\n\n\nA simple graph",
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>C</span>  <span class='chapter-title'>The `hitchhiker-graphs` Python Package</span>"

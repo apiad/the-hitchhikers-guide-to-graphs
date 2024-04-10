@@ -252,30 +252,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lots of code ahead
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This whole appendix is dedicated to the <code>hitchhiker-graphs</code> Python package. You are free to skip it if you don’t care about the coding part of the book.</p>
-</div>
-</div>
+<p>This appendix is dedicated to the <code>hitchhiker-graphs</code> Python package. You are free to skip it if you don’t care about the coding part of the book.</p>
 <p>The <code>hitchhikers-graph</code> package contains the main code used in this book, including class definitions for all the graph types and functions for all search algorithms. It does not contain scripting code that we used to illustrate how the algorithms run.</p>
 <p>To install the package, just type:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pip install hitchhiker-graphs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Once installation is ready, you can import the <code>AdjGraph</code> class and start doing fun stuff.</p>
-<div id="08c30fbb" class="cell" data-execution_count="1">
+<div id="ff29db71" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> graphs <span class="im">import</span> AdjGraph</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> AdjGraph().cycle(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>).link(<span class="dv">2</span>,<span class="dv">4</span>).link(<span class="dv">3</span>,<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Which generates the following graph:</p>
-<div id="a6ca2a42" class="cell" data-execution_count="2">
+<div id="5127e715" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
